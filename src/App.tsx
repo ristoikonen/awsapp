@@ -9,7 +9,7 @@ function App() {
         <section className="bg-white py-12 px-6 md:px-16 lg:px-24 text-center">
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-7xl lg:text-7xl font-black leading-tight mb-8">
-                    <div className="text-red-600">.NET Aspire </div><div className="text-indigo-700">Semantic Kernel  </div><div class="text-gray-700">React</div>
+                    <div className="text-red-600">.NET Aspire </div><div className="text-indigo-700">Semantic Kernel  </div><div className="text-gray-700">React</div>
                 </h1>
             </div>
         </section>
