@@ -15,7 +15,9 @@ function App() {
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16">
+            
             <div className="bg-white p-10 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+                <a className="after:absolute after:inset-0" href="https://github.com/ristoikonen/Embed.AppHost/blob/master/LambdaReadme.md">
                 <div className="text-orange-500 mb-8">
                     <svg className="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 00-1.05-9.95l-.65-.18a7.001 7.001 0 00-13.62-2.73 4 4 0 00-2.73 4.62 4 4 0 00-4.62 2.73 7.001 7.001 0 002.73 13.62 4 4 0 004.62-2.73"></path>
@@ -24,9 +26,16 @@ function App() {
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-5 text-center">.Net Aspire orchestration</h3>
                 <p className="text-gray-700 text-center leading-relaxed text-lg">Cloud solution using AWS Amplify.</p>
+                </a>
             </div>
 
+{/* <a href="https://github.com/ristoikonen/Embed.AppHost/blob/master/FV.md" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more</a>
+<a href="https://github.com/ristoikonen/Embed.AppHost/blob/master/LambdaReadme.md" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more</a>
+ */}
+
           <div className="bg-white p-10 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+            <a className="after:absolute after:inset-0" href="https://github.com/ristoikonen/Embed.AppHost/blob/master/FV.md">
+
               <div className="text-orange-500 mb-8">
                   <svg className="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.944 12c0 2.894.834 5.618 2.306 7.956A11.955 11.955 0 0112 21.056c2.894 0 5.618-.834 7.956-2.306A12.007 12.007 0 0021.056 12c0-2.894-.834-5.618-2.306-7.956z"></path>
@@ -34,18 +43,19 @@ function App() {
               </div>
               <h3 className="text-3xl font-bold text-gray-900 mb-5 text-center">Future value calculator</h3>
               <p className="text-gray-700 text-center leading-relaxed text-lg">AWS Lambda function. First part of a Lambda finacial libarary</p>
+              </a>
           </div>
           
           </div>
           <div className="bg-white p-10 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
-            <button className="bg-purple-700 text-white hover:bg-purple-800 font-bold py-5 px-14 rounded-full shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-purple-300 focus:ring-opacity-75 text-lg">
-                Explore Projects in GitHub
+            <button type="button" className="bg-purple-700 text-white hover:bg-purple-800 font-bold py-5 px-14 rounded-full shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-purple-300 focus:ring-opacity-75 text-lg">
+                <a href="https://github.com/ristoikonen/" className="font-medium text-white hover:underline">Explore Projects in GitHub</a>
             </button>
           </div>
 
           <footer className=" text-center">
                   <div className=" border-gray-800 mt-16 pt-12 text-m font-light">
-                      &copy; 2025 Risto Ikonen. All rights reserved.
+                      &copy; 2025 Risto Ikonen.
                   </div>
           </footer>
             
