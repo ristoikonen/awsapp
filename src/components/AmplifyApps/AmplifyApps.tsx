@@ -1,16 +1,14 @@
-import  { FC } from 'react';
-import { 
-  Card,   Flex,    Grid,    Heading,    Text,    Button, 
-  View,    ThemeProvider  } from '@aws-amplify/ui-react';
+import React from 'react';
+import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider  } 
+   from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
-import { AmplifyAppsWrapper } from './AmplifyApps.styled';
 
 interface AmplifyAppsProps {}
 
-const AmplifyApps: FC<AmplifyAppsProps> = () => {
+const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
    return(
-   <AmplifyAppsWrapper data-testid="AmplifyApps">
+
       <ThemeProvider>
         <View padding="medium">
         {/* Header Section */}
@@ -30,7 +28,7 @@ const AmplifyApps: FC<AmplifyAppsProps> = () => {
           gap="large"
           padding={{ base: 'medium', medium: 'large' }}
         >
-          {/* Card 1 */}
+          {/* Card 1 - Amplify */}
           <Card
             variation="elevated"
             padding="large"
@@ -55,7 +53,7 @@ const AmplifyApps: FC<AmplifyAppsProps> = () => {
             </Flex>
           </Card>
 
-{/*                 <Card
+{/*  Card for Semantic Kernel when it's ready..               <Card
             variation="elevated"
             padding="large"
             borderRadius="large"
@@ -101,7 +99,8 @@ const AmplifyApps: FC<AmplifyAppsProps> = () => {
             </Flex>
           </Card>  */}
 
-          {/* Card 2 */}
+
+          {/* Card 2 - FV */}
           <Card
             variation="elevated"
             padding="large"
@@ -165,8 +164,7 @@ const AmplifyApps: FC<AmplifyAppsProps> = () => {
       </View>
     </ThemeProvider>
 
-   </AmplifyAppsWrapper>
-)
+   )
 };
 
 
