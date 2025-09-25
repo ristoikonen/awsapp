@@ -1,9 +1,9 @@
 import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
 
 const schema = a.schema({
-  Funk: a
+  Funks: a
     .model({
-      ID: a.id() ,  
+      ID: a.id() ,  //.required(),
       name: a.float(),
       rate: a.float(),
       per: a.float(),
@@ -13,8 +13,8 @@ const schema = a.schema({
       pv: a.float(),  
       guess: a.float(),  
       isDueEnd: a.boolean(),  
-      createdAt: a.timestamp().default(), 
-      updatedAt: a.timestamp().default(), 
+      createdAt: a.timestamp(), 
+      updatedAt: a.timestamp(), 
     })
     .authorization((allow) => [allow.guest()]),
 });

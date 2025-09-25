@@ -1,4 +1,5 @@
 import AmplifyApps from './components/AmplifyApps/AmplifyApps'
+
 import './App.css'
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <>
 
         <AmplifyApps/>
-            
+
     </>
   )
 }

@@ -1,12 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider  } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+// TODO: Update the path below to the correct location of your amplify data resource type
+// Update the path below to the correct location of your amplify data resource type
+import type { Schema } from '../../../amplify/data/resource'
+import { generateClient } from 'aws-amplify/data'
+
+
+const client = generateClient<Schema>()
 
 interface AmplifyAppsProps {}
 
 const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
+    // In a real application, you might integrate with Amplify DataStore or API here:
+    /*
+    try {
+      await DataStore.save(new MyAnswerModel({ text: submittedAnswer }));
+      alert('Answer saved to DataStore!');
+    } catch (e) {
+      console.error('Error saving answer', e);
+      alert('Failed to save answer.');
+    }
+    */
+  //Error: Client could not be generated
+  useEffect(() => {
+    const GetData = async () => {
+      try {
+        // Fetch data from the Amplify data resource
+        const { data: funks } = await client.models.Funks.list();
+        console.log('Fetched Funks:', funks);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+    GetData()
+  }, [])
+
+
+  
    return(
 
       <ThemeProvider>
@@ -18,6 +51,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text color="orange.60" fontWeight="extrabold">.NET Aspire</Text>
               <Text color="purple.80" fontWeight="extrabold">Semantic Kernel</Text>
               <Text color="blue.60" fontWeight="extrabold">React</Text>
+              <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
+              
             </Heading>
           </View>
         </Flex>
@@ -43,7 +78,11 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 </svg>
               </View>
               <Heading level={3} textAlign="center">AWS Serverless</Heading>
-              <Text textAlign="center">AWS Amplify app on .NET Aspire host</Text>
+              <Text textAlign="center">
+                
+                AWS Amplify application on .NET Aspire host
+                
+              </Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/Embed.AppHost/blob/master/LambdaReadme.md', '_blank')}
@@ -151,8 +190,19 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             <View backgroundColor="neutral.20" height="8px" borderRadius="full">
               <View backgroundColor="purple.60" width="60%" height="100%" borderRadius="full" />
             </View>
-            <Text>Semantic Kernel App -  60% complete</Text>
+            <Text>Semantic Kernel App -  70% complete</Text>
           </Flex>
+        </Flex>
+        
+        <Flex justifyContent="center" padding="large">
+          <View
+            className="App"
+            display="flex"
+            minHeight="20vh"
+            backgroundColor="var(--amplify-colors-neutral-10)"
+            padding="1rem"
+          >
+          </View>
         </Flex>
 
         {/* Footer */}
@@ -166,6 +216,5 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
    )
 };
-
 
 export default AmplifyApps;
