@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, Link  } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
@@ -102,23 +102,16 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             <Flex direction="column" alignItems="center" gap="medium">
               <View color="purple.80">
                 <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-
                   <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="8" />
-                  
-
                   <path 
                     d="M100 40 L150 70 L150 130 L100 160 L50 130 L50 70 Z" 
                     fill="none" 
                     stroke="currentColor" 
                     strokeWidth="6" 
                   />
-                  
-
                   <line x1="100" y1="40" x2="100" y2="160" stroke="currentColor" strokeWidth="4" />
                   <line x1="50" y1="70" x2="150" y2="130" stroke="currentColor" strokeWidth="4" />
                   <line x1="50" y1="130" x2="150" y2="70" stroke="currentColor" strokeWidth="4" />
-                  
-
                   <circle cx="100" cy="40" r="8" fill="currentColor" />
                   <circle cx="150" cy="70" r="8" fill="currentColor" />
                   <circle cx="150" cy="130" r="8" fill="currentColor" />
@@ -198,8 +191,6 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </Button>
             </Flex>
           </Card>
-
-          
           
           <Card
             variation="elevated"
@@ -210,16 +201,16 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             <Flex direction="row" alignItems="left" gap="small">
               <Badge variation="success">.NET Core 9.0</Badge>
               <Badge variation="success">OpenAPI</Badge>
+              <Badge variation="success">Docker</Badge>
             </Flex>
             <Flex direction="column" alignItems="center" gap="medium">
-              
               <View color="orange.60">
                 <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M4 2h18v16H6v2H4v-2h2v-2h14V4H4v18H2V2h2zm5 7H7v2h2V9zm2 0h2v2h-2V9zm6 0h-2v2h2V9z" fill="currentColor"/>
                 </svg>
               </View>
               <Heading level={3} textAlign="center">Free email verifier API</Heading>
-              <Text textAlign="center">Generates temp email address, and polls Mail tm's inbox. Max 8 queries per second. Docker.</Text>
+              <Text textAlign="center">Generates temp email address, and polls Mail tm's inbox. Max 8 queries per second.</Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/MailTmAPI', '_blank')}
@@ -228,7 +219,6 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </Button>
             </Flex>
           </Card>
-
 
 
           <Card
@@ -251,20 +241,18 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </View>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
               <Text textAlign="center">Ticker as React component, HTTP client of Coinlore API. </Text>
-
-
-              
+            
                <Link href="https://vite-react-pearl-sigma-30.vercel.app/" isExternal={true} >
                 <Text fontSize="large" color="font.tertiary">
                     Run Ticker
                 </Text>
-                </Link>
+              </Link>
 
               <Button
                 variation="link"
-                onClick={() => window.open('https://github.com/ristoikonen/CoinTicker', '_blank')}
+                onClick={() => window.open('https://github.com/ristoikonen/ReactCoinloreAPI', '_blank')}
               >
-                 Coin Ticker repo
+                 Coin Ticker readme
               </Button>
             </Flex>
           </Card>
