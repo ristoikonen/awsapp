@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider  } 
+import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, Link  } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 // TODO: Update the path below to the correct location of your amplify data resource type
@@ -14,16 +14,6 @@ interface AmplifyAppsProps {}
 
 const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
-    // In a real application, you might integrate with Amplify DataStore or API here:
-    /*
-    try {
-      await DataStore.save(new MyAnswerModel({ text: submittedAnswer }));
-      alert('Answer saved to DataStore!');
-    } catch (e) {
-      console.error('Error saving answer', e);
-      alert('Failed to save answer.');
-    }
-    */
   //Error: Client could not be generated
   useEffect(() => {
     const GetData = async () => {
@@ -70,6 +60,11 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             borderRadius="large"
             backgroundColor="white"
           >
+            <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="success">AWS</Badge>
+              <Badge variation="success">.NET Aspire</Badge>
+            </Flex>
+
             <Flex direction="column" alignItems="center" gap="medium">
               <View color="orange.60">
                 <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -92,12 +87,18 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
           </Card>
 
-{/*  Card for Semantic Kernel when it's ready..               <Card
+        <Card
             variation="elevated"
             padding="large"
             borderRadius="large"
             backgroundColor="white"
           >
+            <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="success">AI</Badge>
+              <Badge variation="success">Ollama</Badge>
+              <Badge variation="success">Process Framework</Badge>
+            </Flex>
+
             <Flex direction="column" alignItems="center" gap="medium">
               <View color="purple.80">
                 <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -131,21 +132,27 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text textAlign="center">AI orchestration with Microsoft Semantic Kernel</Text>
               <Button
                 variation="link"
-                onClick={() => window.open('https://github.com/microsoft/semantic-kernel', '_blank')}
+                onClick={() => window.open('https://github.com/ristoikonen/KernelProcess', '_blank')}
               >
                 Learn more
               </Button>
             </Flex>
-          </Card>  */}
+          </Card>  
 
 
-          {/* Card 2 - FV */}
+          {/* FV */}
           <Card
             variation="elevated"
             padding="large"
             borderRadius="large"
             backgroundColor="white"
           >
+            <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="success">AWS</Badge>
+              <Badge variation="success">.NET Aspire</Badge>
+              <Badge variation="success">Serverless</Badge>
+            </Flex>
+
             <Flex direction="column" alignItems="center" gap="medium">
               <View color="orange.60">
                 <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -153,7 +160,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 </svg>
               </View>
               <Heading level={3} textAlign="center">Future value calculator</Heading>
-              <Text textAlign="center">AWS Lambda function on .NET Aspire host. First part of a financial Lambda functions.</Text>
+              <Text textAlign="center">AWS Lambda function on .NET Aspire host. Financial function exposed through Amazon API Gateway.</Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/Embed.AppHost/blob/master/FV.md', '_blank')}
@@ -162,6 +169,106 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </Button>
             </Flex>
           </Card>
+
+          <Card
+            variation="elevated"
+            padding="large"
+            borderRadius="large"
+            backgroundColor="white"
+          >
+            <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="success">C#</Badge>
+              <Badge variation="success">Steganography</Badge>
+            </Flex>
+            <Flex direction="column" alignItems="center" gap="medium">
+              <View color="orange.60">
+
+                <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M3 3h8v8H3V3zm6 6V5H5v4h4zm9 4h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3zM15 3h6v8h-8V3h2zm4 6V5h-4v4h4zM5 13h6v8H3v-8h2zm4 6v-4H5v4h4z" fill="currentColor"/>
+              </svg>
+
+              </View>
+              <Heading level={3} textAlign="center">Pixel Mapper</Heading>
+              <Text textAlign="center">Embed ASCII data into a Bitmap by encoding bit values into RGBA pixels. Encoding readable using image editor</Text>
+              <Button
+                variation="link"
+                onClick={() => window.open('https://github.com/ristoikonen/PixMapper', '_blank')}
+              >
+                Pixel Mapper repo 
+              </Button>
+            </Flex>
+          </Card>
+
+          
+          
+          <Card
+            variation="elevated"
+            padding="large"
+            borderRadius="large"
+            backgroundColor="white"
+          >
+            <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="success">.NET Core 9.0</Badge>
+              <Badge variation="success">OpenAPI</Badge>
+            </Flex>
+            <Flex direction="column" alignItems="center" gap="medium">
+              
+              <View color="orange.60">
+                <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M4 2h18v16H6v2H4v-2h2v-2h14V4H4v18H2V2h2zm5 7H7v2h2V9zm2 0h2v2h-2V9zm6 0h-2v2h2V9z" fill="currentColor"/>
+                </svg>
+              </View>
+              <Heading level={3} textAlign="center">Free email verifier API</Heading>
+              <Text textAlign="center">Generates temp email address, and polls Mail tm's inbox. Max 8 queries per second. Docker.</Text>
+              <Button
+                variation="link"
+                onClick={() => window.open('https://github.com/ristoikonen/MailTmAPI', '_blank')}
+              >
+                 Mail API repo
+              </Button>
+            </Flex>
+          </Card>
+
+
+
+          <Card
+            variation="elevated"
+            padding="large"
+            borderRadius="large"
+            backgroundColor="white"
+          >
+            <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="success">React</Badge>
+              <Badge variation="success">Vercel analytics</Badge>
+            </Flex>
+            <Flex direction="column" alignItems="center" gap="medium">
+              
+              <View color="orange.60">
+                
+                <svg  width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M6 2h12v2H6V2zM4 6V4h2v2H4zm0 12V6H2v12h2zm2 2v-2H4v2h2zm12 0v2H6v-2h12zm2-2v2h-2v-2h2zm0-12h2v12h-2V6zm0 0V4h-2v2h2zm-9-1h2v2h3v2h-6v2h6v6h-3v2h-2v-2H8v-2h6v-2H8V7h3V5z" fill="currentColor"/>
+                </svg>
+              </View>
+              <Heading level={3} textAlign="center">Crypto Ticker</Heading>
+              <Text textAlign="center">Ticker as React component, HTTP client of Coinlore API. </Text>
+
+
+              
+               <Link href="https://vite-react-pearl-sigma-30.vercel.app/" isExternal={true} >
+                <Text fontSize="large" color="font.tertiary">
+                    Run Ticker
+                </Text>
+                </Link>
+
+              <Button
+                variation="link"
+                onClick={() => window.open('https://github.com/ristoikonen/CoinTicker', '_blank')}
+              >
+                 Coin Ticker repo
+              </Button>
+            </Flex>
+          </Card>
+
         </Grid>
 
         {/* GitHub Button */}
@@ -172,9 +279,9 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             color="white"
             size="large"
             borderRadius="full"
-            onClick={() => window.open('https://github.com/ristoikonen/', '_blank')}
+            onClick={() => window.open('https://github.com/ristoikonen?tab=repositories', '_blank')}
           >
-            Explore Projects in GitHub
+            Explore Repos in GitHub
           </Button>
         </Flex>
 
@@ -188,9 +295,9 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text>Coming soon...</Text>
             </Flex>
             <View backgroundColor="neutral.20" height="8px" borderRadius="full">
-              <View backgroundColor="purple.60" width="60%" height="100%" borderRadius="full" />
+              <View backgroundColor="purple.60" width="40%" height="100%" borderRadius="full" />
             </View>
-            <Text>Semantic Kernel App -  70% complete</Text>
+            <Text>40% complete<br/>AI Chat App. Any Ollama model <br/>App will get user to input data with validation.<br/>Dynamic field set!</Text>
           </Flex>
         </Flex>
         
