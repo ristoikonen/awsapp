@@ -269,7 +269,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             borderRadius="full"
             onClick={() => window.open('https://github.com/ristoikonen?tab=repositories', '_blank')}
           >
-            Explore Repos in GitHub
+            Explore my Repos in GitHub
           </Button>
         </Flex>
 
@@ -285,7 +285,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             <View backgroundColor="neutral.20" height="8px" borderRadius="full">
               <View backgroundColor="purple.60" width="40%" height="100%" borderRadius="full" />
             </View>
-            <Text>40% complete<br/>AI Chat App. Any Ollama model <br/>App will get user to input data with validation.<br/>Dynamic field set!</Text>
+            <Text>AI Chat App. Any Ollama model <br/>App will get user to input data with validation.<br/>Dynamic field set!</Text>
           </Flex>
         </Flex>
         
