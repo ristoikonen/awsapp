@@ -39,7 +39,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           <View maxWidth="1200px" width="100%">
             <Heading level={1} textAlign="center">
               <Text color="orange.60" fontWeight="extrabold">.NET Aspire</Text>
-              <Text color="purple.80" fontWeight="extrabold">Semantic Kernel</Text>
+              <Text color="purple.80" fontWeight="extrabold">Microsoft Agent Framework</Text>
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
               
@@ -63,8 +63,9 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             <Flex direction="row" alignItems="left" gap="small">
               <Badge variation="success">AWS</Badge>
               <Badge variation="success">.NET Aspire</Badge>
+              <Badge variation="success">Docker</Badge>
             </Flex>
-
+            <br/>
             <Flex direction="column" alignItems="center" gap="medium">
               <View color="orange.60">
                 <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -121,8 +122,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                   <circle cx="100" cy="100" r="10" fill="currentColor" />
                 </svg>
               </View>
-              <Heading level={3} textAlign="center">Semantic Kernel</Heading>
-              <Text textAlign="center">AI orchestration with Microsoft Semantic Kernel</Text>
+              <Heading level={3} textAlign="center">MS Agent Framework</Heading>
+              <Text textAlign="center">AI orchestration with Microsoft Agent Framework</Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/KernelProcess', '_blank')}
@@ -242,14 +243,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
               </View>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
-              <Text textAlign="center">Live Crypto Ticker as React component, HTTP client of Coinlore API. </Text>
+              <Text textAlign="center">Live Crypto Ticker, React component<br/>HTTP client of Coinlore API for live market access. </Text>
             
-               <Link href="https://coin.ristoikonen.com/" isExternal={true} >
-                <Text fontSize="large" color="font.tertiary">
-                    Coin Ticker
-                </Text>
-              </Link>
-
               <Heading level={5}>
                 <Link href="https://coin.ristoikonen.com/" color="#950495" isExternal={true} >
                     Access Coin Ticker 
