@@ -229,7 +229,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           >
             <Flex direction="row" alignItems="left" gap="small">
               <Badge variation="success">React</Badge>
-              <Badge variation="success">Vercel analytics</Badge>
+              <Badge variation="success">Vercel Analytics</Badge>
+              <Badge variation="success">API Client</Badge>
             </Flex>
             <Flex direction="column" alignItems="center" gap="medium">
               
@@ -238,15 +239,23 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 <svg  width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M6 2h12v2H6V2zM4 6V4h2v2H4zm0 12V6H2v12h2zm2 2v-2H4v2h2zm12 0v2H6v-2h12zm2-2v2h-2v-2h2zm0-12h2v12h-2V6zm0 0V4h-2v2h2zm-9-1h2v2h3v2h-6v2h6v6h-3v2h-2v-2H8v-2h6v-2H8V7h3V5z" fill="currentColor"/>
                 </svg>
+
               </View>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
-              <Text textAlign="center">Ticker as React component, HTTP client of Coinlore API. </Text>
+              <Text textAlign="center">Live Crypto Ticker as React component, HTTP client of Coinlore API. </Text>
             
-               <Link href="https://vite-react-pearl-sigma-30.vercel.app/" isExternal={true} >
+               <Link href="https://coin.ristoikonen.com/" isExternal={true} >
                 <Text fontSize="large" color="font.tertiary">
-                    Run Ticker
+                    Coin Ticker
                 </Text>
               </Link>
+
+              <Heading level={5}>
+                <Link href="https://coin.ristoikonen.com/" color="#950495" isExternal={true} >
+                    Access Coin Ticker 
+                 </Link>
+              </Heading>
+
 
               <Button
                 variation="link"
@@ -258,6 +267,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Card>
 
         </Grid>
+
+
 
         {/* GitHub Button */}
         <Flex justifyContent="center" padding="large">
@@ -280,7 +291,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           <Flex direction="column" width="80%" maxWidth="500px" padding="medium">
             <Flex justifyContent="space-between" marginBottom="xs">
               
-              <Text>Coming soon...</Text>
+              <Text></Text>
             </Flex>
             <View backgroundColor="neutral.20" height="8px" borderRadius="full">
               <View backgroundColor="purple.60" width="40%" height="100%" borderRadius="full" />
@@ -303,7 +314,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
         {/* Footer */}
         <Flex justifyContent="center" padding="large" marginTop="large">
           <Text variation="tertiary" fontSize="small">
-            &copy; 2025 Risto Ikonen. Site under more/less active development.
+            &copy; 2026 Risto Ikonen. Site under active development.
           </Text>
         </Flex>
       </View>
