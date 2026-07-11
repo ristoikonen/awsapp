@@ -3,10 +3,8 @@ import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, Li
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 // TODO: Update the path below to the correct location of your amplify data resource type
-// Update the path below to the correct location of your amplify data resource type
 import type { Schema } from '../../../amplify/data/resource'
 import { generateClient } from 'aws-amplify/data'
-
 
 const client = generateClient<Schema>()
 
@@ -28,13 +26,14 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
     GetData()
   }, [])
 
-
   
    return(
 
       <ThemeProvider>
         <View padding="medium">
-        {/* Header Section */}
+
+        {/* Giga font header section */}
+        
         <Flex direction="column" alignItems="center" padding="large">
           <View maxWidth="1200px" width="100%">
             <Heading level={1} textAlign="center">
@@ -42,18 +41,17 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text color="purple.80" fontWeight="extrabold">Microsoft Agent Framework</Text>
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
-              
             </Heading>
           </View>
         </Flex>
 
-        {/* Cards Grid */}
+        {/* Card Grid starts here*/}
+
         <Grid
           templateColumns={{ base: '1fr', medium: '1fr 1fr' }}
           gap="large"
           padding={{ base: 'medium', medium: 'large' }}
         >
-          {/* Card 1 - Amplify */}
           <Card
             variation="elevated"
             padding="large"
@@ -75,9 +73,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </View>
               <Heading level={3} textAlign="center">AWS Serverless</Heading>
               <Text textAlign="center">
-                
                 AWS Amplify application on .NET Aspire host
-                
               </Text>
               <Button
                 variation="link"
@@ -99,7 +95,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Badge variation="success">Ollama</Badge>
               <Badge variation="success">Process Framework</Badge>
             </Flex>
-
+            <br/>
             <Flex direction="column" alignItems="center" gap="medium">
               <View color="purple.80">
                 <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +142,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Badge variation="success">.NET Aspire</Badge>
               <Badge variation="success">Serverless</Badge>
             </Flex>
-
+            <br/>
             <Flex direction="column" alignItems="center" gap="medium">
               <View color="orange.60">
                 <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -174,13 +170,12 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Badge variation="success">C#</Badge>
               <Badge variation="success">Steganography</Badge>
             </Flex>
+            <br/>
             <Flex direction="column" alignItems="center" gap="medium">
               <View color="orange.60">
-
                 <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path d="M3 3h8v8H3V3zm6 6V5H5v4h4zm9 4h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3zM15 3h6v8h-8V3h2zm4 6V5h-4v4h4zM5 13h6v8H3v-8h2zm4 6v-4H5v4h4z" fill="currentColor"/>
               </svg>
-
               </View>
               <Heading level={3} textAlign="center">Pixel Mapper</Heading>
               <Text textAlign="center">Embed ASCII data into a Bitmap by encoding bit values into RGBA pixels. Encoding readable using image editor</Text>
@@ -204,6 +199,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Badge variation="success">OpenAPI</Badge>
               <Badge variation="success">Docker</Badge>
             </Flex>
+            <br/>
             <Flex direction="column" alignItems="center" gap="medium">
               <View color="orange.60">
                 <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -221,7 +217,6 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
           </Card>
 
-
           <Card
             variation="elevated"
             padding="large"
@@ -233,25 +228,20 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Badge variation="success">Vercel Analytics</Badge>
               <Badge variation="success">API Client</Badge>
             </Flex>
+            <br/>
             <Flex direction="column" alignItems="center" gap="medium">
-              
               <View color="orange.60">
-                
                 <svg  width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M6 2h12v2H6V2zM4 6V4h2v2H4zm0 12V6H2v12h2zm2 2v-2H4v2h2zm12 0v2H6v-2h12zm2-2v2h-2v-2h2zm0-12h2v12h-2V6zm0 0V4h-2v2h2zm-9-1h2v2h3v2h-6v2h6v6h-3v2h-2v-2H8v-2h6v-2H8V7h3V5z" fill="currentColor"/>
                 </svg>
-
               </View>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
               <Text textAlign="center">Live Crypto Ticker, React component<br/>HTTP client of Coinlore API for live market access. </Text>
-            
               <Heading level={5}>
                 <Link href="https://coin.ristoikonen.com/" color="#950495" isExternal={true} >
                     Access Coin Ticker 
                  </Link>
               </Heading>
-
-
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/ReactCoinloreAPI', '_blank')}
@@ -263,9 +253,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
         </Grid>
 
-
-
-        {/* GitHub Button */}
+        {/* GitHub Repos Button */}
         <Flex justifyContent="center" padding="large">
           <Button
             variation="primary"
@@ -279,37 +267,24 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Button>
         </Flex>
 
-        {/* Coming Soon Section */}
+{/*   'Coming Soon' section with Progress Indicator for future projects  
         <Flex direction="column" alignItems="center" padding="large" backgroundColor="neutral.10" borderRadius="medium" marginTop="large">
-          
-          {/* Progress Indicator */}
           <Flex direction="column" width="80%" maxWidth="500px" padding="medium">
             <Flex justifyContent="space-between" marginBottom="xs">
-              
               <Text></Text>
             </Flex>
             <View backgroundColor="neutral.20" height="8px" borderRadius="full">
               <View backgroundColor="purple.60" width="40%" height="100%" borderRadius="full" />
             </View>
-            <Text>AI Chat App. Any Ollama model <br/>App will get user to input data with validation.<br/>Dynamic field set!</Text>
+            <Text></Text>
           </Flex>
         </Flex>
-        
-        <Flex justifyContent="center" padding="large">
-          <View
-            className="App"
-            display="flex"
-            minHeight="20vh"
-            backgroundColor="var(--amplify-colors-neutral-10)"
-            padding="1rem"
-          >
-          </View>
-        </Flex>
+ */}
 
         {/* Footer */}
         <Flex justifyContent="center" padding="large" marginTop="large">
           <Text variation="tertiary" fontSize="small">
-            &copy; 2026 Risto Ikonen. Site under active development.
+            Risto Ikonen 2026&copy;. Site under active development.
           </Text>
         </Flex>
       </View>
