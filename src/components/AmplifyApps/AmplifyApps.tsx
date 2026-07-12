@@ -193,7 +193,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                   </View>
               </Button>
               <Heading level={3} textAlign="center">Pixel Mapper</Heading>
-              <Text textAlign="center">Embed ASCII data into a Bitmap by encoding bit values into RGBA pixels. Encoding readable using image editor</Text>
+              <Text textAlign="center">Embed hidden text into an image by encoding ASCII bit values into RGBA pixels. Encoding readable using image editor</Text>
                 <Button
                   variation="link"
                   colorTheme="info"
