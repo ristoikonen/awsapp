@@ -41,6 +41,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text color="purple.80" fontWeight="extrabold">Microsoft Agent Framework</Text>
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
+              <Text color="gray.60" fontWeight="bold">Click project icon to access GitHub repo</Text>
             </Heading>
           </View>
         </Flex>
@@ -184,11 +185,13 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </Button>
               <Heading level={3} textAlign="center">Pixel Mapper</Heading>
               <Text textAlign="center">Embed ASCII data into a Bitmap by encoding bit values into RGBA pixels. Encoding readable using image editor</Text>
-              <Heading level={6}>
-                <Link href="https://www.nuget.org/packages/PixMapper/1.0.2" color="#950495" isExternal={true} >
-                    PixMapper NuGet package
-                 </Link>
-              </Heading>
+                <Button
+                  variation="link"
+                  colorTheme="info"
+                  onClick={() => window.open('https://www.nuget.org/packages/PixMapper/1.0.2', '_blank')}
+                >
+                  PixMapper NuGet package
+                </Button>
             </Flex>
           </Card>
           
@@ -242,7 +245,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
               <Text textAlign="center">Live Crypto Ticker, React component<br/>HTTP client of Coinlore API for live market access. </Text>
               <Heading level={5}>
-                <Link href="https://coin.ristoikonen.com/" color="#950495" isExternal={true} >
+                <Link href="https://coin.ristoikonen.com/" color="#408BDA" isExternal={true} >
                     Access Coin Ticker 
                  </Link>
               </Heading>
