@@ -36,7 +36,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
         
         <Flex direction="column" alignItems="center" padding="large">
           <View maxWidth="1200px" width="100%">
-            <Heading level={1} textAlign="center">
+            <Heading level={2} textAlign="center">
               <Text color="orange.60" fontWeight="extrabold">.NET Aspire</Text>
               <Text color="purple.80" fontWeight="extrabold">Microsoft Agent Framework</Text>
               <Text color="blue.60" fontWeight="extrabold">React</Text>
