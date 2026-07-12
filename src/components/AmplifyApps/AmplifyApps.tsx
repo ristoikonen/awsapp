@@ -172,21 +172,21 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
-                <Button
+              <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/PixMapper', '_blank')}
                 >
-                <View color="orange.60">
-                  <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M3 3h8v8H3V3zm6 6V5H5v4h4zm9 4h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3zM15 3h6v8h-8V3h2zm4 6V5h-4v4h4zM5 13h6v8H3v-8h2zm4 6v-4H5v4h4z" fill="currentColor"/>
-                </svg>
-                </View>
-                <Heading level={3} textAlign="center">Pixel Mapper</Heading>
+                  <View color="orange.60">
+                    <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M3 3h8v8H3V3zm6 6V5H5v4h4zm9 4h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3zM15 3h6v8h-8V3h2zm4 6V5h-4v4h4zM5 13h6v8H3v-8h2zm4 6v-4H5v4h4z" fill="currentColor"/>
+                  </svg>
+                  </View>
               </Button>
+              <Heading level={3} textAlign="center">Pixel Mapper</Heading>
               <Text textAlign="center">Embed ASCII data into a Bitmap by encoding bit values into RGBA pixels. Encoding readable using image editor</Text>
               <Heading level={6}>
                 <Link href="https://www.nuget.org/packages/PixMapper/1.0.2" color="#950495" isExternal={true} >
-                    PixMapper nuget package
+                    PixMapper NuGet package
                  </Link>
               </Heading>
             </Flex>
