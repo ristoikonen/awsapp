@@ -225,7 +225,9 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 </View>
               </Button>
               <Heading level={3} textAlign="center">Free email verifier API</Heading>
-              <Text textAlign="center">Generates Mail Tm temp email address, and polls inbox via API. Max 8 queries per second.</Text>
+              <Text textAlign="center">
+                Generates Mail Tm temp email address, and polls inbox via API. Max 8 queries per second.
+              </Text>
             </Flex>
           </Card>
 
@@ -249,13 +251,6 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </View>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
               <Text textAlign="center">Live Crypto Ticker, React component<br/>HTTP client of Coinlore API for live market access. </Text>
-              {/*
-              <Heading level={5}>
-                <Link href="https://coin.ristoikonen.com/" color="#408BDA" isExternal={true} >
-                    Access Coin Ticker 
-                 </Link>
-              </Heading> 
-              */}
               <Button
                 variation="primary"
                 colorTheme="info"
