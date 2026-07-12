@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, Link  } 
+import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge  } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 // TODO: Update the path below to the correct location of your amplify data resource type
