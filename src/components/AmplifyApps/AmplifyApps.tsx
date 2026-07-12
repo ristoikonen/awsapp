@@ -59,6 +59,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           gap="large"
           padding={{ base: 'medium', medium: 'large' }}
         >
+
+           {/* AWS Serverless */}
           <Card
             variation="elevated"
             padding="large"
@@ -72,25 +74,25 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
-              <View color="orange.60">
-                <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 00-1.05-9.95l-.65-.18a7.001 7.001 0 00-13.62-2.73 4 4 0 00-2.73 4.62 4 4 0 00-4.62 2.73 7.001 7.001 0 002.73 13.62 4 4 0 004.62-2.73"></path>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 10h.01M18 14h.01M18 18h.01"></path>
-                </svg>
-              </View>
-              <Heading level={3} textAlign="center">AWS Serverless</Heading>
-              <Text textAlign="center">
-                AWS Amplify application on .NET Aspire host
-              </Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/Embed.AppHost/blob/master/LambdaReadme.md', '_blank')}
               >
-                Serverless readme
+                <View color="orange.60">
+                  <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 00-1.05-9.95l-.65-.18a7.001 7.001 0 00-13.62-2.73 4 4 0 00-2.73 4.62 4 4 0 00-4.62 2.73 7.001 7.001 0 002.73 13.62 4 4 0 004.62-2.73"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 10h.01M18 14h.01M18 18h.01"></path>
+                  </svg>
+                </View>
               </Button>
+              <Heading level={3} textAlign="center">AWS Serverless</Heading>
+              <Text textAlign="center">
+                AWS Amplify application on .NET Aspire host
+              </Text>
             </Flex>
           </Card>
 
+        {/* MS Agent */}
         <Card
             variation="elevated"
             padding="large"
@@ -104,35 +106,34 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
-              <View color="purple.80">
-                <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="8" />
-                  <path 
-                    d="M100 40 L150 70 L150 130 L100 160 L50 130 L50 70 Z" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="6" 
-                  />
-                  <line x1="100" y1="40" x2="100" y2="160" stroke="currentColor" strokeWidth="4" />
-                  <line x1="50" y1="70" x2="150" y2="130" stroke="currentColor" strokeWidth="4" />
-                  <line x1="50" y1="130" x2="150" y2="70" stroke="currentColor" strokeWidth="4" />
-                  <circle cx="100" cy="40" r="8" fill="currentColor" />
-                  <circle cx="150" cy="70" r="8" fill="currentColor" />
-                  <circle cx="150" cy="130" r="8" fill="currentColor" />
-                  <circle cx="100" cy="160" r="8" fill="currentColor" />
-                  <circle cx="50" cy="130" r="8" fill="currentColor" />
-                  <circle cx="50" cy="70" r="8" fill="currentColor" />
-                  <circle cx="100" cy="100" r="10" fill="currentColor" />
-                </svg>
-              </View>
-              <Heading level={3} textAlign="center">MS Agent Framework</Heading>
-              <Text textAlign="center">AI orchestration with Microsoft Agent Framework</Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/KernelProcess', '_blank')}
               >
-                Learn more
+                <View color="purple.80">
+                  <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="8" />
+                    <path 
+                      d="M100 40 L150 70 L150 130 L100 160 L50 130 L50 70 Z" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="6" 
+                    />
+                    <line x1="100" y1="40" x2="100" y2="160" stroke="currentColor" strokeWidth="4" />
+                    <line x1="50" y1="70" x2="150" y2="130" stroke="currentColor" strokeWidth="4" />
+                    <line x1="50" y1="130" x2="150" y2="70" stroke="currentColor" strokeWidth="4" />
+                    <circle cx="100" cy="40" r="8" fill="currentColor" />
+                    <circle cx="150" cy="70" r="8" fill="currentColor" />
+                    <circle cx="150" cy="130" r="8" fill="currentColor" />
+                    <circle cx="100" cy="160" r="8" fill="currentColor" />
+                    <circle cx="50" cy="130" r="8" fill="currentColor" />
+                    <circle cx="50" cy="70" r="8" fill="currentColor" />
+                    <circle cx="100" cy="100" r="10" fill="currentColor" />
+                  </svg>
+                </View>
               </Button>
+              <Heading level={3} textAlign="center">MS Agent Framework</Heading>
+              <Text textAlign="center">AI orchestration with Microsoft Agent Framework</Text>
             </Flex>
           </Card>  
 
@@ -151,22 +152,22 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
-              <View color="orange.60">
-                <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.944 12c0 2.894.834 5.618 2.306 7.956A11.955 11.955 0 0112 21.056c2.894 0 5.618-.834 7.956-2.306A12.007 12.007 0 0021.056 12c0-2.894-.834-5.618-2.306-7.956z"></path>
-                </svg>
-              </View>
-              <Heading level={3} textAlign="center">Future value calculator</Heading>
-              <Text textAlign="center">AWS Lambda financial functions hosted on .NET Aspire. Functions exposed through Amazon API Gateway.</Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/Embed.AppHost/blob/master/FV.md', '_blank')}
               >
-                FV readme 
+                <View color="orange.60">
+                  <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.944 12c0 2.894.834 5.618 2.306 7.956A11.955 11.955 0 0112 21.056c2.894 0 5.618-.834 7.956-2.306A12.007 12.007 0 0021.056 12c0-2.894-.834-5.618-2.306-7.956z"></path>
+                  </svg>
+                </View>
               </Button>
+              <Heading level={3} textAlign="center">Future value calculator</Heading>
+              <Text textAlign="center">AWS Lambda financial functions hosted on .NET Aspire. Functions exposed through Amazon API Gateway.</Text>
             </Flex>
           </Card>
 
+          {/* PixMapper */}
           <Card
             variation="elevated"
             padding="large"
@@ -201,6 +202,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
           </Card>
           
+          {/* MailTmAPI */}
           <Card
             variation="elevated"
             padding="large"
@@ -231,6 +233,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
           </Card>
 
+          {/* Coin */}
           <Card
             variation="elevated"
             padding="large"
@@ -244,11 +247,16 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
-              <View color="orange.60">
-                <svg  width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M6 2h12v2H6V2zM4 6V4h2v2H4zm0 12V6H2v12h2zm2 2v-2H4v2h2zm12 0v2H6v-2h12zm2-2v2h-2v-2h2zm0-12h2v12h-2V6zm0 0V4h-2v2h2zm-9-1h2v2h3v2h-6v2h6v6h-3v2h-2v-2H8v-2h6v-2H8V7h3V5z" fill="currentColor"/>
-                </svg>
-              </View>
+              <Button
+                variation="link"
+                onClick={() => window.open('https://github.com/ristoikonen/ReactCoinloreAPI', '_blank')}
+              >
+                <View color="orange.60">
+                  <svg  width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M6 2h12v2H6V2zM4 6V4h2v2H4zm0 12V6H2v12h2zm2 2v-2H4v2h2zm12 0v2H6v-2h12zm2-2v2h-2v-2h2zm0-12h2v12h-2V6zm0 0V4h-2v2h2zm-9-1h2v2h3v2h-6v2h6v6h-3v2h-2v-2H8v-2h6v-2H8V7h3V5z" fill="currentColor"/>
+                  </svg>
+                </View>
+              </Button>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
               <Text textAlign="center">Live Crypto Ticker, React component<br/>HTTP client of Coinlore API for live market access. </Text>
               <Button
