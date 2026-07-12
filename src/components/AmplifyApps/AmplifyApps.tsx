@@ -42,7 +42,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
               <br/>
-              <Text color="gray.80" fontWeight="bold">Click projects icon to access GitHub repo</Text>
+              <Text color="gray.60" fontWeight="bold">Click projects icon to access GitHub repo</Text>
             </Heading>
           </View>
         </Flex>
@@ -215,7 +215,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 </svg>
               </View>
               <Heading level={3} textAlign="center">Free email verifier API</Heading>
-              <Text textAlign="center">Generates temp email address, and polls Mail Tm's inbox. Max 8 queries per second.</Text>
+              <Text textAlign="center">Generates Mail Tm temp email address, and polls inbox via API. Max 8 queries per second.</Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/MailTmAPI', '_blank')}
