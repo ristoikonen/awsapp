@@ -40,10 +40,20 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
               <br/>
-              <Text color="gray.60" fontWeight={300} >Click projects icon to access GitHub repo</Text>
+              <Text color="gray" fontWeight={250} >Click projects icon to access GitHub repo</Text>
             </Heading>
           </View>
         </Flex>
+
+        <Flex direction="column" alignItems="center" padding="large">
+          <View maxWidth="1200px" width="100%">
+            <Heading level={4} textAlign="center">
+              <Text color="gray" fontWeight={300} >Click projects icon to access GitHub repo</Text>
+              <Text color="gray" fontWeight={250} >Click projects icon to access GitHub repo</Text>
+            </Heading>
+          </View>
+        </Flex>
+
 
         {/* Card Grid starts here*/}
 
@@ -243,6 +253,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </View>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
               <Text textAlign="center">Live Crypto Ticker, React component<br/>HTTP client of Coinlore API for live market access. </Text>
+
+             
               <Heading level={5}>
                 <Link href="https://coin.ristoikonen.com/" color="#408BDA" isExternal={true} >
                     Access Coin Ticker 
