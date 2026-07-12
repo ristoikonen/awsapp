@@ -25,10 +25,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
     }
     GetData()
   }, [])
-
   
    return(
-
       <ThemeProvider>
         <View padding="medium">
 
@@ -42,7 +40,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
               <br/>
-              <Text color="gray.60" fontWeight="bold">Click projects icon to access GitHub repo</Text>
+              <Text color="gray.60" fontWeight={300} >Click projects icon to access GitHub repo</Text>
             </Heading>
           </View>
         </Flex>
@@ -152,7 +150,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 </svg>
               </View>
               <Heading level={3} textAlign="center">Future value calculator</Heading>
-              <Text textAlign="center">AWS Lambda function on .NET Aspire host. Financial function exposed through Amazon API Gateway.</Text>
+              <Text textAlign="center">AWS Lambda financial functions hosted on .NET Aspire. Functions exposed through Amazon API Gateway.</Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/Embed.AppHost/blob/master/FV.md', '_blank')}
