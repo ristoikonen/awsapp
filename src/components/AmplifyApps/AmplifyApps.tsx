@@ -45,12 +45,11 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text
                 variation="success"
                 as="p"
-                lineHeight="1.5em"
                 fontWeight={400}
-                fontSize="1.5em"
+                fontSize="1em"
                 fontStyle="normal"
                 textDecoration="none"
-                width="30vw"
+                width="100vw"
               >
                 Click projects icon to access GitHub repo
             </Text>
