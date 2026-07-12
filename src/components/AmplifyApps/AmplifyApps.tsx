@@ -39,17 +39,14 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text color="purple.80" fontWeight="extrabold">Microsoft Agent Framework</Text>
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
-              <br/>
-              <Text color="gray" fontWeight={250} >Click projects icon to access GitHub repo</Text>
             </Heading>
           </View>
         </Flex>
 
-        <Flex direction="column" alignItems="center" padding="large">
+        <Flex direction="column" alignItems="center" padding="normal">
           <View maxWidth="1200px" width="100%">
             <Heading level={4} textAlign="center">
               <Text color="gray" fontWeight={300} >Click projects icon to access GitHub repo</Text>
-              <Text color="gray" fontWeight={250} >Click projects icon to access GitHub repo</Text>
             </Heading>
           </View>
         </Flex>
