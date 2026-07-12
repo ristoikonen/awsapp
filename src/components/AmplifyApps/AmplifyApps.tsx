@@ -46,7 +46,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
         <Flex direction="column" alignItems="center" padding="normal">
           <View maxWidth="1200px" width="100%">
             <Heading level={4} textAlign="center">
-              <Text color="gray" fontWeight={300} >Click projects icon to access GitHub repo</Text>
+              <Text color="gray" fontWeight={300} >Click projects icon to access it's GitHub repo</Text>
             </Heading>
           </View>
         </Flex>
@@ -214,19 +214,18 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
-              <View color="orange.60">
-                <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M4 2h18v16H6v2H4v-2h2v-2h14V4H4v18H2V2h2zm5 7H7v2h2V9zm2 0h2v2h-2V9zm6 0h-2v2h2V9z" fill="currentColor"/>
-                </svg>
-              </View>
-              <Heading level={3} textAlign="center">Free email verifier API</Heading>
-              <Text textAlign="center">Generates Mail Tm temp email address, and polls inbox via API. Max 8 queries per second.</Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/MailTmAPI', '_blank')}
               >
-                 Mail API repo
+                <View color="orange.60">
+                  <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M4 2h18v16H6v2H4v-2h2v-2h14V4H4v18H2V2h2zm5 7H7v2h2V9zm2 0h2v2h-2V9zm6 0h-2v2h2V9z" fill="currentColor"/>
+                  </svg>
+                </View>
               </Button>
+              <Heading level={3} textAlign="center">Free email verifier API</Heading>
+              <Text textAlign="center">Generates Mail Tm temp email address, and polls inbox via API. Max 8 queries per second.</Text>
             </Flex>
           </Card>
 
@@ -250,22 +249,22 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </View>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
               <Text textAlign="center">Live Crypto Ticker, React component<br/>HTTP client of Coinlore API for live market access. </Text>
-
-             
+              {/*
               <Heading level={5}>
                 <Link href="https://coin.ristoikonen.com/" color="#408BDA" isExternal={true} >
                     Access Coin Ticker 
                  </Link>
-              </Heading>
+              </Heading> 
+              */}
               <Button
-                variation="link"
-                onClick={() => window.open('https://github.com/ristoikonen/ReactCoinloreAPI', '_blank')}
+                variation="primary"
+                colorTheme="info"
+                onClick={() => window.open('https://coin.ristoikonen.com/', '_blank')}
               >
-                 Coin Ticker readme
+                 Coin Ticker site
               </Button>
             </Flex>
           </Card>
-
         </Grid>
 
         {/* GitHub Repos Button */}
