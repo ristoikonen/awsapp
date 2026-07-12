@@ -42,17 +42,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
               <br/>
-              <Text
-                variation="success"
-                as="p"
-                fontWeight={400}
-                fontSize="1em"
-                fontStyle="normal"
-                textDecoration="none"
-                width="100vw"
-              >
-                Click projects icon to access GitHub repo
-            </Text>
+              <Text color="gray.80" fontWeight="bold">Click projects icon to access GitHub repo</Text>
             </Heading>
           </View>
         </Flex>
