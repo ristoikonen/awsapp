@@ -41,7 +41,19 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text color="purple.80" fontWeight="extrabold">Microsoft Agent Framework</Text>
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
-              <Text color="gray.60" fontWeight="bold">Click project icon to access GitHub repo</Text>
+              <br/>
+              <Text
+                variation="success"
+                as="p"
+                lineHeight="1.5em"
+                fontWeight={400}
+                fontSize="1.5em"
+                fontStyle="normal"
+                textDecoration="none"
+                width="30vw"
+              >
+                Click projects icon to access GitHub repo
+            </Text>
             </Heading>
           </View>
         </Flex>
@@ -214,7 +226,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 </svg>
               </View>
               <Heading level={3} textAlign="center">Free email verifier API</Heading>
-              <Text textAlign="center">Generates temp email address, and polls Mail tm's inbox. Max 8 queries per second.</Text>
+              <Text textAlign="center">Generates temp email address, and polls Mail Tm's inbox. Max 8 queries per second.</Text>
               <Button
                 variation="link"
                 onClick={() => window.open('https://github.com/ristoikonen/MailTmAPI', '_blank')}
