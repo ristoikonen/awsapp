@@ -1,5 +1,7 @@
 //import React from 'react';
 
+import { Image,Card, Grid, View, Heading, Collection,Flex, Divider,Badge,Button } from '@aws-amplify/ui-react';
+
 // 1. Define the TypeScript contract for your cloud image metadata
 export interface CloudImage {
   id: string;
@@ -36,21 +38,80 @@ export default function ImageGallery({ images, isLoading = false }: ImageGallery
 
   // 4. Render the responsive image grid with metadata overlays
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+
+
+    <Grid
+        templateColumns={{ base: '1fr', medium: '1fr 1fr', large: '1fr 1fr 1fr' }}
+        gap="1rem"
+      >
+
+    {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"> */}
+
+
+    
+<Collection
+  items={images}
+  type="list"
+  direction="column"
+  gap="20px"
+  wrap="nowrap"
+>
+  {(images, index) => (
+    <Card
+      key={index}
+      borderRadius="medium"
+      maxWidth="20rem"
+      variation="outlined"
+    >
+      <Image
+        src={images.url}
+        alt="Glittering stream with old log, snowy mountain peaks tower over a green field."
+      />
+      <View padding="xs">
+{/*         <Flex>
+          {images.uploadedBy.map((badge) => (
+            <Badge
+              key={badge}
+              backgroundColor={
+                badge === 'Auto' ? 'blue.40' 
+                : badge === 'Mountain' ? 'green.40' : 'yellow.40'}
+            >
+              {badge}
+            </Badge>
+          ))}
+        </Flex> */}
+        <Divider padding="xs" />
+        <Heading padding="medium">{images.caption}</Heading>
+        <Button variation="primary" isFullWidth>
+          Book it
+        </Button>
+      </View>
+    </Card>
+  )}
+</Collection>
+
+
+
+
+
+
+      
       {images.map((image) => (
+
+
+
+        <Card key={image.id} borderRadius="medium" variation="elevated">
+    
         <div 
           key={image.id} 
           className="group relative overflow-hidden rounded-xl bg-white shadow-md border border-gray-100 transition-all duration-300 hover:shadow-xl"
         >
-          {/* Image Container */}
-          <div className="aspect-square w-full overflow-hidden bg-gray-200">
-            <img
-              src={image.url}
-              alt={image.caption}
-              loading="lazy" // Native browser performance boost
-              className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
+          <div>
+            <Image
+                src={image.url}
+                alt={image.caption}
+              />
+          </div>  
 
           {/* Metadata Footer Panel */}
           <div className="p-4 bg-white">
@@ -67,7 +128,11 @@ export default function ImageGallery({ images, isLoading = false }: ImageGallery
             )}
           </div>
         </div>
+        <View padding="0.5rem">
+              <Heading level={6}>{image.id.split('/').pop()}</Heading>
+            </View>
+        </Card>
       ))}
-    </div>
+    </Grid>
   );
 }

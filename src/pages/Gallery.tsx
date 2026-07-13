@@ -64,16 +64,13 @@ export default function Gallery() {
             </AmplifyUILink>
           </MenuItem>
         </Menu>
-      </View>
 
-      <main className="max-w-7xl mx-auto py-8 px-4">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Image Gallery</h1>
         <p className="text-gray-600 mb-8">Secure media gallery synced directly to cloud object buckets.</p>
         
         <ImageGallery images={cloudData} isLoading={loading} />
         <Link to="/">Back to Main Page</Link>
-      </main>
-
+      </View>
     </ThemeProvider>
   );
 }

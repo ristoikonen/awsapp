@@ -28,40 +28,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
   useEffect(() => {
 
-/*     const fetchCloudImages = async () => {
-      try {
-        // Replace with your real backend fetch call: fetch('/api/images')
-        const mockCloudData: CloudImage[] = [
-          {
-            id: 'cloud-001',
-            url: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/174-free-google-maps-pointer.png',
-            caption: 'GM pointer',
-            uploadedBy: 'CDN',
-            createdAt: '2026-07-10T14:32:00Z',
-            gmurl: ''
-          },
-          {
-            id: 'cloud-002',
-            url: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg',
-            caption: 'Gmicon',
-            uploadedBy: 'CDN',
-            createdAt: '2026-07-12T09:15:00Z',
-            gmurl: ''
-          }
-        ];
-        
-        setCloudData(mockCloudData);
-      } catch (error) {
-        console.error("Failed fetching cloud assets", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCloudImages();
-
- */
-
+  /*
     const GetData = async () => {
       try {
         // Fetch data from the Amplify data resource
@@ -72,6 +39,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
       }
     }
     GetData()
+  */
+
   }, [])
   
    return(
@@ -325,13 +294,13 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 </View>
               </Button>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
-              <Text textAlign="center">Live Crypto Ticker, React component<br/>HTTP client of Coinlore API for live market access. </Text>
+              <Text textAlign="center">Crypto currency ticker tape, React component<br/>HTTP client of Coinlore API for live market access. </Text>
               <Button
-                variation="primary"
-                colorTheme="info"
-                onClick={() => window.open('https://coin.ristoikonen.com/', '_blank')}
-              >
-                 Coin Ticker site
+                  variation="link"
+                  colorTheme="info"
+                  onClick={() => window.open('https://coin.ristoikonen.com/', '_blank')}
+                >
+                  Live Coin Ticker site
               </Button>
             </Flex>
           </Card>
