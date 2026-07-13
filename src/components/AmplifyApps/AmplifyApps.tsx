@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+// , useState
+import React, { useEffect } from 'react';
+//import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, Link  } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 // TODO: Update the path below to the correct location of your amplify data resource type
 import type { Schema } from '../../../amplify/data/resource'
 import { generateClient } from 'aws-amplify/data'
-import ImageGallery, { type CloudImage } from '../ImageGallery/ImageGallery'
+//import ImageGallery, { type CloudImage } from '../ImageGallery/ImageGallery'
 import Gallery from '../../pages/Gallery.tsx'
 
 const client = generateClient<Schema>()
@@ -14,12 +16,12 @@ interface AmplifyAppsProps {}
 
 const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
   
-  const [cloudData, setCloudData] = useState<CloudImage[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  //const [cloudData, setCloudData] = useState<CloudImage[]>([]);
+  //const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
 
-    const fetchCloudImages = async () => {
+/*     const fetchCloudImages = async () => {
       try {
         // Replace with your real backend fetch call: fetch('/api/images')
         const mockCloudData: CloudImage[] = [
@@ -51,7 +53,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
     fetchCloudImages();
 
-
+ */
 
     const GetData = async () => {
       try {
@@ -343,12 +345,12 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             href="./pages/Gallery.tsx"
             color="#950495"
             >
-            <Gallery />
+            Gallery
           </Link>
           <Text variation="tertiary" fontSize="small">
             Risto Ikonen 2026&copy;. Site under active development.
           </Text>
-          <ImageGallery images={cloudData} isLoading={loading} />
+          {/* <Gallery /> <ImageGallery images={cloudData} isLoading={loading} /> */}
         </Flex>
       </View>
     </ThemeProvider>
