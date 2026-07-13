@@ -76,7 +76,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
   
    return(
       <ThemeProvider>
-        
+
         <View width="4rem">
           <Menu
             menuAlign="start"
@@ -372,11 +372,36 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Text>
         </Flex>
 
-        <Flex justifyContent="center" padding="large" marginTop="large">
+{/*         <Flex justifyContent="center" padding="large" marginTop="large">
           <AmplifyUILink as={ReactRouterLink} to="/gallery">
             Image Gallery - In dev
           </AmplifyUILink>
+
         </Flex>
+ */}
+
+       <Flex justifyContent="center" padding="large" marginTop="large">
+        <View width="4rem">
+          <Menu
+            menuAlign="center"
+            size="large"
+          >
+            <MenuItem>
+              <AmplifyUILink as={ReactRouterLink} to="/gallery">
+                Gallery
+              </AmplifyUILink>
+            </MenuItem>
+            <Divider />
+            <MenuItem isDisabled >
+              <AmplifyUILink as={ReactRouterLink} to="/">
+                Home
+              </AmplifyUILink>
+            </MenuItem>
+          </Menu>
+        </View>
+
+        </Flex>
+
 
       </View>
     </ThemeProvider>
