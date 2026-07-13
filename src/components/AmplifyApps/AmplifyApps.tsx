@@ -1,5 +1,14 @@
 // , useState
 import React, { useEffect } from 'react';
+
+import {
+  BrowserRouter as Router,
+  //Link as ReactRouterLink,
+  Routes,
+  Route,
+} from 'react-router-dom';
+
+
 //import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, Link  } 
    from '@aws-amplify/ui-react';
@@ -9,10 +18,19 @@ import type { Schema } from '../../../amplify/data/resource'
 import { generateClient } from 'aws-amplify/data'
 //import ImageGallery, { type CloudImage } from '../ImageGallery/ImageGallery'
 import Gallery from '../../pages/Gallery.tsx'
+//import ImageGallery from '../ImageGallery/ImageGallery.tsx';
 
 const client = generateClient<Schema>()
 
 interface AmplifyAppsProps {}
+
+function HGallery() {
+  return <Heading level={2}><Gallery/></Heading>;
+}
+
+function HImageGallery() {
+  return <Heading level={2}><Gallery/></Heading>;
+}
 
 const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
   
@@ -352,10 +370,35 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Text>
           {/* <Gallery /> <ImageGallery images={cloudData} isLoading={loading} /> */}
         </Flex>
+
+
+        <Router>
+          <Flex>
+
+            <Link href="../../pages/Gallery.tsx" >
+              gallery
+            </Link>
+
+            
+
+          {/* <ReactRouterLink to="/HGallery"  component={Link}>Gallery</ReactRouterLink>
+          <ReactRouterLink to="/HGallery"  path={HGallery}>Gallery</ReactRouterLink>
+          <ReactRouterLink to="/HImageGallery" component={HImageGallery}>ImageGallery</ReactRouterLink> */}
+
+            <Routes>
+              <Route path="/Gallery" element={<HGallery />} />
+              <Route path="/HImageGallery" element={<HImageGallery />} />
+            </Routes>
+
+          </Flex>
+        </Router>
+
       </View>
     </ThemeProvider>
 
    )
 };
+
+
 
 export default AmplifyApps;
