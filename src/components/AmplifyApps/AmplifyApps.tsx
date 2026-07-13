@@ -10,13 +10,13 @@ import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge  }
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 // TODO: Update the path below to the correct location of your amplify data resource type
-import type { Schema } from '../../../amplify/data/resource'
-import { generateClient } from 'aws-amplify/data'
+//import type { Schema } from '../../../amplify/data/resource'
+//import { generateClient } from 'aws-amplify/data'
 
 //import ImageGallery, { type CloudImage } from '../ImageGallery/ImageGallery'
 //import ImageGallery from '../ImageGallery/ImageGallery.tsx';
 
-const client = generateClient<Schema>()
+//const client = generateClient<Schema>()
 
 interface AmplifyAppsProps {}
 

@@ -1,6 +1,6 @@
 //import React from 'react';
 
-import { Image,Card, Grid, View, Heading, Collection,Flex, Divider,Badge,Button } from '@aws-amplify/ui-react';
+import { Image,Card, Grid, View, Heading, Collection, Divider,Button } from '@aws-amplify/ui-react';
 
 // 1. Define the TypeScript contract for your cloud image metadata
 export interface CloudImage {
