@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 
 import {
   BrowserRouter as Router,
-  //Link as ReactRouterLink,
+  Link as ReactRouterLink,
   Routes,
   Route,
 } from 'react-router-dom';
@@ -25,7 +25,7 @@ const client = generateClient<Schema>()
 interface AmplifyAppsProps {}
 
 function HGallery() {
-  return <Heading level={2}><Gallery/></Heading>;
+  return <Heading level={2}><Gallery /></Heading>;
 }
 
 function HImageGallery() {
@@ -385,10 +385,13 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           {/* <ReactRouterLink to="/HGallery"  component={Link}>Gallery</ReactRouterLink>
           <ReactRouterLink to="/HGallery"  path={HGallery}>Gallery</ReactRouterLink>
           <ReactRouterLink to="/HImageGallery" component={HImageGallery}>ImageGallery</ReactRouterLink> */}
+            <ReactRouterLink to="<Gallery />" >Rg</ReactRouterLink>
+
+            <ReactRouterLink to="<Gallery />" >Rg</ReactRouterLink>
 
             <Routes>
-              <Route path="/Gallery" element={<HGallery />} />
-              <Route path="/HImageGallery" element={<HImageGallery />} />
+              <Route path="<Gallery />" element={<HGallery />} >R1</Route>
+              <Route path="/HImageGallery" element={<HImageGallery />} >R2</Route>
             </Routes>
 
           </Flex>
