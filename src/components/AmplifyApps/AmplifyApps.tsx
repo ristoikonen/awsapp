@@ -1,6 +1,10 @@
 // , useState
 import React, { useEffect } from 'react';
 
+import { Link as ReactRouterLink } from 'react-router-dom';
+import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
+import { Menu, MenuItem, Divider } from '@aws-amplify/ui-react';
+
 //import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge  } 
    from '@aws-amplify/ui-react';
@@ -72,10 +76,29 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
   
    return(
       <ThemeProvider>
-        <View padding="medium">
+        
+        <View width="4rem">
+          <Menu
+            menuAlign="start"
+            size="small"
+          >
+            <MenuItem>
+              <AmplifyUILink as={ReactRouterLink} to="/gallery">
+                Gallery
+              </AmplifyUILink>
+            </MenuItem>
+            <Divider />
+            <MenuItem isDisabled >
+              <AmplifyUILink as={ReactRouterLink} to="/">
+                Home
+              </AmplifyUILink>
+            </MenuItem>
+          </Menu>
+        </View>
 
         {/* Giga font header section */}
-        
+
+        <View padding="medium">
         <Flex direction="column" alignItems="center" padding="large">
           <View maxWidth="1200px" width="100%">
             <Heading level={2} textAlign="center">
@@ -347,7 +370,12 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           <Text variation="tertiary" fontSize="small">
             Risto Ikonen 2026&copy;. Site under active development.
           </Text>
-          {/* <Gallery /> <ImageGallery images={cloudData} isLoading={loading} /> */}
+        </Flex>
+
+        <Flex justifyContent="center" padding="large" marginTop="large">
+          <AmplifyUILink as={ReactRouterLink} to="/gallery">
+            Image Gallery - In dev
+          </AmplifyUILink>
         </Flex>
 
       </View>

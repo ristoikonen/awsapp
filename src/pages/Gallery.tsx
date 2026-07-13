@@ -2,6 +2,10 @@
 import  { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageGallery, { type CloudImage } from '../components/ImageGallery/ImageGallery';
+import { Link as ReactRouterLink } from 'react-router-dom';
+import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
+import { ThemeProvider, View, Menu, MenuItem, Divider  } 
+   from '@aws-amplify/ui-react';
 
 export default function Gallery() {
   const [cloudData, setCloudData] = useState<CloudImage[]>([]);
@@ -42,6 +46,26 @@ export default function Gallery() {
   }, []);
 
   return (
+    <ThemeProvider>
+            <View width="4rem">
+              <Menu
+                menuAlign="start"
+                size="small"
+              >
+                <MenuItem isDisabled >
+                  <AmplifyUILink as={ReactRouterLink} to="/gallery">
+                    Gallery
+                  </AmplifyUILink>
+                </MenuItem>
+                <Divider />
+                <MenuItem>
+                  <AmplifyUILink as={ReactRouterLink} to="/">
+                    Home
+                  </AmplifyUILink>
+                </MenuItem>
+              </Menu>
+            </View>
+
     <main className="max-w-7xl mx-auto py-8 px-4">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Image Gallery</h1>
       <p className="text-gray-600 mb-8">Secure media gallery synced directly to cloud object buckets.</p>
@@ -49,5 +73,7 @@ export default function Gallery() {
       <ImageGallery images={cloudData} isLoading={loading} />
       <Link to="/">Back to Main Page</Link>
     </main>
+
+    </ThemeProvider>
   );
 }
