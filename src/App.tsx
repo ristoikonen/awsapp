@@ -1,4 +1,4 @@
-import {  Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //BrowserRouter, Routes, Route,
 
 import AmplifyApps from './components/AmplifyApps/AmplifyApps'
@@ -12,11 +12,18 @@ function App() {
   return (
     <>
 
-        <AmplifyApps/>
+        {/* <AmplifyApps/> */}
 
-        <Link to="/gallery" style={{ color: 'blue', textDecoration: 'underline' }}>
-          <Gallery/>
-        </Link>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AmplifyApps />} />
+        
+        {/* 1. Define the path for your Gallery component */}
+        <Route path="/gallery" element={<Gallery />} />
+        
+      </Routes>
+    </Router>
+
     </>
   )
 }
