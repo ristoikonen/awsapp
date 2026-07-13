@@ -29,7 +29,7 @@ function HGallery() {
 }
 
 function HImageGallery() {
-  return <Heading level={2}><Gallery/></Heading>;
+  return <Heading level={3}><Gallery/></Heading>;
 }
 
 const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
@@ -356,7 +356,6 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Flex>
         </Flex>
  */}
-      <div>Galler:<Gallery /></div>
         {/* Footer */}
         <Flex justifyContent="center" padding="large" marginTop="large">
           <Link
@@ -366,7 +365,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             Gallery
           </Link>
           <Text variation="tertiary" fontSize="small">
-            Risto Ikonen 2026&copy;. Site under active development.
+            Risto Ikonen 2026&copy;. Site is under active development.
           </Text>
           {/* <Gallery /> <ImageGallery images={cloudData} isLoading={loading} /> */}
         </Flex>
@@ -375,9 +374,11 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
         <Router>
           <Flex>
 
+{/* 
+            <div>Galler:<Gallery /></div>
             <Link href="../../pages/Gallery.tsx" >
               gallery
-            </Link>
+            </Link> */}
 
             
 

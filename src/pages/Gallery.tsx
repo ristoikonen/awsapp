@@ -2,7 +2,7 @@
 import  { useState, useEffect } from 'react';
 import ImageGallery, { type CloudImage } from '../components/ImageGallery/ImageGallery';
 
-export default function App() {
+export default function Gallery() {
   const [cloudData, setCloudData] = useState<CloudImage[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
