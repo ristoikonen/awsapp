@@ -1,19 +1,58 @@
-import React, { useEffect } from 'react';
-import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge  } 
+import React, { useEffect, useState } from 'react';
+import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, Link  } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 // TODO: Update the path below to the correct location of your amplify data resource type
 import type { Schema } from '../../../amplify/data/resource'
 import { generateClient } from 'aws-amplify/data'
+import ImageGallery, { type CloudImage } from '../ImageGallery/ImageGallery'
+import Gallery from '../../pages/Gallery.tsx'
 
 const client = generateClient<Schema>()
 
 interface AmplifyAppsProps {}
 
 const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
+  
+  const [cloudData, setCloudData] = useState<CloudImage[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  //Error: Client could not be generated
   useEffect(() => {
+
+    const fetchCloudImages = async () => {
+      try {
+        // Replace with your real backend fetch call: fetch('/api/images')
+        const mockCloudData: CloudImage[] = [
+          {
+            id: 'cloud-001',
+            url: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/174-free-google-maps-pointer.png',
+            caption: 'GM pointer',
+            uploadedBy: 'CDN',
+            createdAt: '2026-07-10T14:32:00Z',
+            gmurl: ''
+          },
+          {
+            id: 'cloud-002',
+            url: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg',
+            caption: 'Gmicon',
+            uploadedBy: 'CDN',
+            createdAt: '2026-07-12T09:15:00Z',
+            gmurl: ''
+          }
+        ];
+        
+        setCloudData(mockCloudData);
+      } catch (error) {
+        console.error("Failed fetching cloud assets", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCloudImages();
+
+
+
     const GetData = async () => {
       try {
         // Fetch data from the Amplify data resource
@@ -297,12 +336,19 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Flex>
         </Flex>
  */}
-
+      <div>Galler:<Gallery /></div>
         {/* Footer */}
         <Flex justifyContent="center" padding="large" marginTop="large">
+          <Link
+            href="./pages/Gallery.tsx"
+            color="#950495"
+            >
+            <Gallery />
+          </Link>
           <Text variation="tertiary" fontSize="small">
             Risto Ikonen 2026&copy;. Site under active development.
           </Text>
+          <ImageGallery images={cloudData} isLoading={loading} />
         </Flex>
       </View>
     </ThemeProvider>
