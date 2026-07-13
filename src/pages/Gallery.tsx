@@ -1,5 +1,6 @@
 //React,
 import  { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ImageGallery, { type CloudImage } from '../components/ImageGallery/ImageGallery';
 
 export default function Gallery() {
@@ -46,6 +47,7 @@ export default function Gallery() {
       <p className="text-gray-600 mb-8">Secure media gallery synced directly to cloud object buckets.</p>
       
       <ImageGallery images={cloudData} isLoading={loading} />
+      <Link to="/">Back to Main Page</Link>
     </main>
   );
 }
