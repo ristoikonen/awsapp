@@ -56,6 +56,11 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 Gallery
               </AmplifyUILink>
             </MenuItem>
+            <MenuItem>
+              <a href="./src/pages/Fonts.html">
+                Fonts
+              </a>
+            </MenuItem>
             <Divider />
             <MenuItem isDisabled >
               <AmplifyUILink as={ReactRouterLink} to="/">

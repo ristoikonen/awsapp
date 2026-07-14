@@ -30,8 +30,8 @@ export default function ImageGallery({ images, isLoading = false }: ImageGallery
   // 3. Handle empty cloud storage states
   if (images.length === 0) {
     return (
-      <div className="text-center p-8 bg-gray-50 rounded-lg border border-dashed border-gray-300">
-        <p className="text-gray-500">No cloud images found in this gallery.</p>
+      <div>
+        <p>No cloud images found in this gallery.</p>
       </div>
     );
   }

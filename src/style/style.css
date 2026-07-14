@@ -1,0 +1,867 @@
+﻿/* ==========================================================================
+   1. GLOBAL RESETS & VARIABLES
+   ========================================================================== */
+/* The box-sizing reset ensures padding and borders don't break layout widths */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define global variables for easy theme management */
+:root {
+    --primary-color: #007acc;
+    --text-color: #333333;
+    --background-color: #f4f7f6;
+    --font-main: 'Roboto', sans-serif;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --accent: #4f46e5;
+            --accent-light: #eeebff;
+            --meta-text: #64748b;
+            --border-color: #e2e8f0;
+}
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 60px 20px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 32px;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header h1 {
+                font-size: 42px;
+                font-weight: 800;
+            margin-bottom: 32px;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+               
+
+            }
+
+        footer {
+            text-align: center;
+            max-width: 1040px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* -webkit-background-clip: text; Info Card Container Style */
+        .info-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03), 0 10px 15px -3px rgba(15, 23, 42, 0.05);
+            margin-bottom: 48px;
+            padding: 32px 40px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .info-card h2 {
+                font-size: 18px;
+                font-weight: 600;
+                color: var(--accent);
+                margin-top: 0;
+                margin-bottom: 16px;
+            }
+
+            .info-card p {
+                color: var(--meta-text);
+                font-size: 15px;
+                margin-bottom: 16px;
+            }
+
+                .info-card p:last-child {
+                    margin-bottom: 0;
+                }
+
+        /* The Comparison Row Component */
+        .showcase-row {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03), 0 10px 15px -3px rgba(15, 23, 42, 0.05);
+            margin-bottom: 32px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+            .showcase-row:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px -3px rgba(15, 23, 42, 0.04), 0 20px 25px -5px rgba(15, 23, 42, 0.08);
+            }
+
+        @media (max-width: 768px) {
+            .showcase-row {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 24px;
+            }
+
+            .info-card {
+                padding: 24px;
+            }
+        }
+
+        /* Left Side: Type Specimen Badges */
+        .specimen-side h2 {
+            font-size: 15px !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em !important;
+            color: var(--accent);
+            background-color: var(--accent-light);
+            display: inline-block;
+            padding: 6px 16px !important;
+            border-radius: 20px;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+        }
+
+        /* Dedicated font assignments for the badges */
+        .badge-inter {
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        .badge-roboto {
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        .badge-open-sans {
+            font-family: 'Open Sans', sans-serif !important;
+            text-transform: none !important;
+        }
+
+        .badge-lato {
+            font-family: 'Lato', sans-serif !important;
+        }
+
+        .badge-montserrat {
+            font-family: 'Montserrat', sans-serif !important;
+            font-weight: 800 !important;
+        }
+
+        .badge-merriweather {
+            font-family: 'Merriweather', serif !important;
+            text-transform: none !important;
+        }
+
+        .badge-poppins {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+        .badge-source-sans {
+            font-family: 'Source Sans 3', sans-serif !important;
+        }
+
+        .font-meta-merriweather {
+            font-family: 'Merriweather', serif !important;
+            font-size: 18px;
+            color: var(--meta-text);
+            margin-bottom: 4px;
+            font-weight: 400;
+        }
+
+        .large-display {
+            font-size: 36px;
+            line-height: 1.15;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .font-meta {
+            font-size: 18px;
+            color: var(--meta-text);
+            margin-bottom: 4px;
+            font-weight: 400;
+        }
+
+        .font-eight {
+            font-size: 16px;
+            font-weight: 400;
+            color: #475569;
+        }
+
+        /* Right Side: Visual Overlap Canvas Component */
+        .canvas-container {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            height: 280px;
+            position: relative;
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+        }
+
+        /* Re-calibrated structural density layer mapping */
+        .layer-1 {
+            position: absolute;
+            top: 18px;
+            left: 16px;
+            font-size: 46px;
+            font-weight: 800;
+            color: #1e293b;
+            opacity: 0.95;
+            line-height: 0.9;
+            white-space: nowrap;
+        }
+
+        .layer-2 {
+            position: absolute;
+            top: 68px;
+            left: 140px;
+            font-size: 26px;
+            font-weight: 600;
+            color: #4f46e5;
+            opacity: 0.85;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .layer-3 {
+            position: absolute;
+            top: 100px;
+            left: 32px;
+            font-size: 38px;
+            font-weight: 700;
+            font-style: italic;
+            color: #0f172a;
+            opacity: 0.92;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .layer-4 {
+            position: absolute;
+            top: 146px;
+            left: 195px;
+            font-size: 22px;
+            font-weight: 900;
+            color: #059669;
+            opacity: 0.85;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .layer-5 {
+            position: absolute;
+            top: 182px;
+            left: 22px;
+            font-size: 32px;
+            font-weight: 700;
+            color: #dc2626;
+            opacity: 0.88;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .layer-6 {
+            position: absolute;
+            bottom: 36px;
+            left: 110px;
+            font-size: 16px;
+            font-weight: 500;
+            color: darkslategray;
+            opacity: 0.8;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .layer-7 {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #94a3b8;
+            opacity: 0.7;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        /* Specific Font Application Elements */
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .font-open-sans {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .font-lato {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .font-merriweather {
+            font-family: 'Merriweather', serif;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-source-sans {
+            font-family: 'Source Sans 3', sans-serif;
+        }
+
+        /*HTML Function*/
+        .code-block {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin: 40px 0;
+            font-family: sans-serif;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+        }
+
+        .code-block-header {
+            display: flex;
+            justify-content: space-between;
+            background: #f1f5f9;
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 18px;
+            font-size: 13px;
+            align-items: center;
+        }
+
+        .code-lang {
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.05em;
+        }
+
+        .copy-btn {
+            background: var(--accent);
+            border: none;
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: blue;
+            transition: background 0.15s ease;
+        }
+
+            .copy-btn:hover {
+                color: #fff;
+                background: #4338ca;
+            }
+
+        pre {
+            margin: 0;
+            padding: 20px;
+            background: #1e293b;
+            overflow: auto;
+            font-size: 14px;
+            line-height: 1.5;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .code-content {
+            font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
+            color: #e2e8f0;
+        }
+
+/* ==========================================================================
+   2. BASE ELEMENT STYLES (Typography & Layout)
+   ========================================================================== */
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #111111;
+}
+
+
+h2 {
+    font-family: 'Merriweather', serif; /* serif serves as a web-safe fallback */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+
+p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* ==========================================================================
+   3. COMPONENT STYLES (Classes and IDs)
+   ========================================================================== */
+/* Class selector for a reusable wrapper card */
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Class selector for a custom button */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #005999;
+    }
+
+
+/* COPY-BOX */
+.copy-box-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--box-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Label header styling */
+.copy-box-header {
+    font-size: 12px;
+    color: var(--label-color);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Flex wrapper for text and button */
+.copy-box-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Content to be copied */
+.copy-text {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow-x: auto;
+    margin: 0;
+    padding-bottom: 4px;
+    flex-grow: 1;
+}
+
+    /* Custom scrollbar for long text */
+    .copy-text::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .copy-text::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 4px;
+    }
+
+/* Action button styling */
+.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+    .copy-btn:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .copy-btn:active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+/* EO COPY-BOX */
+
+
+/* SVG Icon styling */
+.copy-icon {
+    fill: none;
+    stroke: var(--label-color);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.2s ease;
+}
+
+.copy-btn:hover .copy-icon {
+    stroke: var(--accent-color);
+}
+
+/* Visual tooltip feedback */
+.tooltip {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    background-color: var(--accent-color);
+    color: #000;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.copy-btn.copied .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* ==========================================
+   1. ROBOTO
+   ========================================== */
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-roboto-italic {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-roboto-bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-roboto-bold-italic {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* ==========================================
+   2. OPEN SANS
+   ========================================== */
+.font-opensans {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-opensans-italic {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-opensans-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-opensans-bold-italic {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* ==========================================
+   3. MONTSERRAT
+   ========================================== */
+
+
+/* --- ROBOTO CSS --- */
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-roboto-italic {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-roboto-bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-roboto-bold-italic {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* --- OPEN SANS CSS --- */
+.font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-open-sans-italic {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-open-sans-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-open-sans-bold-italic {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* --- MONTSERRAT CSS --- */
+
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-montserrat-italic {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-montserrat-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-montserrat-bold-italic {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* ==========================================
+   4. POPPINS
+   ========================================== */
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-poppins-italic {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-poppins-bold {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-poppins-bold-italic {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* ==========================================
+   5. INTER
+   ========================================== */
+.font-inter {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-inter-italic {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-inter-bold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-inter-bold-italic {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* ==========================================
+   6. LATO
+   ========================================== */
+.font-lato {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-lato-italic {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-lato-bold {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-lato-bold-italic {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* ==========================================
+   7. MERRIWEATHER
+   ========================================== */
+.font-merriweather {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-merriweather-italic {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-merriweather-bold {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-merriweather-bold-italic {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-style: italic;
+}
+.font-merriweather_sample {
+    font-family: inherit;
+    font-weight: 300;
+    font-style: inherit;
+}
+
+
+/* ==========================================
+   8. SOURCE SANS 3
+   ========================================== */
+
+.font-source-sans {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-source-sans-italic {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-source-sans-bold {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-source-sans-bold-italic {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.font-source-sans_sample {
+    font-family: inherit;
+    font-weight: 300;
+    font-style: inherit;
+}
+

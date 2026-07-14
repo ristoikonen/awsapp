@@ -1,19 +1,34 @@
 //React,
 import  { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import ImageGallery, { type CloudImage } from '../components/ImageGallery/ImageGallery';
-import { Link as ReactRouterLink } from 'react-router-dom';
-import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
-import { ThemeProvider, View, Menu, MenuItem, Divider  } 
+//import { Link } from 'react-router-dom';
+// ImageGallery,
+import  { type CloudImage } from '../components/ImageGallery/ImageGallery';
+//import { Link as ReactRouterLink } from 'react-router-dom';
+//import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
+
+// Menu, MenuItem, Divider 
+import { ThemeProvider, Grid, Card, Image, View } 
    from '@aws-amplify/ui-react';
+
+
 
 export default function Gallery() {
   const [cloudData, setCloudData] = useState<CloudImage[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
+  if (loading) {
+    return (
+      <p>
+        TODO: loading msg
+      </p>
+    );
+  }
+
   useEffect(() => {
     const fetchCloudImages = async () => {
       try {
+        
+
         // Replace with your real backend fetch call: fetch('/api/images')
         const mockCloudData: CloudImage[] = [
           {
@@ -48,28 +63,31 @@ export default function Gallery() {
   return (
     <ThemeProvider>
       <View width="4rem">
-        <Menu
-          menuAlign="start"
-          size="small"
+        <Grid
+          templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+          gap="1rem"
+          padding="1rem"
         >
-          <MenuItem isDisabled >
-            <AmplifyUILink as={ReactRouterLink} to="/gallery">
-              Gallery
-            </AmplifyUILink>
-          </MenuItem>
-          <Divider />
-          <MenuItem>
-            <AmplifyUILink as={ReactRouterLink} to="/">
-              Home
-            </AmplifyUILink>
-          </MenuItem>
-        </Menu>
-
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Image Gallery</h1>
-        <p className="text-gray-600 mb-8">Secure media gallery synced directly to cloud object buckets.</p>
-        
-        <ImageGallery images={cloudData} isLoading={loading} />
-        <Link to="/">Back to Main Page</Link>
+          {cloudData.map((image) => (
+          <Card 
+            key={image.id} 
+            padding="0" 
+            borderRadius="medium"
+            style={{ cursor: 'pointer', overflow: 'hidden' }}
+            //onClick={() => onImageClick(image)} 
+          >
+            <View height="250px" width="100%">
+              <Image
+                src={image.gmurl} // <-- Small, 250px optimized version
+                alt={image.caption}
+                objectFit="cover"
+                width="100%"
+                height="100%"
+              />
+            </View>
+          </Card>
+        ))}
+      </Grid>
       </View>
     </ThemeProvider>
   );
