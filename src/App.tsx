@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import AmplifyApps from './components/AmplifyApps/AmplifyApps'
 import Gallery from './pages/Gallery.tsx'
+import FontsPage from "./pages/Fonts.tsx";
 
 import './App.css'
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AmplifyApps />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/fonts" element={<FontsPage  />} />
         </Routes>
       </Router>
     </>
