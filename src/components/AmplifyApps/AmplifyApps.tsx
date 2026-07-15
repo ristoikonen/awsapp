@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
-import { Menu, MenuItem, Divider } from '@aws-amplify/ui-react';
+//import { Menu, MenuItem, Divider } from '@aws-amplify/ui-react';
 
 //import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge  } 
