@@ -57,19 +57,13 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </AmplifyUILink>
             </MenuItem>
             <MenuItem>
-              <a href="./pages/Fonts.html">
-                Fonts
-              </a>
+               <ReactRouterLink to="pages/Fonts.html">Fonts2</ReactRouterLink>
             </MenuItem>
             <MenuItem>
-              <a href="pages/Fonts.html">
-                Fonts2
-              </a>
+              <ReactRouterLink to="./pages/Fonts.html">Fonts2</ReactRouterLink>
             </MenuItem>
             <MenuItem>
-              <a href="/pages/Fonts.html">
-                Fonts3
-              </a>
+              <ReactRouterLink to="/pages/Fonts.html">Fonts2</ReactRouterLink>
             </MenuItem>
             <Divider />
             <MenuItem isDisabled >
