@@ -33,27 +33,6 @@ export default function FontsPage ({}) {
 &lt;link href=&quot;https://googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;family=Merriweather:ital,wght@0,400;0,700;1,300&amp;family=Montserrat:wght@400;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@400;600;700&amp;family=Roboto:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;" /></span>
         </div>
 
-        {/* <!-- Copy Box Component Start --> */}
-        <div className="code-block">
-            <div className="code-block-header">
-
-                <span className="code-lang">Copy links into HEAD section of HTML page</span>
-                <button className="copy-btn"><span className="material-symbols-outlined">content_copy</span>Copy</button>
-            </div>
-            <div>
-                <pre>
-                    <code className="code-content">&lt;link rel=&quot;preconnect&quot; href=&quot;https://googleapis.com&quot;&gt;
-&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts-gstatic.com&quot; crossorigin&gt;
-&lt;link href=&quot;https://googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;family=Merriweather:ital,wght@0,400;0,700;1,300&amp;family=Montserrat:wght@400;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@400;600;700&amp;family=Roboto:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
-                    </code>
-                </pre>
-            </div>
-        </div>
-
-        {/* <!-- Copy Box Component End --> */}
-
-
-
         <div className="showcase-row">
             <div className="specimen-side">
                 <h2 className="font-inter badge-inter">1. Inter</h2>
