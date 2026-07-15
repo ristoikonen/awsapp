@@ -9,6 +9,7 @@ import { Menu, MenuItem, Divider } from '@aws-amplify/ui-react';
 import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge  } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+
 // TODO: Update the path below to the correct location of your amplify data resource type
 //import type { Schema } from '../../../amplify/data/resource'
 //import { generateClient } from 'aws-amplify/data'
@@ -46,11 +47,13 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
    return(
       <ThemeProvider>
 
-        <View width="4rem">
+{/*         <View>
           <Menu
             menuAlign="start"
             size="small"
           >
+
+
             <MenuItem>
               <AmplifyUILink as={ReactRouterLink} to="/gallery">
                 Gallery
@@ -68,7 +71,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </AmplifyUILink>
             </MenuItem>
           </Menu>
-        </View>
+        </View> */}
 
         {/* Giga font header section */}
 
@@ -338,6 +341,15 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Flex>
         </Flex>
  */}
+          <View textAlign="center" padding="large">
+            <AmplifyUILink as={ReactRouterLink} to="/fonts">
+              Fonts
+            </AmplifyUILink>
+            <br/>
+            <AmplifyUILink as={ReactRouterLink} to="/gallery">
+              Image Gallery - In dev
+            </AmplifyUILink>
+          </View>
 
         {/* Footer */}
         <Flex justifyContent="center" padding="large" marginTop="large">
@@ -346,16 +358,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Text>
         </Flex>
 
-{/*         <Flex justifyContent="center" padding="large" marginTop="large">
-          <AmplifyUILink as={ReactRouterLink} to="/gallery">
-            Image Gallery - In dev
-          </AmplifyUILink>
-
-        </Flex>
- */}
-
-       <Flex justifyContent="center" padding="large" marginTop="large">
-        <View width="4rem">
+{/*         <View width="4rem">
           <Menu
             menuAlign="center"
             size="large"
@@ -372,11 +375,9 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </AmplifyUILink>
             </MenuItem>
           </Menu>
-        </View>
+        </View> */}
 
-        </Flex>
-
-
+        
       </View>
     </ThemeProvider>
 

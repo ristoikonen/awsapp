@@ -1,15 +1,18 @@
 //import React from 'react';
+import { Link as ReactRouterLink } from 'react-router-dom';
+import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
 
 import '../style/style.css';
 
 export default function FontsPage ({}) {
-  return (  
-<body>
 
+  return (  
 
     <div className="container">
         <header>
-            <a href="/">Home</a>
+            <AmplifyUILink as={ReactRouterLink} to="/">
+                Home
+            </AmplifyUILink>
             <h3>UNDER CONSTRUCTION</h3>
             <h1>Font Showcase</h1>
         </header>
@@ -191,12 +194,13 @@ export default function FontsPage ({}) {
                 </div>
             </div>
         </div>
+
         <footer>Fonts.googleapis.com to serves a CSS stylesheet to fonts-gstatic.com that hosts font files.<br/>
                 Fonts are of various weights, often 400, 700 and 800. Check googleapis.com -link for details.<br/>
                 Fonts-gstatic.com and googleapis.com are part of Google's' massive, global Content Delivery Network (CDN).
-                <br/>&copy; Risto Ikonen 2026</footer>
-    </div>
+                <br/>&copy; Risto Ikonen 2026
+        </footer>
 
-</body>
+    </div>
 
 )}
