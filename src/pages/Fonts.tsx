@@ -1,6 +1,8 @@
 //import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
+//import CodeBlock1 from './././components/CodeBlock/CodeBlock';
+import CodeBlock from '../components/CodeBlock/CodeBlock';
 
 import '../style/style.css';
 
@@ -22,7 +24,13 @@ export default function FontsPage ({}) {
             <h3>Copy links to load these eight fonts from Google's CDN</h3>
             <p>
                 Add selection of Google's eight popular fonts onto your page.
+                
             </p>
+
+
+            <span><CodeBlock code="&lt;link rel=&quot;preconnect&quot; href=&quot;https://googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts-gstatic.com&quot; crossorigin&gt;
+&lt;link href=&quot;https://googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;family=Merriweather:ital,wght@0,400;0,700;1,300&amp;family=Montserrat:wght@400;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@400;600;700&amp;family=Roboto:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;" /></span>
         </div>
 
         {/* <!-- Copy Box Component Start --> */}
@@ -32,11 +40,19 @@ export default function FontsPage ({}) {
                 <span className="code-lang">Copy links into HEAD section of HTML page</span>
                 <button className="copy-btn"><span className="material-symbols-outlined">content_copy</span>Copy</button>
             </div>
-            <pre><code className="code-content">&lt;link rel=&quot;preconnect&quot; href=&quot;https://googleapis.com&quot;&gt;
+            <div>
+                <pre>
+                    <code className="code-content">&lt;link rel=&quot;preconnect&quot; href=&quot;https://googleapis.com&quot;&gt;
 &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts-gstatic.com&quot; crossorigin&gt;
-&lt;link href=&quot;https://googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;family=Merriweather:ital,wght@0,400;0,700;1,300&amp;family=Montserrat:wght@400;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@400;600;700&amp;family=Roboto:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+&lt;link href=&quot;https://googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;family=Merriweather:ital,wght@0,400;0,700;1,300&amp;family=Montserrat:wght@400;700;800&amp;family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@400;600;700&amp;family=Roboto:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+                    </code>
+                </pre>
+            </div>
         </div>
+
         {/* <!-- Copy Box Component End --> */}
+
+
 
         <div className="showcase-row">
             <div className="specimen-side">
