@@ -57,7 +57,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </AmplifyUILink>
             </MenuItem>
             <MenuItem>
-              <a href="./src/pages/Fonts.html">
+              <a href="/src/pages/Fonts.html">
                 Fonts
               </a>
             </MenuItem>
