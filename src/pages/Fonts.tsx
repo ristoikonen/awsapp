@@ -24,7 +24,8 @@ export default function FontsPage ({}) {
             <h3>Copy links to load these eight fonts from Google's CDN</h3>
             <p>
                 Add selection of Google's eight popular fonts onto your page.
-                
+                Versions are regular, bold amnd italics (weights are usually 400,700 and 800).
+                Fonts are: Inter, 
             </p>
 
 

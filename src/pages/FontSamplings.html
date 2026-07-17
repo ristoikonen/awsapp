@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Font Pairing Demo: Header vs. Menu</title>
+    
+    <!-- 1. LOAD THE FONTS -->
+    <!-- Pairing: Poppins (geometric header) + Lato (humanist menu) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,400&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 2. BASE CSS STYLES */
+        :root {
+            --header-font: 'Poppins', sans-serif;
+            --menu-font: 'Lato', sans-serif;
+            --primary-color: #004d40; /* Dark Teal */
+            --accent-color: #ffc107; /* Amber Gold */
+            --light-bg: #f5f5f5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--menu-font); /* Default body text is Lato */
+            background-color: var(--light-bg);
+            color: #333;
+        }
+
+        /* 3. HEADER TEXT STYLE (The Large Headings) */
+        h1 {
+            font-family: var(--header-font);
+            font-weight: 800; /* Extra Bold */
+            font-size: 3.5rem; /* Large size */
+            color: var(--primary-color);
+            margin: 0 0 1rem;
+            line-height: 1.1;
+        }
+
+        /* Subheader style */
+        h2 {
+            font-family: var(--header-font);
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #555;
+            margin: 0 0 2rem;
+        }
+
+        /* 4. MENU AND NAV STYLING (The Menu Text) */
+        .main-nav {
+            background-color: #fff;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--header-font);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .menu-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: #333;
+            /* APPLIES MENU FONT (Lato Regular) */
+            font-family: var(--menu-font);
+            font-weight: 400; /* Light/Normal */
+            font-size: 1rem;
+            text-transform: uppercase; /* Classic menu style */
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .menu-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* 5. CONTENT SECTION STYLES */
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: var(--menu-font);
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 6. THE WEBSITE MENU SECTION -->
+    <nav class="main-nav">
+        <div class="container" main-container>
+            <div class="logo">FONT PAIRINGS INC.</div>
+            <ul class="menu-list">
+                <li><a href="#" class="menu-link">Home</a></li>
+                <li><a href="#" class="menu-link">About Us</a></li>
+                <li><a href="#" class="menu-link">Our Fonts</a></li>
+                <li><a href="#" class="menu-link">Resources</a></li>
+                <li><a href="#" class="menu-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 7. THE HEADER AND CONTENT SECTION -->
+    <header class="content-section">
+        <div class="container">
+            <!-- LARGE HEADER TEXT (POPPINS) -->
+            <h1>Designing with Active Hierarchy: Fonts and Contrast</h1>
+            
+            <!-- SUBHEADER TEXT (POPPINS) -->
+            <h2>The active role of font contrast in user interface design.</h2>
+            
+            <p class="description">
+                In this actual website example, we have activated the modern pairing of **Poppins** and **Lato**. This combination excels because it draws a clear distinction between the geometric punch of headlines and the warm, accessible clarity required for functional navigation. By applying one font specifically for **larger header text** and the other for **menu and body text**, we establish strong typographic hierarchy that improves readability and enhances the overall user experience.
+            </p>
+            
+            <!-- CALL TO ACTION BUTTON (LATO) -->
+            <a href="#" class="cta-button">Learn More About These Fonts</a>
+        </div>
+    </header>
+
+</body>
+</html>

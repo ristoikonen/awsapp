@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Font Pairing Selector - Stable Focus</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* DYNAMIC CSS VARIABLES */
+        :root {
+            --header-font: 'Poppins', sans-serif;
+            --menu-font: 'Lato', sans-serif;
+            --primary-color: #1e293b;
+            --accent-color: #3b82f6;
+            --light-bg: #f8fafc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--menu-font);
+            background-color: var(--light-bg);
+            color: #334155;
+            transition: font-family 0.2s ease;
+        }
+
+        /* CONTROL PANEL (Stable Click-Based Dropdown) */
+        .control-panel {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
+        }
+        
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+            width: 325px;
+        }
+
+        .dropdown-button {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #fff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .dropdown-button:focus {
+            outline: 2px solid var(--accent-color);
+            border-color: transparent;
+        }
+
+        /* Visibility controlled strictly via a dedicated utilities class */
+        .dropdown-content {
+            display: none; 
+            position: absolute;
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            z-index: 10;
+            margin-top: 4px;
+            padding: 0.5rem 0;
+            box-sizing: border-box;
+        }
+
+        /* The single active modifier class injected safely via JS */
+        .dropdown-container.is-active .dropdown-content {
+            display: block;
+        }
+
+        .pair-option {
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .pair-option:hover {
+            background-color: #f1f5f9;
+        }
+
+        .pair-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        /* TYPOGRAPHY & LAYOUT STRUCTURE */
+        h1 {
+            font-family: var(--header-font);
+            font-weight: 800;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin: 0 0 1rem;
+            line-height: 1.15;
+            transition: font-family 0.2s ease;
+        }
+
+        h2 {
+            font-family: var(--header-font);
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #64748b;
+            margin: 0 0 2rem;
+            transition: font-family 0.2s ease;
+        }
+
+        .main-nav {
+            background-color: #fff;
+            padding: 1.25rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--header-font);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .menu-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: #475569;
+            font-family: var(--menu-font);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s, font-family 0.2s ease;
+        }
+
+        .menu-link:hover {
+            color: var(--accent-color);
+        }
+
+        .content-section {
+            padding: 5rem 0;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: #475569;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: var(--menu-font);
+            font-weight: 700;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CONTROL PANEL WITH DROPDOWN CHECKBOXES -->
+    <div class="control-panel">
+        <div class="container">
+            <label style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:0.5rem; color:#64748b;">
+                Select Active Pairing:
+            </label>
+            <div class="dropdown-container" id="dropdownContainer">
+                <button class="dropdown-button" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+                    <span>Poppins + Lato (Active)</span>
+                    <span id="arrowIndicator" style="transition: transform 0.2s;">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <label class="pair-option">
+                        <input type="checkbox" name="font-pair" value="pair1">
+                        <span>Montserrat + Source Sans 3</span>
+                    </label>
+                    <label class="pair-option">
+                        <input type="checkbox" name="font-pair" value="pair2">
+                        <span>Merriweather + Open Sans</span>
+                    </label>
+                    <label class="pair-option">
+                        <input type="checkbox" name="font-pair" value="pair3" checked>
+                        <span>Poppins + Lato</span>
+                    </label>
+                    <label class="pair-option">
+                        <input type="checkbox" name="font-pair" value="pair4">
+                        <span>Roboto + Roboto</span>
+                    </label>
+                    <label class="pair-option">
+                        <input type="checkbox" name="font-pair" value="pair5">
+                        <span>Roboto + Roboto</span>
+                    </label>
+                    <label class="pair-option">
+                        <input type="checkbox" name="font-pair" value="pair6">
+                        <span>Roboto + Roboto</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WEBSITE NAVIGATION MENU -->
+    <nav class="main-nav">
+        <div class="container nav-wrapper">
+            <div class="logo">STUDIO ARCHITECTURE</div>
+            <ul class="menu-list">
+                <li><a href="#" class="menu-link">Overview</a></li>
+                <li><a href="#" class="menu-link">Portfolios</a></li>
+                <li><a href="#" class="menu-link">Case Studies</a></li>
+                <li><a href="#" class="menu-link">Journal</a></li>
+                <li><a href="#" class="menu-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO CONTENT -->
+    <header class="content-section">
+        <div class="container">
+            <h1>Dynamic Typography Across Digital Spaces</h1>
+            <h2>Testing architectural hierarchy through curated open-source font setups.</h2>
+            <p class="description">
+                This environment enables rapid switching between distinct design philosophies. When you modify the active checkbox selection above, the DOM updates its CSS custom properties instantly. Observe how the weight balance transitions seamlessly between geometric structural styles and warm, high-performance interface typography.
+            </p>
+            <a href="#" class="cta-button">Initialize Strategy</a>
+        </div>
+    </header>
+
+    <!-- STABLE CONTROL SCRIPT -->
+    <script>
+        const pairings = {
+            pair1: {
+                name: "Montserrat + Source Sans 3",
+                header: "'Montserrat', sans-serif",
+                menu: "'Source Sans 3', sans-serif",
+                url: "https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Source+Sans+3:wght@400;700&display=swap"
+            },
+            pair2: {
+                name: "Merriweather + Open Sans",
+                header: "'Merriweather', serif",
+                menu: "'Open Sans', sans-serif",
+                url: "https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;700&display=swap"
+            },
+            pair3: {
+                name: "Poppins + Lato",
+                header: "'Poppins', sans-serif",
+                menu: "'Lato', sans-serif",
+                url: "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;800&display=swap"
+            },
+            pair4: {
+                name: "Roboto + Roboto",
+                header: "'Roboto', sans-serif",
+                menu: "'Roboto', sans-serif",
+                url: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+            },
+                        pair5: {
+                name: "Gotham + Roboto",
+                header: "'Roboto', sans-serif",
+                menu: "'Roboto', sans-serif",
+                url: "https://fonts.googleapis.com/css2?family=Gotham:wght@400;700&Roboto:wght@400;700;900&display=swap"
+            },
+            pair6: {
+                name: "Raleway  + Bitter",
+                header: "'Roboto', sans-serif",
+                menu: "'Roboto', sans-serif",
+                url: "https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&family=Bitter:wght@400;700;900&display=swap"
+            }
+        };
+
+        const dropdownContainer = document.getElementById('dropdownContainer');
+        const dropdownBtn = document.getElementById('dropdownBtn');
+        const arrowIndicator = document.getElementById('arrowIndicator');
+        const dropdownBtnText = dropdownBtn.querySelector('span:first-child');
+        const checkboxes = document.querySelectorAll('input[name="font-pair"]');
+
+        // 1. STABLE TOGGLE LOGIC: Toggle on explicit click execution instead of unstable hovers
+        dropdownBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isActive = dropdownContainer.classList.toggle('is-active');
+            dropdownBtn.setAttribute('aria-expanded', isActive);
+            arrowIndicator.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+
+        // 2. FOCUS CONTAINMENT BLOCK: Prevent click propagation inside the layout options from closing it down
+        dropdownContainer.querySelector('.dropdown-content').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // 3. GLOBAL CLICK-AWAY CLOSE SYSTEM: Closes down reliably only when user explicitly targets alternate screen areas
+        window.addEventListener('click', function() {
+            if (dropdownContainer.classList.contains('is-active')) {
+                dropdownContainer.classList.remove('is-active');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+                arrowIndicator.style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // 4. CHECKBOX EXCLUSIVITY CONTROL
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    checkboxes.forEach(cb => { if (cb !== this) cb.checked = false; });
+                    updateFonts(this.value);
+                } else {
+                    this.checked = true; // Block unchecking the singular chosen element state
+                }
+            });
+        });
+
+        function updateFonts(pairKey) {
+            const selectedPair = pairings[pairKey];
+            
+            if (!document.querySelector(`link[href="${selectedPair.url}"]`)) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = selectedPair.url;
+                document.head.appendChild(link);
+                document.title.replace(selectedPair.name);
+            }
+
+            document.documentElement.style.setProperty('--header-font', selectedPair.header);
+            document.documentElement.style.setProperty('--menu-font', selectedPair.menu);
+            dropdownBtnText.textContent = `${selectedPair.name} (Active)`;
+        }
+    </script>
+</body>
+</html>
