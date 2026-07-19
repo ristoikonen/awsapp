@@ -1,0 +1,237 @@
+﻿/* ==========================================================================
+   1. GLOBAL RESETS & VARIABLES
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;800&display=swap');
+
+   /* The box-sizing reset ensures padding and borders don't break layout widths */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        :root {
+            --header-font: 'Poppins', sans-serif;
+            --menu-font: 'Lato', sans-serif;
+            --primary-color: #1e293b;
+            --accent-color: #3b82f6;
+            --light-bg: #f8fafc;
+
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--menu-font);
+            background-color: var(--light-bg);
+            color: #334155;
+            transition: font-family 0.2s ease;
+        }
+
+        /* CONTROL PANEL (Stable Click-Based Dropdown) */
+        .control-panel {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
+        }
+        
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+            width: 325px;
+        }
+
+        .dropdown-button {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #fff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            /*user-select: none;*/
+        }
+
+        .dropdown-button:focus {
+            outline: 2px solid var(--accent-color);
+            border-color: transparent;
+        }
+
+        /* Visibility controlled strictly via a dedicated utilities class */
+        .dropdown-content {
+            display: none; 
+            position: absolute;
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            z-index: 10;
+            margin-top: 4px;
+            padding: 0.5rem 0;
+            box-sizing: border-box;
+        }
+
+        /* The single active modifier class injected safely via JS */
+        .dropdown-container.is-active .dropdown-content {
+            display: block;
+        }
+
+        .pair-option {
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            /*user-select: none;*/
+        }
+
+        .pair-option:hover {
+            background-color: #f1f5f9;
+        }
+
+        .pair-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        /* TYPOGRAPHY & LAYOUT STRUCTURE */
+        h1 {
+            font-family: var(--header-font);
+            font-weight: 800;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin: 0 0 1rem;
+            line-height: 1.15;
+            transition: font-family 0.2s ease;
+        }
+
+        h2 {
+            font-family: var(--header-font);
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #64748b;
+            margin: 0 0 2rem;
+            transition: font-family 0.2s ease;
+        }
+
+        .main-nav {
+            background-color: #fff;
+            padding: 1.25rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--header-font);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .control-text {
+            font-family: var(--header-font);
+            font-weight: 400;
+            font-size: 1.0rem;
+            color: var(--primary-color);
+        }
+
+        .arrow {
+            transition: transform 0.2s;
+        }
+       
+
+        .menu-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: #475569;
+            font-family: var(--menu-font);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s, font-family 0.2s ease;
+        }
+
+        .menu-link:hover {
+            color: var(--accent-color);
+        }
+
+        .content-section {
+            padding: 5rem 0;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: #475569;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: var(--menu-font);
+            font-weight: 700;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+        }
+
+        .specimen-grid {
+            margin-top: 2rem;
+            font-family: var(--font-demo);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            opacity: 0.9;
+        }
+
+        .test-area{
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        .test-area:empty::before {
+            content: attr(placeholder);
+            color: #64748b; 
+            font-style: italic;
+            cursor: text;
+        }
