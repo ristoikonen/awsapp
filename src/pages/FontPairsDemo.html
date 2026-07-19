@@ -147,6 +147,18 @@
             color: var(--primary-color);
         }
 
+        .control-text {
+            font-family: var(--header-font);
+            font-weight: 400;
+            font-size: 1.0rem;
+            color: var(--primary-color);
+        }
+
+        .arrow {
+            transition: transform 0.2s;
+        }
+       
+
         .menu-list {
             margin: 0;
             padding: 0;
@@ -197,6 +209,29 @@
         .cta-button:hover {
             background-color: var(--accent-color);
         }
+
+        .specimen-grid {
+            margin-top: 2rem;
+            font-family: var(--font-demo);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            opacity: 0.9;
+        }
+
+        .test-area{
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        .test-area:empty::before {
+            content: attr(placeholder);
+            color: #64748b; 
+            font-style: italic;
+            cursor: text;
+        }
+
+
     </style>
 </head>
 <body>
@@ -204,13 +239,13 @@
     <!-- CONTROL PANEL WITH DROPDOWN CHECKBOXES -->
     <div class="control-panel">
         <div class="container">
-            <label style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:0.5rem; color:#64748b;">
+            <label class="control-text">
                 Select Active Pairing:
             </label>
             <div class="dropdown-container" id="dropdownContainer">
                 <button class="dropdown-button" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
                     <span>Poppins + Lato (Active)</span>
-                    <span id="arrowIndicator" style="transition: transform 0.2s;">▼</span>
+                    <span id="arrowIndicator" class="arrow">▼</span>
                 </button>
                 <div class="dropdown-content">
                     <label class="pair-option">
@@ -231,11 +266,11 @@
                     </label>
                     <label class="pair-option">
                         <input type="checkbox" name="font-pair" value="pair5">
-                        <span>Roboto + Roboto</span>
+                        <span>Gotham + Roboto</span>
                     </label>
                     <label class="pair-option">
                         <input type="checkbox" name="font-pair" value="pair6">
-                        <span>Roboto + Roboto</span>
+                        <span>Raleway + Bitter</span>
                     </label>
                 </div>
             </div>
@@ -259,14 +294,22 @@
     <!-- HEADER / HERO CONTENT -->
     <header class="content-section">
         <div class="container">
-            <h1>Dynamic Typography Across Digital Spaces</h1>
-            <h2>Testing architectural hierarchy through curated open-source font setups.</h2>
+            <h1 id="fontHeader1">Dynamic Typography</h1>
+            <h1 id="fontHeader2">using Google CDN</h1>
+            <h2>Testing curated open-source font setups.</h2>
             <p class="description">
                 This environment enables rapid switching between distinct design philosophies. When you modify the active checkbox selection above, the DOM updates its CSS custom properties instantly. Observe how the weight balance transitions seamlessly between geometric structural styles and warm, high-performance interface typography.
             </p>
-            <a href="#" class="cta-button">Initialize Strategy</a>
+            <!-- <a href="#" class="cta-button">Initialize Strategy</a> -->
+
+            <div class="test-area" contenteditable="true" placeholder="Test font here.">
+                Test font here
+            </div>
+
         </div>
     </header>
+
+
 
     <!-- STABLE CONTROL SCRIPT -->
     <script>
@@ -274,37 +317,49 @@
             pair1: {
                 name: "Montserrat + Source Sans 3",
                 header: "'Montserrat', sans-serif",
+                header2: "Montserrat",
                 menu: "'Source Sans 3', sans-serif",
+                menu2: "Source Sans 3",
                 url: "https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Source+Sans+3:wght@400;700&display=swap"
             },
             pair2: {
                 name: "Merriweather + Open Sans",
                 header: "'Merriweather', serif",
+                header2: "Merriweather",
                 menu: "'Open Sans', sans-serif",
+                menu2: "Open Sans",
                 url: "https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;700&display=swap"
             },
             pair3: {
                 name: "Poppins + Lato",
                 header: "'Poppins', sans-serif",
+                header2: "Poppins",
                 menu: "'Lato', sans-serif",
+                menu2: "Lato",
                 url: "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;800&display=swap"
             },
             pair4: {
                 name: "Roboto + Roboto",
                 header: "'Roboto', sans-serif",
+                header2: "Roboto",
                 menu: "'Roboto', sans-serif",
+                menu2: "Roboto",
                 url: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
             },
-                        pair5: {
+            pair5: {
                 name: "Gotham + Roboto",
-                header: "'Roboto', sans-serif",
+                header: "'Gotham', sans-serif",
+                header2: "Gotham",
                 menu: "'Roboto', sans-serif",
+                menu2: "Roboto",
                 url: "https://fonts.googleapis.com/css2?family=Gotham:wght@400;700&Roboto:wght@400;700;900&display=swap"
             },
             pair6: {
                 name: "Raleway  + Bitter",
-                header: "'Roboto', sans-serif",
-                menu: "'Roboto', sans-serif",
+                header: "'Raleway', sans-serif",
+                header2: "Raleway",
+                menu: "'Bitter', sans-serif",
+                menu2: "Bitter",
                 url: "https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&family=Bitter:wght@400;700;900&display=swap"
             }
         };
@@ -313,6 +368,8 @@
         const dropdownBtn = document.getElementById('dropdownBtn');
         const arrowIndicator = document.getElementById('arrowIndicator');
         const dropdownBtnText = dropdownBtn.querySelector('span:first-child');
+        const fontHeader1Text = document.getElementById('fontHeader1');
+        const fontHeader2Text = document.getElementById('fontHeader2');
         const checkboxes = document.querySelectorAll('input[name="font-pair"]');
 
         // 1. STABLE TOGGLE LOGIC: Toggle on explicit click execution instead of unstable hovers
@@ -342,6 +399,7 @@
             checkbox.addEventListener('change', function() {
                 if (this.checked) {
                     checkboxes.forEach(cb => { if (cb !== this) cb.checked = false; });
+                    console.log(this.value);
                     updateFonts(this.value);
                 } else {
                     this.checked = true; // Block unchecking the singular chosen element state
@@ -351,7 +409,6 @@
 
         function updateFonts(pairKey) {
             const selectedPair = pairings[pairKey];
-            
             if (!document.querySelector(`link[href="${selectedPair.url}"]`)) {
                 const link = document.createElement('link');
                 link.rel = 'stylesheet';
@@ -363,6 +420,17 @@
             document.documentElement.style.setProperty('--header-font', selectedPair.header);
             document.documentElement.style.setProperty('--menu-font', selectedPair.menu);
             dropdownBtnText.textContent = `${selectedPair.name} (Active)`;
+
+            fontHeader1Text.textContent  = `${selectedPair.header2}`;
+            fontHeader1Text.font  = `${selectedPair.header}`;
+            fontHeader2Text.textContent  = `${selectedPair.menu2}`;
+            fontHeader2Text.font  = `${selectedPair.menu}`;
+
+            document.getElementById('fontHeader1').style.setProperty('font-family', selectedPair.header);
+            document.getElementById('fontHeader2').style.setProperty('font-family', selectedPair.menu);
+
+            console.log(selectedPair);
+
         }
     </script>
 </body>
