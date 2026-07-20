@@ -6,7 +6,7 @@ import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
 //import { Menu, MenuItem, Divider } from '@aws-amplify/ui-react';
 
 //import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge  } 
+import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, Image  as AmplifyUIImage } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
@@ -311,6 +311,42 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </Button>
             </Flex>
           </Card>
+
+          <Card
+            variation="elevated"
+            padding="large"
+            borderRadius="large"
+            backgroundColor="white"
+          >
+            <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="success">Google CDN</Badge>
+              <Badge variation="success">React</Badge>
+            </Flex>
+            <br/>
+            <Flex direction="column" alignItems="center" gap="medium">
+              <Button
+                variation="link"
+                onClick={() => window.open('https://github.com/ristoikonen/awsapp', '_blank')}
+              >
+                <View color="orange.60">
+                <AmplifyUILink as={ReactRouterLink} to="/fontpairspagedemo">
+                  <AmplifyUIImage src="src/assets/mixlogoS.png" alt="fontlogo"/>
+                </AmplifyUILink>
+                </View>
+              </Button>
+              <Heading level={3} textAlign="center">Google API Fonts</Heading>
+              <Text textAlign="center">Test Google CDN fonts and pairings.<br/>Load eight popular fonts using provided Google CDN links.<br/>AWS Amplify build workflow diagram.</Text>
+              <Button
+                  variation="link"
+                  colorTheme="info"
+                  onClick={() => window.open('https://www.ristoikonen.com/fontpairspagedemo', '_blank')}
+                >
+                  Play with Font pairings
+              </Button>
+            </Flex>
+          </Card>
+
+
         </Grid>
 
         {/* GitHub Repos Button */}
@@ -340,6 +376,13 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Flex>
         </Flex>
  */}
+
+        <br/>
+        <AmplifyUILink as={ReactRouterLink} to="/fontpairspagedemo">
+          <AmplifyUIImage src="src/assets/mixlogoS.png" alt="fontlogo"/>
+        </AmplifyUILink>
+        <br/>
+
           <View textAlign="center" padding="large">
             <AmplifyUILink as={ReactRouterLink} to="/fonts">
               Fonts
