@@ -6,7 +6,7 @@ import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
 //import { Menu, MenuItem, Divider } from '@aws-amplify/ui-react';
 
 //import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, Image  as AmplifyUIImage } 
+import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
@@ -312,6 +312,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
           </Card>
 
+          {/* Fonts */}
           <Card
             variation="elevated"
             padding="large"
@@ -338,8 +339,10 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
                 </View>
               </Button>
-              <Heading level={3} textAlign="center">Google CDN Fonts</Heading>
-              <Text textAlign="center">Test Google CDN fonts and pairings.<br/>Load eight popular fonts using provided Google CDN links.<br/>AWS Amplify build workflow diagram.</Text>
+              <Heading level={3} textAlign="center">Use Google CDN Fonts</Heading>
+              <Text textAlign="center">Link Google CDN fonts and test pairings.
+                <br/>Load eight popular fonts using provided Google CDN links.
+                <br/>Has AWS Amplify build workflow diagram.</Text>
               <Button
                   variation="link"
                   colorTheme="info"
