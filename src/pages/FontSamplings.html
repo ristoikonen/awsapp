@@ -3,158 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Active Font Pairing Demo: Header vs. Menu</title>
+    <title>Dual Font Pairing Suite</title>
     
-    <!-- 1. LOAD THE FONTS -->
-    <!-- Pairing: Poppins (geometric header) + Lato (humanist menu) -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,400&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <!-- Combined Google Fonts Request -->
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@700&family=Fira+Sans:wght@700&family=Inter:wght@400;600&family=Lora:ital,wght@0,400;1,400&family=Merriweather:wght@700&family=Montserrat:wght@700&family=Open+Sans:wght@400;600&family=Oswald:wght@500&family=Playfair+Display:wght@700&family=Poppins:wght@700&family=Raleway:wght@700&family=Roboto+Mono&display=swap" rel="stylesheet">
+
     <style>
-        /* 2. BASE CSS STYLES */
         :root {
-            --header-font: 'Poppins', sans-serif;
-            --menu-font: 'Lato', sans-serif;
-            --primary-color: #004d40; /* Dark Teal */
-            --accent-color: #ffc107; /* Amber Gold */
-            --light-bg: #f5f5f5;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #222222;
+            --border-color: #cccccc;
+            --header-blue: #0066cc;
+            --body-green: #10b981;
         }
 
         body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 0;
-            font-family: var(--menu-font); /* Default body text is Lato */
-            background-color: var(--light-bg);
-            color: #333;
+            padding: 40px 20px;
         }
 
-        /* 3. HEADER TEXT STYLE (The Large Headings) */
-        h1 {
-            font-family: var(--header-font);
-            font-weight: 800; /* Extra Bold */
-            font-size: 3.5rem; /* Large size */
-            color: var(--primary-color);
-            margin: 0 0 1rem;
-            line-height: 1.1;
-        }
-
-        /* Subheader style */
-        h2 {
-            font-family: var(--header-font);
-            font-weight: 600;
-            font-size: 1.5rem;
-            color: #555;
-            margin: 0 0 2rem;
-        }
-
-        /* 4. MENU AND NAV STYLING (The Menu Text) */
-        .main-nav {
-            background-color: #fff;
-            padding: 1rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .container {
-            width: 80%;
+        .wrapper {
+            max-width: 750px;
             margin: 0 auto;
         }
 
-        .logo {
-            font-family: var(--header-font);
-            font-weight: 700;
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 50px 0;
+        }
+
+        .tool-section h2.section-title {
             font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .menu-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
+            margin-bottom: 15px;
             display: flex;
-            gap: 2rem;
+            align-items: center;
+            gap: 10px;
         }
 
-        .menu-link {
-            text-decoration: none;
-            color: #333;
-            /* APPLIES MENU FONT (Lato Regular) */
-            font-family: var(--menu-font);
-            font-weight: 400; /* Light/Normal */
-            font-size: 1rem;
-            text-transform: uppercase; /* Classic menu style */
-            letter-spacing: 1px;
-            transition: color 0.3s;
+        .control-panel {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
-        .menu-link:hover {
-            color: var(--accent-color);
+        @media (max-width: 600px) {
+            .control-panel { grid-template-columns: 1fr; }
         }
 
-        /* 5. CONTENT SECTION STYLES */
-        .content-section {
-            padding: 4rem 0;
+        .field-group {
+            display: flex;
+            flex-direction: column;
         }
 
-        .description {
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        select {
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: border 0.2s;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+        .hf-theme select:focus { border-color: var(--header-blue); }
+        .bf-theme select:focus { border-color: var(--body-green); }
+
+        .preview-box {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .hf-theme .preview-box { border-left: 5px solid var(--header-blue); }
+        .bf-theme .preview-box { border-left: 5px solid var(--body-green); }
+
+        .preview-header {
+            margin-top: 0;
+            font-size: 2.3rem;
+            line-height: 1.2;
+        }
+
+        .preview-body {
             font-size: 1.1rem;
             line-height: 1.6;
-            color: #666;
-            margin-bottom: 2rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: var(--primary-color);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-family: var(--menu-font);
-            font-weight: 700;
-            transition: background 0.3s;
+        .code-container {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
         }
 
-        .cta-button:hover {
-            background-color: var(--accent-color);
-            color: #333;
+        .code-header {
+            font-family: monospace;
+            font-size: 12px;
+            color: #858585;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <!-- 6. THE WEBSITE MENU SECTION -->
-    <nav class="main-nav">
-        <div class="container" main-container>
-            <div class="logo">FONT PAIRINGS INC.</div>
-            <ul class="menu-list">
-                <li><a href="#" class="menu-link">Home</a></li>
-                <li><a href="#" class="menu-link">About Us</a></li>
-                <li><a href="#" class="menu-link">Our Fonts</a></li>
-                <li><a href="#" class="menu-link">Resources</a></li>
-                <li><a href="#" class="menu-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<div class="wrapper">
+    <h1>Dynamic Typography Workspace</h1>
+    <p class="subtitle">Experiment with design choices using both layout methodologies.</p>
 
-    <!-- 7. THE HEADER AND CONTENT SECTION -->
-    <header class="content-section">
-        <div class="container">
-            <!-- LARGE HEADER TEXT (POPPINS) -->
-            <h1>Designing with Active Hierarchy: Fonts and Contrast</h1>
-            
-            <!-- SUBHEADER TEXT (POPPINS) -->
-            <h2>The active role of font contrast in user interface design.</h2>
-            
-            <p class="description">
-                In this actual website example, we have activated the modern pairing of **Poppins** and **Lato**. This combination excels because it draws a clear distinction between the geometric punch of headlines and the warm, accessible clarity required for functional navigation. By applying one font specifically for **larger header text** and the other for **menu and body text**, we establish strong typographic hierarchy that improves readability and enhances the overall user experience.
-            </p>
-            
-            <!-- CALL TO ACTION BUTTON (LATO) -->
-            <a href="#" class="cta-button">Learn More About These Fonts</a>
+    <!-- SECTION 1: HEADER-FIRST -->
+    <div class="tool-section hf-theme">
+        <h2 class="section-title"><span>🔷</span> Method 1: Header-First Selection</h2>
+        
+        <div class="control-panel">
+            <div class="field-group">
+                <label for="hf-header-select">1. Select Heading Identity</label>
+                <select id="hf-header-select">
+                    <option value="playfair">Playfair Display (Elegant Serif)</option>
+                    <option value="montserrat">Montserrat (Modern Sans)</option>
+                    <option value="fira-sans">Fira Sans (Clean & Sharp)</option>
+                </select>
+            </div>
+            <div class="field-group">
+                <label for="hf-body-select">2. Recommended Body Pairs</label>
+                <select id="hf-body-select"></select>
+            </div>
         </div>
-    </header>
+
+        <div class="preview-box">
+            <h3 class="preview-header" id="hf-preview-header">Striking Editorial Headings</h3>
+            <p class="preview-body" id="hf-preview-body">Locking down a strong primary display style helps establish immediate visual branding. The generated dropdown listings below adapt contextually to keep reading mechanics smooth.</p>
+        </div>
+
+        <div class="code-container">
+            <div class="code-header">CSS Rules (Header-First)</div>
+            <pre><code id="hf-code-output">Processing rules...</code></pre>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 2: BODY-FIRST -->
+    <div class="tool-section bf-theme">
+        <h2 class="section-title"><span>🟢</span> Method 2: Body-First Selection</h2>
+        
+        <div class="control-panel">
+            <div class="field-group">
+                <label for="bf-body-select">1. Select Body Text Identity</label>
+                <select id="bf-body-select">
+                    <option value="inter">Inter (Clean Sans)</option>
+                    <option value="lora">Lora (Classic Serif)</option>
+                    <option value="roboto-mono">Roboto Mono (Tech Space)</option>
+                </select>
+            </div>
+            <div class="field-group">
+                <label for="bf-header-select">2. Recommended Header Pairs</label>
+                <select id="bf-header-select"></select>
+            </div>
+        </div>
+
+        <div class="preview-box">
+            <h3 class="preview-header" id="bf-preview-header">Solid Core Body Structure</h3>
+            <p class="preview-body" id="bf-preview-body">Starting with long-form readability ensures optimal UI accessibility. Once your text framework is solid, pick a high-impact structural heading style to bring the layout together.</p>
+        </div>
+
+        <div class="code-container">
+            <div class="code-header">CSS Rules (Body-First)</div>
+            <pre><code id="bf-code-output">Processing rules...</code></pre>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Global Font Declarations 
+    const fontLibrary = {
+        'inter': "'Inter', sans-serif",
+        'lora': "'Lora', serif",
+        'roboto-mono': "'Roboto Mono', monospace",
+        'open-sans': "'Open Sans', sans-serif",
+        'playfair': "'Playfair Display', serif",
+        'montserrat': "'Montserrat', sans-serif",
+        'fira-sans': "'Fira Sans', sans-serif",
+        'poppins': "'Poppins', sans-serif",
+        'cinzel': "'Cinzel', serif",
+        'raleway': "'Raleway', sans-serif",
+        'merriweather': "'Merriweather', serif",
+        'oswald': "'Oswald', sans-serif"
+    };
+
+    // Matrix configuration mapping Header inputs to Body outputs
+    const matrixHeaderFirst = {
+        'playfair': [
+            { display: "Inter (Modern Minimalist)", val: "inter" },
+            { display: "Lora (Classic Literary)", val: "lora" },
+            { display: "Open Sans (Highly Readable)", val: "open-sans" }
+        ],
+        'montserrat': [
+            { display: "Lora (Warm Editorial)", val: "lora" },
+            { display: "Inter (Ultra Clean)", val: "inter" },
+            { display: "Roboto Mono (Technical)", val: "roboto-mono" }
+        ],
+        'fira-sans': [
+            { display: "Roboto Mono (Developer Aesthetic)", val: "roboto-mono" },
+            { display: "Open Sans (Clean Neutral)", val: "open-sans" },
+            { display: "Inter (Sharp Interface)", val: "inter" }
+        ]
+    };
+
+    // Matrix configuration mapping Body inputs to Header outputs
+    const matrixBodyFirst = {
+        'inter': [
+            { display: "Playfair Display (Elegant Serif)", val: "playfair" },
+            { display: "Poppins (Geometric Sans)", val: "poppins" },
+            { display: "Cinzel (Cinematic/Chiseled)", val: "cinzel" }
+        ],
+        'lora': [
+            { display: "Montserrat (Modern Contrast)", val: "montserrat" },
+            { display: "Raleway (Stylish Display)", val: "raleway" },
+            { display: "Merriweather (Warm Editorial)", val: "merriweather" }
+        ],
+        'roboto-mono': [
+            { display: "Fira Sans (Tech Utility)", val: "fira-sans" },
+            { display: "Oswald (Condensed & Bold)", val: "oswald" },
+            { display: "Open Sans (Clean Contrast)", val: "open-sans" }
+        ]
+    };
+
+    // DOM Target Elements - Method 1
+    const hfHeaderSelect = document.getElementById('hf-header-select');
+    const hfBodySelect = document.getElementById('hf-body-select');
+    const hfPreviewHeader = document.getElementById('hf-preview-header');
+    const hfPreviewBody = document.getElementById('hf-preview-body');
+    const hfCodeOutput = document.getElementById('hf-code-output');
+
+    // DOM Target Elements - Method 2
+    const bfBodySelect = document.getElementById('bf-body-select');
+    const bfHeaderSelect = document.getElementById('bf-header-select');
+    const bfPreviewHeader = document.getElementById('bf-preview-header');
+    const bfPreviewBody = document.getElementById('bf-preview-body');
+    const bfCodeOutput = document.getElementById('bf-code-output');
+
+    // Logic Architecture - Method 1 (Header First)
+    function updateHfDropdown() {
+        const currentHeader = hfHeaderSelect.value;
+        const choices = matrixHeaderFirst[currentHeader];
+        hfBodySelect.innerHTML = '';
+        choices.forEach(item => {
+            const opt = document.createElement('option');
+            opt.value = item.val;
+            opt.textContent = item.display;
+            hfBodySelect.appendChild(opt);
+        });
+        renderHfPreview();
+    }
+
+    function renderHfPreview() {
+        const hFont = fontLibrary[hfHeaderSelect.value];
+        const bFont = fontLibrary[hfBodySelect.value];
+        hfPreviewHeader.style.fontFamily = hFont;
+        hfPreviewBody.style.fontFamily = bFont;
+        hfCodeOutput.textContent = generateCSS(hFont, bFont);
+    }
+
+    // Logic Architecture - Method 2 (Body First)
+    function updateBfDropdown() {
+        const currentBody = bfBodySelect.value;
+        const choices = matrixBodyFirst[currentBody];
+        bfHeaderSelect.innerHTML = '';
+        choices.forEach(item => {
+            const opt = document.createElement('option');
+            opt.value = item.val;
+            opt.textContent = item.display;
+            bfHeaderSelect.appendChild(opt);
+        });
+        renderBfPreview();
+    }
+
+    function renderBfPreview() {
+        const bFont = fontLibrary[bfBodySelect.value];
+        const hFont = fontLibrary[bfHeaderSelect.value];
+        bfPreviewHeader.style.fontFamily = hFont;
+        bfPreviewBody.style.fontFamily = bFont;
+        bfCodeOutput.textContent = generateCSS(hFont, bFont);
+    }
+
+    // Shared CSS builder utility string formula
+    function generateCSS(h, b) {
+        return `/* CSS Snippet */\nh1, h2, h3 {\n    font-family: ${h};\n    font-weight: 700;\n}\n\nbody, p {\n    font-family: ${b};\n    font-weight: 400;\n}`;
+    }
+
+    // Interactive Node Event Listeners
+    hfHeaderSelect.addEventListener('change', updateHfDropdown);
+    hfBodySelect.addEventListener('change', renderHfPreview);
+
+    bfBodySelect.addEventListener('change', updateBfDropdown);
+    bfHeaderSelect.addEventListener('change', renderBfPreview);
+
+    // Run programmatic evaluation mappings on load
+    updateHfDropdown();
+    updateBfDropdown();
+</script>
+
 
 </body>
 </html>

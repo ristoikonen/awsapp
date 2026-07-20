@@ -53,7 +53,6 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             size="small"
           >
 
-
             <MenuItem>
               <AmplifyUILink as={ReactRouterLink} to="/gallery">
                 Gallery
@@ -348,6 +347,9 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             <br/>
             <AmplifyUILink as={ReactRouterLink} to="/gallery">
               Image Gallery - In dev
+            </AmplifyUILink>
+            <AmplifyUILink as={ReactRouterLink} to="/fontpairspagedemo">
+              Font Pairs Page Demo
             </AmplifyUILink>
           </View>
 

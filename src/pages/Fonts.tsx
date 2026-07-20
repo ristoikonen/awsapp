@@ -17,6 +17,9 @@ export default function FontsPage ({}) {
             </AmplifyUILink>
             <h3>UNDER CONSTRUCTION</h3>
             <h1>Font Showcase</h1>
+            <AmplifyUILink as={ReactRouterLink} to="/fontpairsdemo">
+                Font Pairs Demo
+            </AmplifyUILink>
         </header>
 
 
