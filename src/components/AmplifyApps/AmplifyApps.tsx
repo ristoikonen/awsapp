@@ -389,9 +389,9 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
         <br/>
 
           <View textAlign="center" padding="large">
-            <AmplifyUILink href="./src/pages/FontPairsTester.html">
+            <a href="./src/pages/FontPairsTester.html">
               Font Pairings
-            </AmplifyUILink>
+            </a>
             <br/>
             <AmplifyUILink as={ReactRouterLink} to="/fonts">
               Fonts

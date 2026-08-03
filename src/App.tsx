@@ -9,6 +9,7 @@ import FontsPage from "./pages/Fonts.tsx";
 import FontPairsPage from "./pages/FontPairs.tsx";
 import FontPairsDemoPage from "./pages/FontPairsDemo.tsx";
 import FontPairsPageDemo from "./pages/FontPairsPageDemo.tsx";
+//import FontPairsHTMLPage from "./pages/FontPairsTester.html"; <Route path="/fontpairshtmlpage" element={<FontPairsHTMLPage />} />
 
 import './App.css'
 
