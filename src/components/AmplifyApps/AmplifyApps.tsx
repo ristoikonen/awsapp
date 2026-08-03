@@ -344,17 +344,14 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text textAlign="center">Link Google CDN fonts and test pairings.
                 <br/>Load eight popular fonts using provided Google CDN links.
                 <br/>Has AWS Amplify build workflow diagram.</Text>
-              <Button
+                <Button
                   variation="link"
                   colorTheme="info"
-                  onClick={() => window.open('https://www.ristoikonen.com/fontpairspagedemo', '_blank')}
-                >
-                  Play with Font pairings
-              </Button>
+                  onClick={() => window.open('https://www.ristoikonen.com/FontPairsTester.html', '_blank')}
+                >Font pairings playground
+                </Button>
             </Flex>
           </Card>
-
-
         </Grid>
 
         {/* GitHub Repos Button */}
@@ -388,21 +385,14 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
         <br/>
         <View textAlign="center" padding="large">
-          <a href="/FontPairsTester.html">
-            Font Pairings Playground
-          </a>
+          <AmplifyUILink as={ReactRouterLink} to="/fonts">
+            Fonts
+          </AmplifyUILink>
+          <br/>
+          <AmplifyUILink as={ReactRouterLink} to="/gallery">
+            Image Gallery
+          </AmplifyUILink>
         </View>
-        <br/>
-          <View textAlign="center" padding="large">
-
-            <AmplifyUILink as={ReactRouterLink} to="/fonts">
-              Fonts
-            </AmplifyUILink>
-            <br/>
-            <AmplifyUILink as={ReactRouterLink} to="/gallery">
-              Image Gallery
-            </AmplifyUILink>
-          </View>
 
         {/* Footer */}
         <Flex justifyContent="center" padding="large" marginTop="large">
