@@ -11,19 +11,15 @@
 <body>
 
     <!-- HEADER TODO: ADD MENU HERE..? -->
-    <div class="control-panel">
-        <div class="container">
-            <div class="logo">Font pairings playground</div>
-        </div>
-    </div>
+
 
     <!-- FONT PAIR MENU -->
     <nav class="main-nav">
         <div class="container nav-wrapper">
-            <div class="sec_logo">FONT PAIRING</div>
+            <div class="sec_logo">Font pairings playground</div>
                 <div class="dropdown-container" id="dropdownContainer">
                     <button class="dropdown-button" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
-                        <span>Poppins + Lato (Active)</span>
+                        <span>Select a pair</span>
                         <span id="arrowIndicator" class="arrow">▼</span>
                     </button>
                     <div class="dropdown-content">
@@ -62,13 +58,14 @@
         <div class="container">
             <h1 id="fontHeader1">Dynamic Typography</h1>
             <h1 id="fontHeader2">using Google CDN fonts</h1>
-            <h2>Testing curated open-source font setups.</h2>
-            <p class="description">
+            <h2 id="fontHeader3">Testing curated open-source font setups.</h2>
+            <p id="fontHeader4" class="description">
                 This environment enables rapid switching between distinct design philosophies. When you modify the active checkbox selection above, the DOM updates its CSS custom properties instantly. Observe how the weight balance transitions seamlessly between geometric structural styles and warm, high-performance interface typography.
             </p>
             <div class="test-area" contenteditable="true" placeholder="Test font here." id="testarea" >
                 Test font here
             </div>
+            <small id="testerFont"></small>
         </div>
     </header>
 
@@ -146,6 +143,10 @@
         const dropdownBtnText = dropdownBtn.querySelector('span:first-child');
         const fontHeader1Text = document.getElementById('fontHeader1');
         const fontHeader2Text = document.getElementById('fontHeader2');
+        const fontHeader3Text = document.getElementById('fontHeader3');
+        const fontHeader4Text = document.getElementById('fontHeader4');
+        const testerFontText = document.getElementById('testerFont');
+        
         const testArea = document.getElementById('testarea');
         const checkboxes = document.querySelectorAll('input[name="font-pair"]');
 
@@ -203,6 +204,16 @@
             fontHeader1Text.font  = `${selectedPair.header}`;
             fontHeader2Text.textContent  = `${selectedPair.menu2}`;
             fontHeader2Text.font  = `${selectedPair.menu}`;
+
+            fontHeader3Text.textContent  = 'This is ' + `${selectedPair.menu2}` + '. Testing curated open-source font setups.';
+            fontHeader3Text.font  = `${selectedPair.menu}`;
+            
+            fontHeader4Text.textContent  = 'This is ' + `${selectedPair.header2}` + '. This environment enables rapid switching between distinct design philosophies. When you modify the active checkbox selection above, the DOM updates its CSS custom properties instantly. Observe how the weight balance transitions seamlessly between geometric structural styles and warm, high-performance interface typography.';
+            fontHeader3Text.font  = `${selectedPair.header}`;
+
+            testerFontText.textContent  = 'This is ' + `${selectedPair.menu2}` + '.';
+            testerFontText.font  = `${selectedPair.menu}`;
+            
 
             document.getElementById('fontHeader1').style.setProperty('font-family', selectedPair.header);
             document.getElementById('fontHeader2').style.setProperty('font-family', selectedPair.menu);
