@@ -39,9 +39,10 @@
         }
         
         .dropdown-container {
-            position: relative;
-            display: inline-block;
-            width: 325px;
+            /* position: relative;display: inline-block; */
+            
+            
+            width: 445px;
         }
 
         .dropdown-button {
@@ -147,9 +148,17 @@
 
         .logo {
             font-family: var(--header-font);
-            font-weight: 700;
+            font-weight: 400;
             font-size: 1.5rem;
             color: var(--primary-color);
+        }
+
+        .sec_logo {
+            font-family: var(--header-font);
+            font-weight: 300;
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            align-items: right; 
         }
 
         .control-text {
@@ -157,6 +166,7 @@
             font-weight: 400;
             font-size: 1.0rem;
             color: var(--primary-color);
+            height: 50px;line-height: 50px;
         }
 
         .arrow {

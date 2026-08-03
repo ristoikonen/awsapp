@@ -89,7 +89,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
         <Flex direction="column" alignItems="center" padding="normal">
           <View maxWidth="1200px" width="100%">
             <Heading level={4} textAlign="center">
-              <Text color="gray" fontWeight={300} >Click projects icon to access it's GitHub repo</Text>
+              <Text color="gray" fontWeight={300} >Sampling of Ristos projects on GitHub</Text>
+              <Text color="gray" fontWeight={300} >Click projects icon to access it's repo</Text>
             </Heading>
           </View>
         </Flex>

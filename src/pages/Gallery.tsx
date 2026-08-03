@@ -14,12 +14,12 @@ import { ThemeProvider, Grid, Card, Image, View }
 
 export default function Gallery() {
   const [cloudData, setCloudData] = useState<CloudImage[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   if (loading) {
     return (
       <p>
-        TODO: loading msg
+        loading...
       </p>
     );
   }

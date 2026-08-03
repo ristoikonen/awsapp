@@ -4,75 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Font Pairings</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../style/fontpairs.css"/>
-
-   
 </head>
 
 <body>
 
-
-    <!-- CONTROL PANEL WITH DROPDOWN CHECKBOXES -->
+    <!-- HEADER TODO: ADD MENU HERE..? -->
     <div class="control-panel">
-
         <div class="container">
-
-            <label class="control-text">
-                Select Active Pairing:
-            </label>
-            <div class="dropdown-container" id="dropdownContainer">
-                <button class="dropdown-button" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
-                    <span>Poppins + Lato (Active)</span>
-                    <span id="arrowIndicator" class="arrow">▼</span>
-                </button>
-                <div class="dropdown-content">
-                    <label class="pair-option">
-                        <input type="checkbox" name="font-pair" value="pair1"/>
-                        <span>Montserrat + Source Sans 3</span>
-                    </label>
-                    <label class="pair-option">
-                        <input type="checkbox" name="font-pair" value="pair2"/>
-                        <span>Merriweather + Open Sans</span>
-                    </label>
-                    <label class="pair-option">
-                        <input type="checkbox" name="font-pair" value="pair3" checked/>
-                        <span>Poppins + Lato</span>
-                    </label>
-                    <label class="pair-option">
-                        <input type="checkbox" name="font-pair" value="pair4"/>
-                        <span>Roboto + Roboto</span>
-                    </label>
-                    <label class="pair-option">
-                        <input type="checkbox" name="font-pair" value="pair5"/>
-                        <span>Gotham + Roboto</span>
-                    </label>
-                    <label class="pair-option">
-                        <input type="checkbox" name="font-pair" value="pair6"/>
-                        <span>Raleway + Bitter</span>
-                    </label>
-                </div>
-            </div>
+            <div class="logo">Google CDN font pairings playground</div>
         </div>
     </div>
 
-    <!-- WEBSITE NAVIGATION MENU -->
+    <!-- FONT PAIR MENU -->
     <nav class="main-nav">
         <div class="container nav-wrapper">
-            <div class="logo">FONT PAIRING</div>
-            <ul class="menu-list">
-                <li><a href="#" className="menu-link">Montserrat</a></li>
-                <li><a href="#" className="menu-link">Merriweather</a></li>
-                <li><a href="#" className="menu-link">Poppins</a></li>
-                <li><a href="#" className="menu-link">Roboto</a></li>
-                <li><a href="#" className="menu-link">Gotham</a></li>
-            </ul>
+            <div class="sec_logo">FONT PAIRING</div>
+                <div class="dropdown-container" id="dropdownContainer">
+                    <button class="dropdown-button" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+                        <span>Poppins + Lato (Active)</span>
+                        <span id="arrowIndicator" class="arrow">▼</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <label class="pair-option">
+                            <input type="checkbox" name="font-pair" value="pair1"/>
+                            <span>Montserrat + Source Sans 3</span>
+                        </label>
+                        <label class="pair-option">
+                            <input type="checkbox" name="font-pair" value="pair2"/>
+                            <span>Merriweather + Open Sans</span>
+                        </label>
+                        <label class="pair-option">
+                            <input type="checkbox" name="font-pair" value="pair3" checked/>
+                            <span>Poppins + Lato</span>
+                        </label>
+                        <label class="pair-option">
+                            <input type="checkbox" name="font-pair" value="pair4"/>
+                            <span>Roboto + Roboto</span>
+                        </label>
+                        <label class="pair-option">
+                            <input type="checkbox" name="font-pair" value="pair5"/>
+                            <span>Gotham + Roboto</span>
+                        </label>
+                        <label class="pair-option">
+                            <input type="checkbox" name="font-pair" value="pair6"/>
+                            <span>Raleway + Bitter</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- HEADER / HERO CONTENT -->
+    <!-- CONTENT -->
     <header class="content-section">
         <div class="container">
             <h1 id="fontHeader1">Dynamic Typography</h1>
@@ -81,18 +66,28 @@
             <p class="description">
                 This environment enables rapid switching between distinct design philosophies. When you modify the active checkbox selection above, the DOM updates its CSS custom properties instantly. Observe how the weight balance transitions seamlessly between geometric structural styles and warm, high-performance interface typography.
             </p>
-            <!-- <a href="#" class="cta-button">Initialize Strategy</a> -->
-
-            <div class="test-area" contenteditable="true" placeholder="Test font here.">
+            <div class="test-area" contenteditable="true" placeholder="Test font here." id="testarea" >
                 Test font here
             </div>
-
         </div>
     </header>
 
+    <footer class="container">
+        <BR/>
+        <ul class="menu-list">
+                <li><a href="https://fonts.google.com/specimen/Montserrat" className="menu-link">Montserrat</a></li>
+                <li><a href="https://fonts.google.com/specimen/Merriweather" className="menu-link">Merriweather</a></li>
+                <li><a href="https://fonts.google.com/specimen/Lato" className="menu-link">Lato</a></li>
+                <li><a href="https://fonts.google.com/specimen/Roboto" className="menu-link">Roboto</a></li>
+                <li><a href="https://fonts.google.com/specimen/Raleway" className="menu-link">Raleway</a></li>
+                <li><a href="https://fonts.google.com/specimen/Bitter" className="menu-link">Bitter</a></li>
+            </ul>
+        <BR/>
+        <small>Fonts at fonts.google.com</small>
+        <BR/>
+    </footer>
 
-
-    <!-- STABLE CONTROL SCRIPT -->
+    <!-- SCRIPT -->
     <script>
         const pairings = {
             pair1: {
@@ -151,6 +146,7 @@
         const dropdownBtnText = dropdownBtn.querySelector('span:first-child');
         const fontHeader1Text = document.getElementById('fontHeader1');
         const fontHeader2Text = document.getElementById('fontHeader2');
+        const testArea = document.getElementById('testarea');
         const checkboxes = document.querySelectorAll('input[name="font-pair"]');
 
         // 1. STABLE TOGGLE LOGIC: Toggle on explicit click execution instead of unstable hovers
@@ -200,7 +196,8 @@
 
             document.documentElement.style.setProperty('--header-font', selectedPair.header);
             document.documentElement.style.setProperty('--menu-font', selectedPair.menu);
-            dropdownBtnText.textContent = `${selectedPair.name} (Active)`;
+            //document.getElementById('textContent').text = selectedPair.name;
+            testArea.innerHTML = "Test area: This is <strong>bold</strong> text and this is <i>italic text</i>";
 
             fontHeader1Text.textContent  = `${selectedPair.header2}`;
             fontHeader1Text.font  = `${selectedPair.header}`;
