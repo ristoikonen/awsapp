@@ -401,7 +401,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Text>
         </Flex>
 
-{/*         <View width="4rem">
+{/*     
+        <View width="4rem">
           <Menu
             menuAlign="center"
             size="large"
@@ -418,8 +419,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </AmplifyUILink>
             </MenuItem>
           </Menu>
-        </View> */}
-
+        </View> 
+        */}
         
       </View>
     </ThemeProvider>
