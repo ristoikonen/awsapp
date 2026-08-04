@@ -5,15 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Font Pairings</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200&icon_names=favorite,home,search,settings" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=favorite,home,search,settings" rel="stylesheet" />
     <link rel="stylesheet" href="fontpairs.css"/>
 </head>
 
 <body>
 
-    <!-- HEADER: TODO:ADD MENU HERE..? -->
+    <!-- HEADER: TODO:ADD MENU HERE USING MATERIALS SYMBOLS  <span class="material-symbols-outlined size-48">home</span> -->
+    <header class="header-dark">
+        <div>
+            <a href="/" title="Let's go Home" >
+            <!-- <span class="material-symbols-outlined size-40">home</span> -->
+            <small>Home</small>
+            </a>
+        </div>
+    </header>
 
 
-    <!-- FONT PAIR MENU -->
+    <!-- FONT PAIR MENU --> 
     <nav class="main-nav">
         <div class="container nav-wrapper">
             <div class="sec_logo">Font pairings playground</div>
@@ -57,7 +67,7 @@
     <header class="content-section">
         <div class="container">
             <h1 id="fontHeader1">Dynamic Typography</h1>
-            <h1 id="fontHeader2">using Google CDN fonts</h1>
+            <h1 id="fontHeader2">using Google CDN's fonts</h1>
             <h2 id="fontHeader3">Testing curated open-source font setups.</h2>
             <p id="fontHeader4" class="description">
                 This environment enables rapid switching between distinct design philosophies. When you modify the active checkbox selection above, the DOM updates its CSS custom properties instantly. Observe how the weight balance transitions seamlessly between geometric structural styles and warm, high-performance interface typography.

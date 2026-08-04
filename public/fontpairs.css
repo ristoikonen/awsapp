@@ -134,6 +134,12 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
+        .header-dark {
+            background-color: #F1F5F9;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
         .container {
             width: 85%;
             max-width: 1100px;
@@ -244,4 +250,28 @@
             color: #64748b; 
             font-style: italic;
             cursor: text;
+        }
+
+        span.size-20 {
+            font-size: 20px;
+            font-variation-settings: 'OPSZ' 20;
+        }
+        span.size-24 {
+        font-size: 24px;
+        font-variation-settings: 'OPSZ' 24;
+        }
+        span.size-40 {
+        font-size: 40px;
+        font-variation-settings: 'OPSZ' 40;
+        }
+        span.size-48 {
+        font-size: 48px;
+        font-variation-settings: 'OPSZ' 48;
+        }
+
+        /* Rules for using icons as black on a light background. */
+        .dark {
+        background: black;
+        color: rgba(255, 255, 255, 1);
+        font-variation-settings: 'GRAD' -25;
         }
