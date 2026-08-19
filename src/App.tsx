@@ -9,6 +9,7 @@ import FontsPage from "./pages/Fonts.tsx";
 import FontPairsPage from "./pages/FontPairs.tsx";
 import FontPairsDemoPage from "./pages/FontPairsDemo.tsx";
 import FontPairsPageDemo from "./pages/FontPairsPageDemo.tsx";
+import FontPlay from "./pages/FontPlay.tsx";
 //import FontPairsHTMLPage from "./pages/FontPairsTester.html"; <Route path="/fontpairshtmlpage" element={<FontPairsHTMLPage />} />
 
 import './App.css'
@@ -26,6 +27,7 @@ function App() {
           <Route path="/fontpairs" element={<FontPairsPage  />} />
           <Route path="/fontpairsdemo" element={<FontPairsDemoPage />} />
           <Route path="/fontpairspagedemo" element={<FontPairsPageDemo />} />
+          <Route path="/fontplay" element={<FontPlay />} />
         </Routes>
       </Router>
     </>
