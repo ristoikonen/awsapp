@@ -1,16 +1,21 @@
 import { useState, useEffect } from 'react';
-import { View } from '@aws-amplify/ui-react';
+import { View  } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
+import { Link as ReactRouterLink } from 'react-router-dom';
+import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
+
 export default function FontPairsPageDemo() {
-  const [headerFont, setHeaderFont] = useState<string>('Montserrat');
+  //const [headerFont, setHeaderFont] = useState<PlayFontKey>('play1');
+  const [headFont, setHeadFont] = useState<string>('Montserrat');
   const [textFont, setTextFont] = useState<string>('Open Sans');
 
-  
 
   // Dynamically load Google Fonts when selections change
   useEffect(() => {
-    const fontsToLoad = [headerFont, textFont];
+    const fontsToLoad = [headFont, textFont];
+    
+    //console.log(activePlay);
     
     fontsToLoad.forEach(font => {
       const fontQuery = font.replace(/\s+/g, '+');
@@ -24,10 +29,19 @@ export default function FontPairsPageDemo() {
         document.head.appendChild(link);
       }
     });
-  }, [headerFont, textFont]);
+  }, [headFont, textFont]);
 
   return (
-    <View minHeight="100vh" backgroundColor="#f8f9fa" padding="20px">
+    
+    <div>
+      <header>
+        <AmplifyUILink as={ReactRouterLink} to="/">
+            Home
+        </AmplifyUILink>
+      </header>
+
+      <View maxWidth='1100px' minHeight="10vh" backgroundColor="var(--amplify-colors-background-secondary)" padding="2px">
+      
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         
         {/* ===================================================================
@@ -52,8 +66,8 @@ export default function FontPairsPageDemo() {
             </svg>
             <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, gap: '4px' }}>
               <select 
-                value={headerFont}
-                onChange={(e) => setHeaderFont(e.target.value)}
+                value={headFont}
+                onChange={(e) => setHeadFont(e.target.value)}
                 style={{ padding: '4px 8px', border: '1px solid #dee2e6', borderRadius: '4px', fontFamily: 'inherit', fontSize: '0.9rem', backgroundColor: '#fff', outline: 'none', width: '100%' }}
               >
                 <option value="Montserrat">Montserrat Bold</option>
@@ -87,26 +101,22 @@ export default function FontPairsPageDemo() {
           </div>
         </div>
 
-        {/* ===================================================================
-            DOCUMENT PREVIEW CANVAS 
-            =================================================================== */}
-        <div >
-          <h2 style={{ fontFamily: `'${headerFont}', sans-serif`, textAlign: 'left', fontSize: '1.5rem'}}>
-            Parasite-cleaning method
-          </h2>
-          <p style={{ fontFamily: `'${textFont}', sans-serif`, textAlign: 'left', marginBottom: '16px', color: '#495057', lineHeight: 1.5 }}>
-            Evolutionary psychologists studying great apes noted that primates spend hours grooming each other's fur to pick off ticks, lice, and dead skin. Human kissing originated roughly 21 million years ago as a final "suction" step in ancient ape grooming rituals. As early humans evolved and lost their thick body fur, the practical need for hours of grooming disappeared. However, the very last stage—the lip-to-skin touch and suction—remained behind as a vestigial shorthand to say, "I care about you."
-          </p>
-         
-          <h2 style={{ fontFamily: `'${headerFont}', sans-serif`, textAlign: 'left', fontWeight: 700, color: '#0f172a', fontSize: '1.5rem' }}>
-            Tetrachromats among us
-          </h2>
-          <p style={{ fontFamily: `'${textFont}', text-align: left, sans-serif`, textAlign: 'left',   color: '#495057', lineHeight: 1.5 }}>
-            Rare humans called tetrachromats see a fourth primary color because a genetic mutation gives them a fourth type of cone cell in their retinas. While typical human vision combines red, green, and blue (RGB) inputs to perceive about 1 million colors, a true tetrachromat can process an extra dimension of light, allowing them to see up to 100 million distinct shades.
-          </p>
-        </div>
+        <h2 style={{ fontFamily: `'${headFont}', sans-serif`, textAlign: 'left', fontWeight: 700, fontSize: '1.5rem', padding: '1px' , color: 'var(--amplify-colors-font-secondary)'}}>
+          Parasite-cleaning method
+        </h2>
+        <p style={{ fontFamily: `'${textFont}', sans-serif`, textAlign: 'left', marginBottom: '36px', color: '#495057', lineHeight: 1.5 }}>
+          Evolutionary psychologists studying great apes noted that primates spend hours grooming each other's fur to pick off ticks, lice, and dead skin. Human kissing originated roughly 21 million years ago as a final "suction" step in ancient ape grooming rituals. As early humans evolved and lost their thick body fur, the practical need for hours of grooming disappeared. However, the very last stage—the lip-to-skin touch and suction—remained behind as a vestigial shorthand to say, "I care about you."
+        </p>
+        
+        <h2 style={{ fontFamily: `'${headFont}', sans-serif`, textAlign: 'left', fontWeight: 700, fontSize: '1.5rem', padding: '1px' , color: 'var(--amplify-colors-font-secondary)' }}>
+          Tetrachromats among us
+        </h2>
+        <p style={{ fontFamily: `'${textFont}', sans-serif`, textAlign: 'left', marginBottom: '36px', color: '#495057', lineHeight: 1.5 }}>
+          Rare humans called tetrachromats see a fourth primary color because a genetic mutation gives them a fourth type of cone cell in their retinas. While typical human vision combines red, green, and blue (RGB) inputs to perceive about 1 million colors, a true tetrachromat can process an extra dimension of light, allowing them to see up to 100 million distinct shades.
+        </p> 
 
       </div>
     </View>
+    </div>
   );
 }

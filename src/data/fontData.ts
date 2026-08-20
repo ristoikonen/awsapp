@@ -7,7 +7,40 @@ export interface FontPair {
   url: string;
 }
 
+export interface PlayFont {
+  name: string;
+  header: string;
+  header2: string;
+  url: string;
+}
+
+
+
 export type PairKey = 'pair1' | 'pair2' | 'pair3' | 'pair4' | 'pair5' | 'pair6';
+
+export type PlayFontKey = 'play1' | 'play2' | 'play3';
+
+export const player: Record<PlayFontKey, PlayFont> = {
+  play1: { 
+    name: "Montserrat", 
+    header: "'Montserrat', sans-serif", 
+    header2: "Montserrat", 
+    url: "https://googleapis.com" 
+  },
+  play2: { 
+    name: "Merriweather", 
+    header: "'Merriweather', serif", 
+    header2: "Merriweather", 
+    url: "https://googleapis.com" 
+  },
+  play3: { 
+    name: "Poppins", 
+    header: "'Poppins', serif", 
+    header2: "Poppins", 
+    url: "https://googleapis.com" 
+  }
+};
+
 
 export const pairings: Record<PairKey, FontPair> = {
   pair1: { 

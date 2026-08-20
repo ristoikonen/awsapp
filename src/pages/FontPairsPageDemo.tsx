@@ -46,7 +46,7 @@ export default function FontPairsPageDemo ({}) {
   return (
 
     <div>
-            <header>
+        <header>
             <AmplifyUILink as={ReactRouterLink} to="/" fontFamily={activePair.header}>
                 Home
             </AmplifyUILink>
@@ -146,6 +146,8 @@ export default function FontPairsPageDemo ({}) {
                 </Flex>
               </View>
             )}
+
+
           </View>
         </Flex>
       </View>
