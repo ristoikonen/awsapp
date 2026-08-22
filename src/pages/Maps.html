@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Simple Map Sample</title>
+
+    <!-- 1. Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- 2. Set map container height (mandatory) -->
+    <style>
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+
+        #myMap {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body onload="loadMap();">
+
+    <h2>My First Leaflet Map</h2>
+    
+    <!-- 3. The DOM element where the map will render -->
+    <div id="map"></div>
+
+    <h2>Bing Maps V8 Example</h2>
+    
+    <!-- 3. The container for the map -->
+    <div id="myMap"></div>
+
+
+    <!-- 4. Include Leaflet JavaScript (must be loaded after CSS) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- 1. Include the Bing Maps V8 script via CDN -->
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=YOUR_BING_MAPS_KEY'></script>
+
+    <!-- 2. Initialize the Bing map once the script loads -->
+    <script type='text/javascript'>
+        function loadMap() {
+            var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                center: new Microsoft.Maps.Location(-35.1810, 149.1300),
+                zoom: 12
+            });
+
+            // Add a pushpin (marker)
+            var pin = new Microsoft.Maps.Pushpin(map.getCenter(), {
+                title: 'Belconnen'
+            });
+            map.entities.push(pin);
+        }
+    </script>
+
+    <!-- 5. Initialize the openstreetmap -map -->
+    <script>
+        // Create map, set center coordinates [latitude, longitude], and zoom level
+        const map = L.map('map').setView([-35.1809, 149.1100], 13);
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add a marker with a popup
+        const marker = L.marker([-35.1810, 149.1300]).addTo(map);
+        marker.bindPopup("<b>Hello!</b><br>Marker on the map.").openPopup();
+    </script>
+
+</body>
+</html>

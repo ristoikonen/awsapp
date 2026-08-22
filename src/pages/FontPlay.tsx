@@ -101,20 +101,21 @@ export default function FontPairsPageDemo() {
           </div>
         </div>
 
-        <h2 style={{ fontFamily: `'${headFont}', sans-serif`, textAlign: 'left', fontWeight: 700, fontSize: '1.5rem', padding: '1px' , color: 'var(--amplify-colors-font-secondary)'}}>
-          Parasite-cleaning method
-        </h2>
-        <p style={{ fontFamily: `'${textFont}', sans-serif`, textAlign: 'left', marginBottom: '36px', color: '#495057', lineHeight: 1.5 }}>
-          Evolutionary psychologists studying great apes noted that primates spend hours grooming each other's fur to pick off ticks, lice, and dead skin. Human kissing originated roughly 21 million years ago as a final "suction" step in ancient ape grooming rituals. As early humans evolved and lost their thick body fur, the practical need for hours of grooming disappeared. However, the very last stage—the lip-to-skin touch and suction—remained behind as a vestigial shorthand to say, "I care about you."
-        </p>
+        <div>
+          <h2 style={{ fontFamily: `'${headFont}', sans-serif`, textAlign: 'left', fontWeight: 700, fontSize: '1.5rem', padding: '1px' , color: 'var(--amplify-colors-font-secondary)'}}>
+            Parasite-cleaning method
+          </h2>
+          <p style={{ fontFamily: `'${textFont}', sans-serif`, textAlign: 'left', marginBottom: '36px', color: '#495057', lineHeight: 1.5 }}>
+            Evolutionary psychologists studying great apes noted that primates spend hours grooming each other's fur to pick off ticks, lice, and dead skin. Human kissing originated roughly 21 million years ago as a final "suction" step in ancient ape grooming rituals. As early humans evolved and lost their thick body fur, the practical need for hours of grooming disappeared. However, the very last stage—the lip-to-skin touch and suction—remained behind as a vestigial shorthand to say, "I care about you."
+          </p>
+          <h2 style={{ fontFamily: `'${headFont}', sans-serif`, textAlign: 'left', fontWeight: 700, fontSize: '1.5rem', padding: '1px' , color: 'var(--amplify-colors-font-secondary)' }}>
+            Tetrachromats among us
+          </h2>
+          <p style={{ fontFamily: `'${textFont}', sans-serif`, textAlign: 'left', marginBottom: '36px', color: '#495057', lineHeight: 1.5 }}>
+            Rare humans called tetrachromats see a fourth primary color because a genetic mutation gives them a fourth type of cone cell in their retinas. While typical human vision combines red, green, and blue (RGB) inputs to perceive about 1 million colors, a true tetrachromat can process an extra dimension of light, allowing them to see up to 100 million distinct shades.
+          </p> 
+        </div>
         
-        <h2 style={{ fontFamily: `'${headFont}', sans-serif`, textAlign: 'left', fontWeight: 700, fontSize: '1.5rem', padding: '1px' , color: 'var(--amplify-colors-font-secondary)' }}>
-          Tetrachromats among us
-        </h2>
-        <p style={{ fontFamily: `'${textFont}', sans-serif`, textAlign: 'left', marginBottom: '36px', color: '#495057', lineHeight: 1.5 }}>
-          Rare humans called tetrachromats see a fourth primary color because a genetic mutation gives them a fourth type of cone cell in their retinas. While typical human vision combines red, green, and blue (RGB) inputs to perceive about 1 million colors, a true tetrachromat can process an extra dimension of light, allowing them to see up to 100 million distinct shades.
-        </p> 
-
       </div>
     </View>
     </div>

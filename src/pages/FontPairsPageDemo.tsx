@@ -155,7 +155,7 @@ export default function FontPairsPageDemo ({}) {
       {/* ===================================================================
           WEBSITE NAVIGATION MENU PRIMITIVE
           =================================================================== 
-      <View as="nav" backgroundColor="var(--amplify-colors-neutral-100)" padding="1rem 2rem">
+       <View as="nav" backgroundColor="var(--amplify-colors-neutral-100)" padding="1rem 2rem">
         <Flex direction="row" justifyContent="space-between" alignItems="center" maxWidth="1100px" margin="0 auto">
           <Text fontFamily={activePair.header} color="var(--amplify-colors-font-inverse)" fontWeight="800" fontSize="18px" letterSpacing="1px">
             FONT PAIRING  
@@ -225,7 +225,6 @@ export default function FontPairsPageDemo ({}) {
           >
             Test font here
           </View>
-
         </Flex>
       </View>
 
