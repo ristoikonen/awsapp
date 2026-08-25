@@ -363,7 +363,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             <Flex direction="row" alignItems="left" gap="small">
               <Badge variation="success">Bun</Badge>
               <Badge variation="success">TypeScript</Badge>
-              <Badge variation="success">.NET Aspire</Badge>
+              <Badge variation="success">Aspire</Badge>
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
@@ -379,8 +379,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
                 </View>
               </Button>
-              <Heading level={3} textAlign="center">Bun with TypeScript</Heading>
-              <Text textAlign="center">POST handler for image upload running on Aspire.
+              <Heading level={3} textAlign="center">Bun runtime with TypeScript</Heading>
+              <Text textAlign="center">Image upload handler running on .NET Aspire.
                 <br/>TypeScript code utilises Bun to create thumbnails and encode POSTed images to base64.</Text>
             </Flex>
           </Card>
@@ -410,9 +410,9 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             Fonts
           </AmplifyUILink>
           <br/>
-          <AmplifyUILink as={ReactRouterLink} to="/gallery">
+{/*           <AmplifyUILink as={ReactRouterLink} to="/gallery">
             Image Gallery
-          </AmplifyUILink>
+          </AmplifyUILink> */}
         </View>
 
       {/*   'Coming Soon' section with Progress Indicator for future projects   */}

@@ -115,7 +115,7 @@ export default function FontPairsPageDemo() {
             Rare humans called tetrachromats see a fourth primary color because a genetic mutation gives them a fourth type of cone cell in their retinas. While typical human vision combines red, green, and blue (RGB) inputs to perceive about 1 million colors, a true tetrachromat can process an extra dimension of light, allowing them to see up to 100 million distinct shades.
           </p> 
         </div>
-        
+
       </div>
     </View>
     </div>

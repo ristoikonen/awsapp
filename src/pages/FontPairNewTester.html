@@ -207,7 +207,7 @@
                 <text x="20" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">H</text>
             </svg>
             <div class="control-cell-content">
-                <!-- <label for="headerFontSelect">Header Font</label> -->
+                <label for="headerFontSelect" id="lblFontSelectHeader1">&nbsp;Header</label>
                 <select id="headerFontSelect" onchange="updateHeaderFont(this.value)">
                     <option value="Montserrat">Montserrat Bold</option>
                     <option value="Roboto">Roboto Bold</option>
@@ -225,7 +225,7 @@
                 <text x="20" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">T</text>
             </svg>
             <div class="control-cell-content">
-                <!-- <label for="textFontSelect">Text Font</label> -->
+                <label for="textFontSelect" id="lblFontSelectHeader2">&nbsp;Text</label>
                 <select id="textFontSelect" onchange="updateTextFont(this.value)">
                     <option value="Open Sans">Open Sans Regular</option>
                     <option value="Roboto">Roboto Regular</option>
@@ -255,14 +255,18 @@
     
     function updateHeaderFont(fontName) {
         const heading = document.getElementById('docHeading');
-        heading.style.fontFamily = fontName + ", sans-serif";
+        heading.style.fontFamily = fontName ?? ''  + ", sans-serif";
         const heading2 = document.getElementById('docHeading2');
-        heading2.style.fontFamily = fontName + ", sans-serif";
+        heading2.style.fontFamily = fontName ?? '' + ", sans-serif";
+        const labelheading1 = document.getElementById('lblFontSelectHeader1');
+        labelheading1.textContent  = " " + fontName ?? ''  + ", sans-serif";
     }
 
     function updateTextFont(fontName) {
         const canvas = document.getElementById('docCanvas');
         canvas.style.fontFamily = fontName + ", sans-serif";
+        const labelheading2 = document.getElementById('lblFontSelectHeader2');
+        labelheading2.textContent  = " " + fontName ?? ''  + ", sans-serif";
     }
 
     function updateTextContent(text) {

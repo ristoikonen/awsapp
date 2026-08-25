@@ -2,7 +2,7 @@
 import  { useState, useEffect } from 'react';
 //import { Link } from 'react-router-dom';
 // ImageGallery,
-import  { type CloudImage } from '../components/ImageGallery/ImageGallery';
+import { type CloudImage } from '../components/ImageGallery/ImageGallery';
 //import { Link as ReactRouterLink } from 'react-router-dom';
 //import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
 
