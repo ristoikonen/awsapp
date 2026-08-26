@@ -78,7 +78,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
         <Flex direction="column" alignItems="center" padding="large">
           <View maxWidth="1200px" width="100%">
             <Heading level={2} textAlign="center">
-              <Text color="orange.60" fontWeight="extrabold">.NET Aspire</Text>
+              <Text color="orange.60" fontWeight="extrabold">Aspire</Text>
               <Text color="purple.80" fontWeight="extrabold">Microsoft Agent Framework</Text>
               <Text color="blue.60" fontWeight="extrabold">React</Text>
               <Text color="red.60" fontWeight="extrabold">AWS Amplify</Text>
@@ -113,7 +113,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           >
             <Flex direction="row" alignItems="left" gap="small">
               <Badge variation="success">AWS</Badge>
-              <Badge variation="success">.NET Aspire</Badge>
+              <Badge variation="success">Aspire</Badge>
               <Badge variation="success">Docker</Badge>
             </Flex>
             <br/>
@@ -191,7 +191,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           >
             <Flex direction="row" alignItems="left" gap="small">
               <Badge variation="success">AWS</Badge>
-              <Badge variation="success">.NET Aspire</Badge>
+              <Badge variation="success">Aspire</Badge>
               <Badge variation="success">Serverless</Badge>
             </Flex>
             <br/>
@@ -302,7 +302,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 </View>
               </Button>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
-              <Text textAlign="center">Crypto currency ticker tape, React component<br/>HTTP client of Coinlore API for live market access. </Text>
+              <Text textAlign="center">Crypto currency ticker tape React component<br/>HTTP client of Coinlore API for live market access. </Text>
               <Button
                   variation="link"
                   colorTheme="info"
@@ -342,7 +342,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Heading level={3} textAlign="center">Use Google CDN Fonts</Heading>
               <Text textAlign="center">Link Google CDN fonts and test pairings.
                 <br/>Load eight popular fonts using Google CDN links.
-                <br/>Has AWS Amplify build workflow diagram.</Text>
+                <br/>AWS Amplify build workflow diagram.</Text>
                 <Button
                   variation="link"
                   colorTheme="info"
@@ -364,6 +364,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Badge variation="success">Bun</Badge>
               <Badge variation="success">TypeScript</Badge>
               <Badge variation="success">Aspire</Badge>
+              <Badge variation="success">Google Gen AI</Badge>
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
@@ -381,7 +382,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </Button>
               <Heading level={3} textAlign="center">Bun runtime with TypeScript</Heading>
               <Text textAlign="center">Image upload handler running on .NET Aspire.
-                <br/>TypeScript code utilises Bun to create thumbnails and encode POSTed images to base64.</Text>
+                <br/>Image AI analysis with Google Gen AI
+                <br/>Creates thumbnails and encodes to base64 using Bun API.</Text>
             </Flex>
           </Card>
 
@@ -410,6 +412,13 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             Fonts
           </AmplifyUILink>
           <br/>
+          <AmplifyUILink as={ReactRouterLink} to="/users">
+            Users
+          </AmplifyUILink>
+          <br/>
+
+          
+
 {/*           <AmplifyUILink as={ReactRouterLink} to="/gallery">
             Image Gallery
           </AmplifyUILink> */}

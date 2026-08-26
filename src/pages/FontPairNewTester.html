@@ -33,6 +33,47 @@
             padding: 20px;
         }
 
+        /* User profile tests */
+        .status-container {
+        position: relative;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        }
+
+        .base-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        }
+
+        /* Positioning and Hover Effects */
+        .status-badge {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        
+        /* Smooth transition for hover animations */
+        transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+        }
+
+        .status-wrapper:hover::after {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        }
+
+        /* Hover effects */
+        .status-badge:hover {
+        transform: scale(1.3);          /* Slightly enlarges the badge */
+        filter: brightness(1.8);         /* Makes the red color pop slightly more */
+        }
+
+        /* EO User profile tests */
+
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -197,9 +238,12 @@
 <body>
 
 <div class="container">
-   
+
+  
     <!-- Top Font Control Bar with Header (H) and Text (T) SVG Cells -->
     <div class="control-bar">
+
+
         <!-- Header Font Cell -->
         <div class="control-cell">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="48" height="48">
@@ -216,6 +260,8 @@
                     <option value="Raleway">Raleway Bold</option>
                 </select>
             </div>
+
+           
         </div>
 
         <!-- Text Font Cell -->
@@ -234,9 +280,23 @@
                     <option value="Raleway">Raleway Regular</option>
                 </select>
             </div>
+
+<!-- 
+            <div class="control-cell">
+
+                          <img src=".././assets/Avatar128.png" alt="User Profile" class="base-image" 
+                            style="width: 98px; height: 98px; object-fit: cover; outline: 5px solid transparent; transition: outline 0.2s;"
+                            onmouseover="this.style.outlineColor='#7bbad3'" 
+                            onmouseout="this.style.outlineColor='transparent'" 
+                            >
+              </div> 
+-->
+
         </div>
     </div>
     
+    <!-- Top Font Control Bar with Header (H) and Text (T) SVG Cells -->
+     
     <div class="document-canvas" id="docCanvas">
         <h1 name="Heading" id="docHeading">Parasite-cleaning method</h1>
         <p id="docParagraph">Evolutionary psychologists studying great apes noted that primates spend hours grooming each other's fur to pick off ticks, 
@@ -249,7 +309,32 @@
         <h2 id="docHeading2" name="Heading">Tetrachromats among us</h2>
         <p id="docParagraph2">Rare humans called tetrachromats see a fourth primary color because a genetic mutation gives them a fourth type of cone cell in their retinas. While typical human vision combines red, green, and blue (RGB) inputs to perceive about 1 million colors, a true tetrachromat can process an extra dimension of light, allowing them to see up to 100 million distinct shades.</p>
     </div>
+
+     
+    <div class="status-container">
+    
+    <img src=".././assets/Avatar128.png" alt="User Profile" class="base-image">
+    
+    
+    <svg class="status-badge" viewBox="0 0 24 24" width="24" height="24">
+        <circle cx="12" cy="12" r="10" fill="#4CAF50" stroke="#FFFFFF" stroke-width="3" />
+    </svg>
+    </div> 
+
+         
+    <div class="status-container">
+    
+    <img src=".././assets/Avatar128.png" alt="User Profile" class="base-image">
+    
+    
+    <svg class="status-badge" viewBox="0 0 24 24" width="24" height="24">
+        <circle cx="12" cy="12" r="10" fill="#eee8a9" stroke="#FFFFFF" stroke-width="3" />
+    </svg>
+    </div> 
+
+
 </div>
+
 
 <script>
     

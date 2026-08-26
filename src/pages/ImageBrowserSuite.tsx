@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { View, Grid, Card, Flex, Heading, Text, Badge, Button, Image, SearchField, Divider } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css'; // Vital Amplify design token styles layout
-import { mockImages, imageCategories, type ImageAsset } from '../data/imageData';
+//import { View, Grid, Card, Flex, Heading, Text, Badge, Button, Image, SearchField, Divider } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css'; 
+import { mockImages, imageCategories, type ImageAsset } from '../data/userData';
 
 export const ImageBrowserSuite: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
