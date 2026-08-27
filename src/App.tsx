@@ -11,7 +11,11 @@ import FontPairsDemoPage from "./pages/FontPairsDemo.tsx";
 import FontPairsPageDemo from "./pages/FontPairsPageDemo.tsx";
 import FontPlay from "./pages/FontPlay.tsx";
 import Users from "./pages/Users.tsx";
-//import FontPairsHTMLPage from "./pages/FontPairsTester.html"; <Route path="/fontpairshtmlpage" element={<FontPairsHTMLPage />} />
+//import PrivacyPage from "./pages/Privacy.html"; 
+
+
+//import FontPairsHTMLPage from "./pages/FontPairsTester.html"; 
+// //<Route path="/fontpairshtmlpage" element={<FontPairsHTMLPage />} />
 
 import './App.css'
 //import {  type UsersProps } from './data/userData';
@@ -33,6 +37,7 @@ function App() {
           <Route path="/fontpairspagedemo" element={<FontPairsPageDemo />} />
           <Route path="/fontplay" element={<FontPlay />} />
           <Route path="/users" element={<Users users={[]} onEdit={() => {}} />} />
+          {/* <Route path="/privacy" element={<PrivacyPage />} /> */}
         </Routes>
       </Router>
     </>
