@@ -416,7 +416,10 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             Users
           </AmplifyUILink>
           <br/>
-
+          <AmplifyUILink as={ReactRouterLink} to="/terms">
+            Terms
+          </AmplifyUILink>
+          <br/>
           
 
 {/*           <AmplifyUILink as={ReactRouterLink} to="/gallery">
