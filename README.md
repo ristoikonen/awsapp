@@ -1,5 +1,5 @@
 # My computer to browser diagram
-
+How deployment to AWS Amplify via GitHub works.
 
 
 ```mermaid

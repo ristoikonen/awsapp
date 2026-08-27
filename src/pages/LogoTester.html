@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Animation using Hue</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #fffafb;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
+            --primary: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-color);
+            
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 24px;
+        }
+
+        
+        .logos-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            height: 150px;
+        }
+
+
+        .logo-container {
+            width: 120px;  
+            height: 120px; 
+
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+        <h2 name="Heading" id="docHeading">Using changes in Hue to animate logo-images colors</h1>
+        <div class="logos-container">
+            <div class="logo-container">
+                <img src=".././assets/RlogoTrOut120_hminus20.png" alt="logo" class="base-image"  id="animated-logo" >
+            </div>
+        </div>
+</div>
+
+<script>
+
+        const logoImages = [
+            "RlogoTrOut120_hminus20.png",
+            "RlogoTrOut120_hminus40.png",
+            "RlogoTrOut120_hminus60.png",
+            "RlogoTrOut120_hminus80.png",
+            "RlogoTrOut120_hminus100.png",
+            "RlogoTrOut120_hminus120.png",
+            "RlogoTrOut120_hminus140.png",
+            "RlogoTrOut120_hminus160.png",
+            "RlogoTrOut120_hminus180.png",
+            "RlogoTrOut120_hminus200.png",
+            "RlogoTrOut120_hminus340.png"
+        ];
+
+    // 2. Set the speed (interval) in milliseconds
+    const intervalTime = 130; // 130ms = roughly 8 frames per second
+
+    let currentIndex = 0;
+
+    const logoElement = document.getElementById("animated-logo");
+
+    // 3. Function to cycle the images
+    function animateLogo() {
+        // Move to the next index, loop back to 0 if at the end
+        currentIndex = (currentIndex + 1) % logoImages.length;
+        // Change the image source
+        logoElement.src = ".././assets/" + logoImages[currentIndex];
+        //console.log(logoElement.src);
+    }
+
+   
+    // 4. Start the animation loop
+    setInterval(animateLogo, intervalTime);
+
+</script>
+</body>
+</html>

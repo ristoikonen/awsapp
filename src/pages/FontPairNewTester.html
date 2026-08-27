@@ -233,6 +233,18 @@
             margin-bottom: 12px;
             font-family: 'Open Sans', sans-serif;
         }
+
+        /* Logo container styling */
+        .logo-container {
+            width: 150px;  /* Match your logo's width */
+            height: 150px; /* Match your logo's height */
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -281,20 +293,18 @@
                 </select>
             </div>
 
-<!-- 
+ 
             <div class="control-cell">
 
-                          <img src=".././assets/Avatar128.png" alt="User Profile" class="base-image" 
-                            style="width: 98px; height: 98px; object-fit: cover; outline: 5px solid transparent; transition: outline 0.2s;"
-                            onmouseover="this.style.outlineColor='#7bbad3'" 
-                            onmouseout="this.style.outlineColor='transparent'" 
-                            >
+
               </div> 
--->
+
 
         </div>
     </div>
     
+    
+
     <!-- Top Font Control Bar with Header (H) and Text (T) SVG Cells -->
      
     <div class="document-canvas" id="docCanvas">
@@ -333,11 +343,38 @@
     </div> 
 
 
+
+
 </div>
 
 
 <script>
-    
+    // 1. List your PNG image file paths in order
+        const logoImages = [
+            "RlogoTrOut120_hminus20.png",
+            "RlogoTrOut120_hminus40.png",
+            "RlogoTrOut120_hminus60.png",
+            "RlogoTrOut120_hminus80.png"
+        ];
+
+    // 2. Set the speed (interval) in milliseconds
+    const intervalTime = 350; // 150ms = roughly 6 frames per second
+
+    let currentIndex = 0;
+    const logoElement = document.getElementById("animated-logo");
+
+    // 3. Function to cycle the images
+    function animateLogo() {
+        // Move to the next index, loop back to 0 if at the end
+        currentIndex = (currentIndex + 1) % logoImages.length;
+        
+        // Change the image source
+        logoElement.src = logoImages[currentIndex];
+    }
+
+    // 4. Start the animation loop
+    setInterval(animateLogo, intervalTime);
+
     function updateHeaderFont(fontName) {
         const heading = document.getElementById('docHeading');
         heading.style.fontFamily = fontName ?? ''  + ", sans-serif";
