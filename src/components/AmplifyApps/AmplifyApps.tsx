@@ -363,14 +363,14 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             <Flex direction="row" alignItems="left" gap="small">
               <Badge variation="success">Bun</Badge>
               <Badge variation="success">TypeScript</Badge>
-              <Badge variation="success">Aspire</Badge>
-              <Badge variation="success">Google Gen AI</Badge>
+              <Badge variation="success">AI</Badge>
+              <Badge variation="success">Google Gemini API</Badge>
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
               <Button
                 variation="link"
-                onClick={() => window.open('https://github.com/ristoikonen/aspireinit', '_blank')}
+                onClick={() => window.open('https://github.com/ristoikonen/bun-app', '_blank')}
               >
                 <View color="purple.80">
                   
@@ -380,10 +380,10 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
                 </View>
               </Button>
-              <Heading level={3} textAlign="center">Bun runtime with TypeScript</Heading>
-              <Text textAlign="center">Image upload handler running on .NET Aspire.
-                <br/>Image AI analysis with Google Gen AI
-                <br/>Creates thumbnails and encodes to base64 using Bun API.</Text>
+              <Heading level={3} textAlign="center">Bun HTTP server with TypeScript</Heading>
+              <Text textAlign="center">Analyses images with Gemini. 
+                <br/>Image uploader saves image with a thumbnail.
+                <br/>Check 'What is Bun' <a href="https://github.com/ristoikonen/bun-app/blob/main/README.md">README</a>.</Text>
             </Flex>
           </Card>
 

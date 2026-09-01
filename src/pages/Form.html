@@ -115,8 +115,15 @@
 <body>
 
 
+
+
+
+    
 <div class="container">
   <div id="progressBar"></div>
+
+  <label for="stepno">Email Address</label>
+  <input type="text" id="stepno" />
 
   <div class="content">
     <!-- Step 1: Contact Info -->
@@ -124,7 +131,7 @@
       <h2>Contact Information</h2>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" required />
+        <input type="email" id="email" data-id='{"localstorage": true, "type": "basic"}' required />
       </div>
       <div class="form-group">
         <label for="phone">Phone Number</label>
@@ -181,6 +188,9 @@
     <div class="step" id="step4">
       <h2>Order Confirmed!</h2>
       <p>Thank you for your order. You'll receive a confirmation email shortly.</p>
+      <p id="emailText"></p>
+      <p id="emailLocalStorege"></p>
+      <h5 id="emailText_h5"></h5>
       <p>Your order number is: <strong>#12345</strong></p>
       <div class="buttons">
         <button class="button" data-button-variant='secondary' onclick="prevStep()">Back</button>
@@ -190,55 +200,96 @@
   </div>
 </div>
 
-<script type="ts">
+<script>
 
-let currentStep: number = 1;
-const totalSteps: number = 4;
-let isGoingBack: boolean = false;
 
-function updateProgress(): void {
-  const progressBar = document.getElementById("progressBar") as HTMLElement | null;
-  if (progressBar) {
-    const progress: number = ((currentStep - 1) / (totalSteps - 1)) * 100;
-    progressBar.style.width = progress + "%";
-  }
+// const activeItem = document.querySelector('[data-id="456"]');
+
+let currentStep = 1;
+const totalSteps = 4;
+let isGoingBack = false;
+let emailText = "";
+
+function updateProgress() {
+  const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+  document.getElementById("progressBar").style.width = progress + "%";
 }
 
-function showStep(stepNumber: number): void {
+function showStep(stepNumber) {
   // Hide all steps
-  document.querySelectorAll(".step").forEach((step: Element) => {
+  document.querySelectorAll(".step").forEach((step) => {
     step.classList.remove("active");
   });
 
   // Show current step
-  const currentStepElement = document.getElementById(`step${stepNumber}`);
-  if (currentStepElement) {
-    currentStepElement.classList.add("active");
-  }
+  document.getElementById(`step${stepNumber}`).classList.add("active");
+
+  emailText = document.getElementById(`email`).value ?? "";
+
+  // debug
+  document.getElementById(`stepno`).value = "step" + stepNumber;
+
+    document.getElementById(`emailText`).innerText  = emailText ?? '';
+ document.getElementById(`emailText_h5`).innerText  = document.getElementById(`address`).value ?? "";
+
+ const emaildataset = JSON.parse(document.getElementById(`email`).dataset.id);
+ //console.log(emaildataset.localstorage); 
+ document.getElementById(`emailLocalStorege`).innerText  = emaildataset.localstorage ?? "";
 
   updateProgress();
 }
 
-function nextStep(): void {
+//Pages initial values
+window.addEventListener('DOMContentLoaded', () => {
+    // set step1
+    const myInput = document.getElementById('stepno');
+    
+    // 2. Set its value
+    if (myInput) {
+        myInput.value = "step1";
+    }
+});
+
+
+function showStepX(stepNumber) {
+  // Hide all steps
+  document.querySelectorAll(".step").forEach((step) => {
+    step.classList.remove("active");
+  });
+
+  // Show current step
+  document.getElementById(`stepno`).text.add("step");
+
+  //document.getElementById(`emailText`).text.add(emailText ??'');
+
+  updateProgress();
+}
+
+function nextStep() {
+  //if (currentStep === totalSteps) {
+  //  alert('sdfsdf');
+  //}
   if (currentStep < totalSteps) {
     isGoingBack = false;
     transitionToStep(currentStep + 1);
   }
+
+
 }
 
-function prevStep(): void {
+function prevStep() {
   if (currentStep > 1) {
     isGoingBack = true;
     transitionToStep(currentStep - 1);
   }
 }
 
-function startOver(): void {
+function startOver() {
   isGoingBack = false;
   transitionToStep(1);
 }
 
-function transitionToStep(stepNumber: number): void {
+function transitionToStep(stepNumber) {
   currentStep = stepNumber;
   showStep(currentStep);
 }
