@@ -412,6 +412,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           <AmplifyUILink as={ReactRouterLink} to="/fonts">
             Fonts
           </AmplifyUILink>
+          {/* 
           <br/>
           <AmplifyUILink as={ReactRouterLink} to="/users">
             Users
@@ -421,7 +422,22 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             Terms
           </AmplifyUILink>
           <br/>
+          */}
+
+          {/* TonkaWonka Website */}
+          <Flex justifyContent="center" padding="large">
+            <Button
+              variation="primary"
+              backgroundColor="purple.80"
+              color="white"
+              borderRadius="full"
+              onClick={() => window.open('https://ristoikonen.github.io/Dacca/index.html', '_blank')}
+            >
+              TonkaWonka Cars 
+            </Button>
+          </Flex>
           
+
 
 {/*           <AmplifyUILink as={ReactRouterLink} to="/gallery">
             Image Gallery
