@@ -364,7 +364,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Badge variation="success">Bun</Badge>
               <Badge variation="success">TypeScript</Badge>
               <Badge variation="success">AI</Badge>
-              <Badge variation="success">Google Gemini API</Badge>
+              <Badge variation="success">Google Auth Platform</Badge>
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
@@ -381,9 +381,10 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 </View>
               </Button>
               <Heading level={3} textAlign="center">Bun HTTP server with TypeScript</Heading>
-              <Text textAlign="center">Analyses images with Gemini. 
-                <br/>Image uploader saves image with a thumbnail.
-                <br/>Check 'What is Bun' <a href="https://github.com/ristoikonen/bun-app/blob/main/README.md">README</a>.</Text>
+              <Text textAlign="center">OAuth 2.0 client authentication using Google Auth.
+                <br/>Analyses uploaded images with Gemini.
+                <br/>Saves images with a thumbnail.
+                <br/>'What is Bun' <a href="https://github.com/ristoikonen/bun-app/blob/main/README.md">README</a>.</Text>
             </Flex>
           </Card>
 
