@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
-//import { View, Grid, Card, Flex, Heading, Text, Badge, Button, Image, SearchField, Divider } from '@aws-amplify/ui-react';
+import { View, Grid, Card, Flex, Heading, Text, Badge, Button, Image, SearchField, Divider } from '@aws-amplify/ui-react';
+import {  type ImageAsset, imageCategories, mockImages } from '../data/imageData';
 import '@aws-amplify/ui-react/styles.css'; 
-import { mockImages, imageCategories, type ImageAsset } from '../data/userData';
 
 export const ImageBrowserSuite: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
