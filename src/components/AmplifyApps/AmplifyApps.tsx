@@ -515,7 +515,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               borderRadius="full"
               onClick={() => window.open('https://ristoikonen.github.io/Dacca/index.html', '_blank')}
             >
-              TonkaWonka Cars 
+              Fun with TonkaWonka Cars 
             </Button>
           </Flex>
           
