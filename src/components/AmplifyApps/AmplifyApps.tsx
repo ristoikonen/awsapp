@@ -128,6 +128,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           templateColumns={{ base: '1fr', medium: '1fr 1fr' }}
           gap="large"
           padding={{ base: 'medium', medium: 'large' }}
+          maxWidth="1160px"
+          minWidth="1060px"
         >
 
            {/* AWS Serverless */}
@@ -282,7 +284,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             wordBreak: 'break-all'
           }}
         >
-          {result !== null ? result : <span style={{ color: '#888' }}>Click calculate to view output</span>}
+          {result !== null ? result : <span style={{ color: '#888' }}>"2,938.66"</span>}
         </View>
 
             </Flex>
