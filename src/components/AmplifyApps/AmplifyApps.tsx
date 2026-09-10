@@ -1,14 +1,13 @@
 // , useState
-import React, { useEffect } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { Link as AmplifyUILink } from '@aws-amplify/ui-react';
-//import { Menu, MenuItem, Divider } from '@aws-amplify/ui-react';
-
-//import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge } 
+import { Card, Flex, Grid, Heading, Text, Button, View, ThemeProvider, Badge, TextField } 
    from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+
+//import { Menu, MenuItem, Divider } from '@aws-amplify/ui-react';
+//import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // TODO: Update the path below to the correct location of your amplify data resource type
 //import type { Schema } from '../../../amplify/data/resource'
@@ -24,6 +23,33 @@ interface AmplifyAppsProps {}
 
 const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
   
+  const [rate, setRate] = useState<string>('0.08');
+  const [pv, setPv] = useState<string>('2000');
+  const [nper, setNper] = useState<string>('5');
+  const [result, setResult] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [cooldown, setCooldown] = useState<boolean>(false);
+
+  const calculateFV = async (): Promise<void> => {
+    if (cooldown || loading) return;
+
+    setLoading(true);
+    try {
+      const response = await fetch(`https://lee4cnqs6ryonvdsu2dogpmzuy0uzzjw.lambda-url.ap-southeast-2.on.aws/fv?rate=${rate}&pv=${pv}&nper=${nper}`);
+      const data: string = await response.text();
+      setResult(data);
+    } catch {
+      setResult('');
+    } finally {
+      setLoading(false);
+      // Trigger a second cooldown
+      setCooldown(true);
+      setTimeout(() => {
+        setCooldown(false);
+      }, 1000); // 1000 milliseconds = second
+    }
+  };
+
   //const [cloudData, setCloudData] = useState<CloudImage[]>([]);
   //const [loading, setLoading] = useState<boolean>(true);
 
@@ -89,7 +115,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
         <Flex direction="column" alignItems="center" padding="normal">
           <View maxWidth="1200px" width="100%">
             <Heading level={4} textAlign="center">
-              <Text color="gray" fontWeight={300} >Sampling of Ristos projects on GitHub</Text>
+              <Text color="gray" fontWeight={300} >Showcase of Risto's coding expertise and GitHub projects</Text>
               <Text color="gray" fontWeight={300} >Click projects icon to access it's repo</Text>
             </Heading>
           </View>
@@ -188,6 +214,12 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             padding="large"
             borderRadius="large"
             backgroundColor="white"
+            style={{ 
+              height: '100%', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              justifyContent: 'space-between' 
+            }}
           >
             <Flex direction="row" alignItems="left" gap="small">
               <Badge variation="success">AWS</Badge>
@@ -201,13 +233,58 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 onClick={() => window.open('https://github.com/ristoikonen/Embed.AppHost/blob/master/FV.md', '_blank')}
               >
                 <View color="orange.60">
-                  <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.944 12c0 2.894.834 5.618 2.306 7.956A11.955 11.955 0 0112 21.056c2.894 0 5.618-.834 7.956-2.306A12.007 12.007 0 0021.056 12c0-2.894-.834-5.618-2.306-7.956z"></path>
+                  <svg width="60" height="60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.9" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.944 12c0 2.894.834 5.618 2.306 7.956A11.955 11.955 0 0112 21.056c2.894 0 5.618-.834 7.956-2.306A12.007 12.007 0 0021.056 12c0-2.894-.834-5.618-2.306-7.956z"></path>
                   </svg>
                 </View>
               </Button>
               <Heading level={3} textAlign="center">Future value calculator</Heading>
-              <Text textAlign="center">AWS Lambda financial functions hosted on .NET Aspire. Functions exposed through Amazon API Gateway.</Text>
+              <Text textAlign="center">AWS Lambda financial functions via Amazon API Gateway.</Text>
+
+
+
+        <Flex direction="row" wrap="wrap" justifyContent="center" gap="small" width="100%">
+          <TextField
+            label="Rate (Percentage/100)"
+            size="small"
+            value={rate}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRate(e.target.value)}
+          />
+          <TextField
+            label="Present Value ($)"
+            size="small"
+            value={pv}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPv(e.target.value)}
+          />
+          <TextField
+            label="Periods (Years)"
+            size="small"
+            value={nper}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNper(e.target.value)}
+          />
+        </Flex>
+
+        <Button variation="primary" size="small" onClick={calculateFV} isLoading={loading} isDisabled={true}>
+          Calculate
+        </Button>
+
+        <View 
+          width="100%" 
+          padding="small"
+          style={{ 
+            border: '1px solid #e0e0e0', 
+            borderRadius: '6px', 
+            backgroundColor: '#f8f9fa',
+            minHeight: '20px',
+            fontFamily: 'monospace',
+            fontSize: '14px',
+            textAlign: 'center',
+            wordBreak: 'break-all'
+          }}
+        >
+          {result !== null ? result : <span style={{ color: '#888' }}>Click calculate to view output</span>}
+        </View>
+
             </Flex>
           </Card>
 
@@ -235,7 +312,10 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                   </View>
               </Button>
               <Heading level={3} textAlign="center">Pixel Mapper</Heading>
-              <Text textAlign="center">Embed hidden text into an image by encoding ASCII bit values into RGBA pixels. Encoding readable using image editor</Text>
+              <Text textAlign="center">Embed hidden text into an image by encoding ASCII bit values into RGBA pixels. Encoded values in pixels readable using image editor.
+                <br/>One RGBA pixel holds four bit word; uses two pixels for 8 bit ASCII character.
+              </Text>
+                <br/>
                 <Button
                   variation="link"
                   colorTheme="info"
