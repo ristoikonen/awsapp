@@ -132,7 +132,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           minWidth="1060px"
         >
 
-           {/* AWS Serverless */}
+           {/* Moth */}
           <Card
             variation="elevated"
             padding="large"
@@ -140,26 +140,115 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             backgroundColor="white"
           >
             <Flex direction="row" alignItems="left" gap="small">
-              <Badge variation="success">AWS</Badge>
-              <Badge variation="success">Aspire</Badge>
-              <Badge variation="success">Docker</Badge>
+              <Badge variation="success">Python</Badge>
+              <Badge variation="success">Radar Data Analysis</Badge>
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
               <Button
                 variation="link"
-                onClick={() => window.open('https://github.com/ristoikonen/Embed.AppHost/blob/master/LambdaReadme.md', '_blank')}
+                onClick={() => window.open('https://github.com/ristoikonen/bogon', '_blank')}
               >
                 <View color="orange.60">
-                  <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="200" height="200" fill="#ffffff"/>
+                  <g transform="translate(100, 175)">
+                    <circle cx="0" cy="0" r="7" fill="#000000" />
+                    <g fill="#d9531e" opacity="0.85">
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(0)" />
+                      <polygon points="0,0 -2,-80 2,-80" transform="rotate(15)" fill="#f08830"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(30)" />
+                      <polygon points="0,0 -2.5,-85 2.5,-85" transform="rotate(45)" fill="#f5a623"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(60)" fill="#b43815"/>
+                      <polygon points="0,0 -3,-90 3,-90" transform="rotate(75)" fill="#ffd166"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(90)" />
+                      <polygon points="0,0 -2,-80 2,-80" transform="rotate(105)" fill="#a0280b"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(120)" />
+                      <polygon points="0,0 -2.5,-85 2.5,-85" transform="rotate(135)" fill="#f08830"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(150)" />
+                      <polygon points="0,0 -3,-90 3,-90" transform="rotate(165)" fill="#ffd166"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(180)" />
+                      <polygon points="0,0 -2,-80 2,-80" transform="rotate(195)" fill="#f5a623"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(210)" />
+                      <polygon points="0,0 -3,-90 3,-90" transform="rotate(225)" fill="#ffd166"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(240)" />
+                      <polygon points="0,0 -2,-80 2,-80" transform="rotate(255)" fill="#b43815"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(270)" />
+                      <polygon points="0,0 -2.5,-85 2.5,-85" transform="rotate(285)" fill="#f08830"/>
+                      <polygon points="0,0 -3,-90 3,-90" transform="rotate(300)" fill="#ffd166"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(315)" />
+                      <polygon points="0,0 -2,-80 2,-80" transform="rotate(330)" fill="#f5a623"/>
+                      <polygon points="0,0 -1.5,-75 1.5,-75" transform="rotate(345)" />
+                    </g>
+                    <circle cx="0" cy="0" r="22" fill="#f08830" opacity="0.3" />
+                    <circle cx="0" cy="0" r="14" fill="#ffd166" opacity="0.5" />
+                    <circle cx="0" cy="0" r="9" fill="#ffffff" opacity="0.8" />
+                    <circle cx="0" cy="0" r="7" fill="#000000" />
+                    <defs>
+                      <rect id="p" width="3.5" height="3.5" rx="0.5"/>
+                    </defs>
+                    <g fill="#b43815" transform="translate(-95, -135)">
+                      <use href="#p" x="0" y="0"/><use href="#p" x="4" y="2"/><use href="#p" x="8" y="1"/>
+                      <use href="#p" x="13" y="3"/><use href="#p" x="17" y="2"/><use href="#p" x="6" y="7"/>
+                    </g>
+                    <g fill="#d9531e" transform="translate(-30, -148)">
+                      <use href="#p" x="0" y="0"/><use href="#p" x="4" y="1"/><use href="#p" x="9" y="-1"/>
+                      <use href="#p" x="14" y="2"/><use href="#p" x="19" y="0"/><use href="#p" x="24" y="3"/>
+                    </g>
+                    <g fill="#b43815" transform="translate(65, -120)">
+                      <use href="#p" x="0" y="0"/><use href="#p" x="4" y="2"/><use href="#p" x="9" y="5"/>
+                      <use href="#p" x="14" y="7"/><use href="#p" x="18" y="12"/>
+                    </g>
+                    <g fill="#b43815" transform="translate(-50, -103)">
+                      <use href="#p" x="0" y="0"/><use href="#p" x="4" y="-2"/><use href="#p" x="8" y="-2.5"/>
+                      <use href="#p" x="12" y="-3"/><use href="#p" x="16" y="-3"/><use href="#p" x="20" y="-2.5"/>
+                      <use href="#p" x="24" y="-2"/><use href="#p" x="28" y="0"/><use href="#p" x="32" y="2"/>
+                      <use href="#p" x="36" y="4"/><use href="#p" x="40" y="7"/><use href="#p" x="44" y="10.5"/>
+                      <use href="#p" x="48" y="14.5"/><use href="#p" x="52" y="19"/><use href="#p" x="56" y="24"/>
+                    </g>
+                    <g fill="#d9531e" transform="translate(-48, -98)">
+                      <use href="#p" x="4" y="0"/><use href="#p" x="8" y="-1"/><use href="#p" x="12" y="-1.5"/>
+                      <use href="#p" x="16" y="-1.5"/><use href="#p" x="20" y="-1"/><use href="#p" x="24" y="0"/>
+                      <use href="#p" x="28" y="1.5"/><use href="#p" x="32" y="3.5"/><use href="#p" x="36" y="6"/>
+                      <use href="#p" x="40" y="9"/><use href="#p" x="44" y="12.5"/><use href="#p" x="48" y="16.5"/>
+                      <use href="#p" x="52" y="21"/><use href="#p" x="56" y="26"/><use href="#p" x="60" y="31.5"/>
+                    </g>
+                    <g fill="#f08830" transform="translate(-44, -93)">
+                      <use href="#p" x="8" y="0"/><use href="#p" x="12" y="-0.4"/><use href="#p" x="16" y="-0.4"/>
+                      <use href="#p" x="20" y="0.4"/><use href="#p" x="24" y="1.6"/><use href="#p" x="28" y="3.2"/>
+                    </g>
+                    <g fill="#f5a623" transform="translate(-32, -89)">
+                      <use href="#p" x="8" y="0"/><use href="#p" x="12" y="0.4"/><use href="#p" x="16" y="1.6"/>
+                    </g>
+                    <g fill="#ffd166" transform="translate(-20, -86)">
+                      <use href="#p" x="8" y="0.8"/><use href="#p" x="12" y="2.4"/>
+                    </g>
+                    <g fill="#b43815" transform="translate(10, -66)">
+                      <use href="#p" x="24" y="6"/><use href="#p" x="27" y="12"/><use href="#p" x="29" y="18"/>
+                      <use href="#p" x="30" y="24"/><use href="#p" x="29" y="30"/><use href="#p" x="27" y="36"/>
+                      <use href="#p" x="23" y="42"/><use href="#p" x="18" y="48"/><use href="#p" x="12" y="53"/>
+                    </g>
+                    <g fill="#a0280b" transform="translate(-88, -58)">
+                      <use href="#p" x="0" y="0"/><use href="#p" x="-2" y="6"/><use href="#p" x="-3" y="12"/>
+                      <use href="#p" x="-3" y="18"/><use href="#p" x="-2" y="24"/><use href="#p" x="0" y="30"/>
+                      <use href="#p" x="3" y="36"/><use href="#p" x="7" y="41"/>
+                    </g>
+                  </g>
+                </svg>
+
+{/*                   <svg width="80" height="80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 00-1.05-9.95l-.65-.18a7.001 7.001 0 00-13.62-2.73 4 4 0 00-2.73 4.62 4 4 0 00-4.62 2.73 7.001 7.001 0 002.73 13.62 4 4 0 004.62-2.73"></path>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 10h.01M18 14h.01M18 18h.01"></path>
                   </svg>
-                </View>
+ */}                </View>
               </Button>
-              <Heading level={3} textAlign="center">AWS Serverless</Heading>
+              <Heading level={3} textAlign="center">Bogong moths on Radar</Heading>
               <Text textAlign="center">
-                AWS Amplify application on .NET Aspire host
+                BOM radar analysis using Python
+                Math and Radar Toolkit.<br/>
+                Parsing BOM radar data streams, handling spatial bins, and quantifying aerial wildlife populations programmatically.
+                
               </Text>
             </Flex>
           </Card>
@@ -242,7 +331,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </Button>
               <Heading level={3} textAlign="center">Future value calculator</Heading>
               <Text textAlign="center">AWS Lambda financial functions via Amazon API Gateway.</Text>
-
+{/* https://github.com/ristoikonen/Embed.AppHost/blob/master/LambdaReadme.md */}
 
 
         <Flex direction="row" wrap="wrap" justifyContent="center" gap="small" width="100%">
