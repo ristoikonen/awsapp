@@ -132,6 +132,103 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           minWidth="1060px"
         >
 
+
+          {/* ID */}
+          <Card
+            variation="elevated"
+            padding="large"
+            borderRadius="large"
+            backgroundColor="white"
+            style={{ 
+              height: '100%', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              justifyContent: 'space-between' 
+            }}
+          >
+            <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="info">LIVE SITE</Badge>
+              <Badge variation="success">Bun</Badge>
+              <Badge variation="success">TypeScript</Badge>
+              <Badge variation="success">React</Badge>
+            </Flex>
+            <br/>
+            <Flex direction="column" alignItems="center" gap="medium">
+              <Button
+                variation="link"
+                onClick={() => window.open('https://github.com/ristoikonen/risukko/blob/main/README.md', '_blank')}
+              >
+                <View color="orange.60">
+
+                  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="142.00pt" height="142.00pt" viewBox="0 0 192.00 192.00" preserveAspectRatio="xMidYMid meet">
+                  <g transform="translate(0.000000,192.000000) scale(0.050000,-0.050000)" fill="#BF8040" stroke="none">
+                  <path d="M2042 3535 c-71 -181 -817 -952 -1363 -1408 -32 -27 -199 193 -199 262 0 37 -54 78 -87 65 -26 -10 -35 -67 -64 -409 -7 -74 -21 -154 -32 -177
+                  -15 -30 -14 -56 1 -85 12 -22 28 -111 35 -197 14 -178 29 -206 108 -206 133 0 553 -511 627 -762 40 -134 93 -150 134 -42 26 67 57 27 58 -72 0 -40 12 -70
+                  30 -77 43 -16 95 33 83 79 -17 63 40 314 82 361 21 23 249 277 507 563 257 286 571 635 697 775 125 140 231 252 235 248 4 -4 -4 -114 -16 -245 -35 -356
+                  -36 -1545 -1 -1574 36 -29 94 9 89 59 -3 20 8 82 24 137 97 347 189 884 229 1340 38 438 58 739 48 755 -18 29 -88 15 -101 -20 -15 -39 -150 -207 -160
+                  -198 -3 3 9 82 27 174 46 245 45 268 -8 275 -31 5 -50 -6 -60 -34 -26 -70 -1148 -845 -1179 -815 -10 10 8 73 188 683 71 242 143 455 160 474 38 43 16
+                  116 -36 116 -22 0 -47 -20 -56 -45z m-123 -410 c-9 -52 -47 -203 -86 -335 -38 -132 -89 -312 -112 -400 l-43 -160 -164 -93 c-256 -145 -675 -362 -683 -354
+                  -4 4 -38 62 -76 128 l-69 122 171 138 c181 148 738 691 937 914 143 161 144 161 125 40z m1022 -315 l-31 -210 -310 -342 c-381 -420 -373 -412 -790 -876
+                  -187 -208 -343 -375 -347 -371 -5 4 10 82 33 173 22 91 88 355 145 586 l104 420 131 80 c229 140 768 502 934 628 88 66 160 121 161 121 0 1 -13 -94 -30
+                  -209z m209 -453 c-47 -568 -170 -1344 -220 -1394 -19 -19 4 883 33 1277 l25 330 89 95 c115 123 111 140 73 -308z m-2635 -176 c82 -125 84 -119 -38 -209
+                  l-103 -77 14 107 c40 327 35 320 127 179z m1082 -256 c-32 -118 -72 -273 -88 -345 -151 -666 -167 -727 -207 -767 -50 -50 -38 -70 -141 217 -47 132 -133
+                  340 -191 462 l-105 223 157 76 c87 42 263 137 393 212 129 74 236 135 238 136 1 0 -24 -96 -56 -214z m-899 -55 c78 -137 86 -118 -80 -200 -179 -88 -191 -88
+                  -208 8 -16 99 14 160 120 239 104 78 96 80 168 -47z m195 -385 c105 -224 307 -732 307 -773 0 -87 -55 -66 -107 42 -100 203 -226 374 -385 524 -87 81 -172
+                  171 -190 199 l-31 53 151 73 c84 41 155 75 158 76 3 0 47 -87 97 -194z"/>
+                  </g>
+                  </svg>
+
+               </View>
+              </Button>
+              <Heading level={3} textAlign="center">Graph Generator</Heading>
+              <Text textAlign="center">Lossless text-to-graph 2-way visual generator. Contains parity bytes for error correction.</Text>
+              <Button variation="primary" size="small" onClick={() => window.open('https://risukko.com/', '_blank')} >
+                Risukko App
+              </Button>
+            </Flex>
+          </Card>
+
+
+          {/* TS */}
+          <Card
+            variation="elevated"
+            padding="large"
+            borderRadius="large"
+            backgroundColor="white"
+            style={{ 
+              height: '100%', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              justifyContent: 'space-between' 
+            }}
+          >
+            <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="info">LIVE SITE</Badge>
+              <Badge variation="success">Bun</Badge>
+              <Badge variation="success">TypeScript</Badge>
+              <Badge variation="success">React</Badge>
+            </Flex>
+            <br/>
+            <Flex direction="column" alignItems="center" gap="medium">
+              <Button
+                variation="link"
+                onClick={() => window.open('https://github.com/ristoikonen/bunsnip/blob/main/README.md', '_blank')}
+              >
+                <View color="orange.60">
+                  <svg width="180px" height="180px" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 15L8.5 12.5L11 10M14 10L16.5 12.5L14 15M5.5 6.5H19.5V18.5H5.5V6.5Z" stroke="#BF8040" stroke-width="1.2"/>
+                  </svg>
+                </View>
+              </Button>
+              <Heading level={3} textAlign="center">TypeScript code snippets</Heading>
+              <Text textAlign="center">Find snippet by keyword or by exsample. Copy code -button.</Text>
+              <Button variation="primary" size="small" onClick={() => window.open('https://bunsnip.vercel.app/', '_blank')} >
+                Open TypeScript Snippets
+              </Button>
+            </Flex>
+          </Card>
+
+
            {/* Moth */}
           <Card
             variation="elevated"
@@ -299,6 +396,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           </Card>  
 
 
+
+
           {/* FV */}
           <Card
             variation="elevated"
@@ -313,9 +412,9 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             }}
           >
             <Flex direction="row" alignItems="left" gap="small">
-              <Badge variation="success">AWS</Badge>
+              <Badge variation="success">Microservice</Badge>
+              <Badge variation="success">AWS Lambda</Badge>
               <Badge variation="success">Aspire</Badge>
-              <Badge variation="success">Serverless</Badge>
             </Flex>
             <br/>
             <Flex direction="column" alignItems="center" gap="medium">
@@ -331,8 +430,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </Button>
               <Heading level={3} textAlign="center">Future value calculator</Heading>
               <Text textAlign="center">AWS Lambda financial functions via Amazon API Gateway.</Text>
-{/* https://github.com/ristoikonen/Embed.AppHost/blob/master/LambdaReadme.md */}
-
+              {/* https://github.com/ristoikonen/Embed.AppHost/blob/master/LambdaReadme.md */}
 
         <Flex direction="row" wrap="wrap" justifyContent="center" gap="small" width="100%">
           <TextField
@@ -397,7 +495,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 onClick={() => window.open('https://github.com/ristoikonen/PixMapper', '_blank')}
                 >
                   <View color="orange.60">
-                    <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <svg width="110" height="110" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                       <path d="M3 3h8v8H3V3zm6 6V5H5v4h4zm9 4h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3zM15 3h6v8h-8V3h2zm4 6V5h-4v4h4zM5 13h6v8H3v-8h2zm4 6v-4H5v4h4z" fill="currentColor"/>
                   </svg>
                   </View>
@@ -407,13 +505,10 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
                 <br/>One RGBA pixel holds four bit word; uses two pixels for 8 bit ASCII character.
               </Text>
                 <br/>
-                <Button
-                  variation="link"
-                  colorTheme="info"
-                  onClick={() => window.open('https://www.nuget.org/packages/PixMapper/1.0.2', '_blank')}
-                >
-                  PixMapper NuGet package
-                </Button>
+
+              <Button variation="primary" size="small" onClick={() => window.open('https://www.nuget.org/packages/PixMapper/1.0.2', '_blank')} >
+                PixMapper NuGet package
+              </Button>                
             </Flex>
           </Card>
           
@@ -456,6 +551,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             backgroundColor="white"
           >
             <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="info">LIVE SITE</Badge>
               <Badge variation="success">React</Badge>
               <Badge variation="success">Vercel Analytics</Badge>
               <Badge variation="success">API Client</Badge>
@@ -474,12 +570,8 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               </Button>
               <Heading level={3} textAlign="center">Crypto Ticker</Heading>
               <Text textAlign="center">Crypto currency ticker tape React component<br/>HTTP client of Coinlore API for live market access. </Text>
-              <Button
-                  variation="link"
-                  colorTheme="info"
-                  onClick={() => window.open('https://coin.ristoikonen.com/', '_blank')}
-                >
-                  Live Coin Ticker site
+              <Button variation="primary" size="small" onClick={() => window.open('https://coin.ristoikonen.com/', '_blank')} >
+                Live Coin Ticker site
               </Button>
             </Flex>
           </Card>
@@ -492,6 +584,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             backgroundColor="white"
           >
             <Flex direction="row" alignItems="left" gap="small">
+              <Badge variation="info">LIVE SITE</Badge>
               <Badge variation="success">Google CDN</Badge>
               <Badge variation="success">React</Badge>
               <Badge variation="success">AWS Amplify</Badge>
@@ -514,12 +607,10 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
               <Text textAlign="center">Link Google CDN fonts and test pairings.
                 <br/>Load eight popular fonts using Google CDN links.
                 <br/>AWS Amplify build workflow diagram.</Text>
-                <Button
-                  variation="link"
-                  colorTheme="info"
-                  onClick={() => window.open('https://www.ristoikonen.com/FontPairsTester.html', '_blank')}
-                >Font pairings playground
+                <Button variation="primary" size="small" onClick={() => window.open('https://www.ristoikonen.com/FontPairsTester.html', '_blank')} >
+                  Font pairings playground
                 </Button>
+
             </Flex>
           </Card>
 
@@ -559,6 +650,10 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
             </Flex>
           </Card>
 
+
+
+
+
         </Grid>
 
         {/* GitHub Repos Button */}
@@ -576,6 +671,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
         </Flex>
 
         <View textAlign="center" padding="large">
+          {/* 
           <AmplifyUILink as={ReactRouterLink} to="/fontplay">
             Font Play
           </AmplifyUILink>
@@ -583,7 +679,7 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
           <AmplifyUILink as={ReactRouterLink} to="/fonts">
             Fonts
           </AmplifyUILink>
-          {/* 
+          
           <br/>
           <AmplifyUILink as={ReactRouterLink} to="/users">
             Users
@@ -597,18 +693,11 @@ const AmplifyApps: React.FC<AmplifyAppsProps> = () => {
 
           {/* TonkaWonka Website */}
           <Flex justifyContent="center" padding="large">
-            <Button
-              variation="primary"
-              backgroundColor="purple.80"
-              color="white"
-              borderRadius="full"
-              onClick={() => window.open('https://ristoikonen.github.io/Dacca/index.html', '_blank')}
-            >
-              Fun with TonkaWonka Cars 
-            </Button>
+              <Button variation="primary" size="small" onClick={() => window.open('https://ristoikonen.github.io/Dacca/index.html', '_blank')} >
+                Fun with TonkaWonka Cars 
+              </Button>
           </Flex>
-          
-
+         
 
 {/*           <AmplifyUILink as={ReactRouterLink} to="/gallery">
             Image Gallery
